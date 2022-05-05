@@ -1,0 +1,35 @@
+				Entidades Escolares
+
+Plataforma escolar (escuela) *entidad debil*
+Grupo *entidad debil*
+Alumno *entidades fuertes*
+Profesores *entidades fuertes*
+Tareas *entidad debil*
+Calificaciones *entidad debil*
+Materias *entidad debil*
+
+			Escuela		1:M	Alumnos
+Escuela puede tener muchos alumnos  		Un alumno solo tiene una escuela
+
+			Grupo		M:M	Materia
+Grupo puede tener muchas materias  		Una materia es impartida en muchos grupos
+
+			Profesores	1:M	Grupo
+Un profesor tiene muchos grupos 		Un grupo tiene solo un profesor
+
+			Alumnos		M:M	Tareas
+Una tarea le pertenece a muchos alumnos		Un alumno puede tener muchas tareas
+
+			Calificacion	1:M	Alumnos
+Un alumno tiene muchas calificaciones		Una calificacion pertenece a un alumno
+
+			Alumnos		M:M	Materias
+Varias materias pertenecen a un alumno		Un alumno puede tener varias materias
+
+			Profesor	M:M	Materias
+Varias materias pertenecen a un profesor	Un profesor puede tener varias materias
+
+
+
+
+
