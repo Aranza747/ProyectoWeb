@@ -1,5 +1,5 @@
 <?php
-    $numero = (isset($_POST["numero"]) && $_POST["numero"] != "" ) ?$_POST["numero"] : "No especificado";
+    20$numero = (isset($_POST["numero"]) && $_POST["numero"] != "" ) ?$_POST["numero"] : "No especificado";
     $email = (isset($_POST["email"]) && $_POST["email"] != "" ) ?$_POST["email"] : "No especificado";
     $password = (isset($_POST["password"]) && $_POST["password"] != "" ) ?$_POST["password"] : "No especificado";
     
