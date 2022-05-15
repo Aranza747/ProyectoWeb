@@ -20,6 +20,9 @@
 .font1{
     font-family: "font1", 'Lucida Sans', sans-serif;
 }
+#inicio{
+    color:#00677b;
+}
 
 /*BACKGROUND
     ------------------------------------------------------------------------------------*/
@@ -43,18 +46,13 @@
 fieldset{
     width:350px;
     height:415px;
-
+    margin: auto;
     border-style: solid;
     border-color: #00677b;
     background-color: white;
     border-radius:10px 10px 10px 10px;
     box-shadow:0px 0px 0px 0px   #292f20;
-    padding-top:10px;
 
-}
-
-#inicio{
-    color:#00677b;
 }
 
 #button, #button2, #button3, #button4{
