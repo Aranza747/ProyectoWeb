@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "font1";
+    src: url(../fonts/font1.ttf);
+}
+
+@font-face {
+    font-family: "font2";
+    src: url(../fonts/font2.ttf);
+}
+
+@font-face {
+    font-family: "font3";
+    src: url(../fonts/font3.ttf);
+}
+
+/*HEADER
+------------------------------------------------------------------------------------*/
+
+.font1{
+    font-family: "font1", 'Lucida Sans', sans-serif;
+}
+
+/*CONTENT
+------------------------------------------------------------------------------------*/
+
+.font2{
+    font-family: "font2", 'Lucinda Sans', serif;
+}
+
+.font3{
+    font-family: "font3", 'Lucinda Sans', serif;
+}
