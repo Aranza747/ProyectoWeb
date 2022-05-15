@@ -13,12 +13,21 @@
     src: url(../fonts/font3.ttf);
 }
 
+
 /*HEADER
 ------------------------------------------------------------------------------------*/
 
 .font1{
     font-family: "font1", 'Lucida Sans', sans-serif;
 }
+
+/*BACKGROUND
+    ------------------------------------------------------------------------------------*/
+
+    body{
+        background-image: url("./fondoinicio.jpeg");
+        background-color: #DD6693;
+    }
 
 /*CONTENT
 ------------------------------------------------------------------------------------*/
@@ -30,3 +39,30 @@
 .font3{
     font-family: "font3", 'Lucinda Sans', serif;
 }
+
+fieldset{
+    border-style: solid;
+    mask-border-width: 4px;
+    border-color: black;
+    background-color: white;
+}
+
+#inicio{
+    color:#00677b;
+}
+
+#button, #button2, #button3, #button4{
+    border-color: #00677b;
+    border-width: 1px;
+}
+
+#button4{
+    background-color: #00677b;
+    color: white;
+}
+
+
+
+
+
+
