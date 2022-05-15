@@ -44,6 +44,9 @@
 }
 
 fieldset{
+    position: relative;
+    top:250px;
+    left:0px;
     width:350px;
     height:415px;
     margin: auto;
