@@ -10,3 +10,13 @@ $usuario = (isset($_POST["usuario"]) && $_POST["usuario"]!= "")?$_POST["usuario"
 $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"]!= "")?$_POST["contrasena"]:false;
 
 echo $noCuenta;
+$sql = "INSERT INTO alumno VALUES(null, $noCuenta, '$nombre', '$usuario', '$correo', null, '$contrasena')";
+$res = mysqli_query($con, $sql);
+
+if($res == false){
+    echo 'No se pudo conectar';
+}
+else{
+    echo 'Si se pudo conectar';
+}
+?>

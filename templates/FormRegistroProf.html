@@ -7,12 +7,12 @@
     <title>Registro</title>
 </head>
 <body>
-    <center><form action="../dynamics/RespRegistroProf.php" method="post">
+    <center><form action="../dynamics/php/registroRol.php" method="post">
         <fieldset>
             <legend>Crea tu cuenta</legend>
 
-            <label for="num">Número de cuenta:</label><br/>
-            <input type="text" name="num" required placeholder="Escriba su número de cuenta aquí">
+            <label for="numeroCuenta">Número de cuenta:</label><br/>
+            <input type="text" name="numeroCuenta" required placeholder="Escriba su número de cuenta aquí">
             <br/><br/>
             
             <label for="nombre">Nombre y apellidos:</label><br/>
@@ -25,14 +25,6 @@
             
             <label for="contrasena">Contraseña:</label><br/>
             <input type="password" name="contrasena" required placeholder="Escriba su contraseña aquí">
-            <br/><br/>
-
-            <label for="rol">¿Cuál es tu rol?</label>
-            <select name="rol" id="rol">
-                <option id="profesor">Profesor</option>
-                <option id="moderador">Moderador</option>
-                <option id="administrador">Administrador</option>
-            </select>
             <br/><br/>
 
             ¿Eres un robot?<input type="checkbox" required><br>
