@@ -20,6 +20,8 @@ function  validarNoCuenta(noCuentaRFC){
     }
 }
 
+//agregar lo de validar num. de trabajador
+
 function  validarCorreo(correo){
     let regexCorreo = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
     cadenaCorreo = correo.value;
@@ -88,11 +90,11 @@ formulario.addEventListener("change", (event) => {
 
 });
 
-enviar.addEventListener("click", (evento) => {
+/*enviar.addEventListener("click", (evento) => {
 
     if(validacionNoCuenta == true || validacionRFC == true && validacionCorreo == true && validacionContrasena == true)
     //aqui va el fecth rescatando los datos del form y conectando al php
-})
+})*/
 
 
 
