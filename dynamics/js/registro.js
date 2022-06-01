@@ -42,9 +42,13 @@ function  validarContrasena(contrasena){
     }
 }
 
-
+let validacionRFC = 0;
+let validacionNoCuenta = 0;
+let validacionCorreo = 0;
+let validacionContrasena = 0;
 
 const formulario = document.getElementById("formulario");
+const enviar = document.getElementById("enviar");
 
 formulario.addEventListener("change", (event) => {
     const noCuentaRFC = document.getElementById("noCuentaRFC");//DECLARACION DE CONSTANTES
@@ -52,16 +56,16 @@ formulario.addEventListener("change", (event) => {
     const correo = document.getElementById("correo");
     const contrasena = document.getElementById("contrasena");
 
-    let validacionRFC = validarRFC(noCuentaRFC); //true or false
+    validacionRFC = validarRFC(noCuentaRFC); //true or false
     //console.log(validacionRFC)
 
-    let validacionNoCuenta= validarNoCuenta(noCuentaRFC);
+    validacionNoCuenta= validarNoCuenta(noCuentaRFC);
     //console.log(validacionNoCuenta)
 
-    let validacionCorreo= validarCorreo(correo);
+    validacionCorreo= validarCorreo(correo);
     //console.log(validacionCorreo)
 
-    let validacionContrasena= validarContrasena(contrasena);
+    validacionContrasena= validarContrasena(contrasena);
     //console.log(validacionContrasena)
 
 
@@ -80,5 +84,15 @@ formulario.addEventListener("change", (event) => {
     else
         contrasena.style.color = "red";
 
+    //if(validacionNoCuenta == true || validacionRFC == true && validacionCorreo == true && validacionContrasena == true)
+
+});
+
+enviar.addEventListener("click", (evento) => {
+
+    if(validacionNoCuenta == true || validacionRFC == true && validacionCorreo == true && validacionContrasena == true)
+    //aqui va el fecth rescatando los datos del form y conectando al php
 })
+
+
 
