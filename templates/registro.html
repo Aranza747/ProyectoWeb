@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <form action="../dynamics/php/registro.php" method="post" id="formulario">
+        <fieldset>
+            <legend>Crea tu cuenta</legend>
+
+            <label>Número de cuenta o RFC:</label><br/>
+            <input type="text" name="numeroCuenta" id="noCuentaRFC" required placeholder="Escriba su número de cuenta o rfc aquí">
+            <br/><br/>
+            
+            <label>Nombre y apellidos:</label><br/>
+            <input type="text" name="nombre" id="nombre" required placeholder="Escriba su nombre completo aquí">
+            <br/><br/>
+
+            <label>Correo electrónico:</label><br/>
+            <input type="email" name="correo" id="correo" required placeholder="Escriba su correo aquí">
+            <br/><br/>
+            
+            <label>Contraseña:</label><br/>
+            <input type="password" name="contrasena" id="contrasena" required placeholder="Escriba su contraseña aquí">
+            <br/><br/>
+
+            ¿Eres un robot?<input type="checkbox" required><br>
+
+            <button type="submit">Ingresar al sistema</button>
+        </fieldset>
+    </form>
+
+    <script src="../dynamics/js/registro.js"></script>
+
+</body>
+</html>
