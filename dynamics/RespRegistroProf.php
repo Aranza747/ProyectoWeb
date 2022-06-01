@@ -16,7 +16,6 @@
             <tr> 
                 <td><strong>Número de cuenta:</strong> <br/> $num </td>
                 <td><strong>Nombre y apellidos: </strong><br/> $nombre </td>
-
                 
             </tr>
             <tr>

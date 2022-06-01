@@ -37,7 +37,7 @@
     
             $foro=$datos3['Alumno_ID'];
             $peticion = "INSERT INTO foro VALUES ($foro, NULL)"; 
-            $query = mysqli_query( $conexion, $peticion); 
+            $query = mysqli_query($conexion, $peticion); 
             $peticion3 = "UPDATE alumno SET Foro_ID=$foro WHERE Nombre='$nombre'"; 
             $query3 = mysqli_query($conexion, $peticion3); 
 
