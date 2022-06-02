@@ -14,6 +14,7 @@ function  validarNoCuenta(noCuentaRFC){
     cadenaNoCuenta = noCuentaRFC.value;
     if(regexNoCuenta.test(cadenaNoCuenta)){
         return true;
+        noCuentaRFC.classList.add("checked");
     }
     else{
         return false;
@@ -44,53 +45,97 @@ function  validarContrasena(contrasena){
     }
 }
 
+function  validarNombre(nombre){
+    let regexNombre = /^[a-zA-Z\s]*$/; //Nombre solo admite letras y espacios
+    cadenaNombre = nombre.value;
+    if(regexNombre.test(cadenaNombre)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 let validacionRFC = 0;
+let validacionNombre = 0;
 let validacionNoCuenta = 0;
 let validacionCorreo = 0;
 let validacionContrasena = 0;
-
+let contadorValidar = 0;
 const formulario = document.getElementById("formulario");
-const enviar = document.getElementById("enviar");
+const mensajeError = document.getElementById("mensaje-error");
 
-formulario.addEventListener("change", (event) => {
+
+formulario.addEventListener("keyup", (evento) => {
+
     const noCuentaRFC = document.getElementById("noCuentaRFC");//DECLARACION DE CONSTANTES
     const nombre = document.getElementById("nombre");
     const correo = document.getElementById("correo");
     const contrasena = document.getElementById("contrasena");
-
+    
     validacionRFC = validarRFC(noCuentaRFC); //true or false
-    //console.log(validacionRFC)
 
     validacionNoCuenta= validarNoCuenta(noCuentaRFC);
-    //console.log(validacionNoCuenta)
 
     validacionCorreo= validarCorreo(correo);
-    //console.log(validacionCorreo)
 
     validacionContrasena= validarContrasena(contrasena);
-    //console.log(validacionContrasena)
+
+    validacionNombre= validarNombre(nombre);
 
 
-    if(validacionRFC == true || validacionNoCuenta == true)//numero de cuenta o RFC
+    if(validacionRFC == true || validacionNoCuenta == true){//numero de cuenta o RFC
         noCuentaRFC.style.color = "green";
-    else
+        noCuentaRFC.classList.add("checked");
+    }
+    else{
         noCuentaRFC.style.color = "red";
+        noCuentaRFC.classList.remove("checked");
+    }
 
-    if(validacionCorreo == true)//correo
+
+    if(validacionNombre == true){//nombre 
+        nombre.style.color = "green";
+        nombre.classList.add("checked");
+    }
+    else{
+        nombre.style.color = "red";
+        nombre.classList.remove("checked")
+    }
+
+
+    if(validacionCorreo == true){//correo
         correo.style.color = "green";
-    else
+        correo.classList.add("checked");
+    }
+    else{
         correo.style.color = "red";
+        correo.classList.remove("checked")
+    }
 
-    if(validacionContrasena == true)//contraseña
+
+    if(validacionContrasena == true){//contraseña
         contrasena.style.color = "green";
-    else
+        contrasena.classList.add("checked");
+    }
+    else{
         contrasena.style.color = "red";
+        contrasena.classList.remove("checked")
+    }
 
-    //if(validacionNoCuenta == true || validacionRFC == true && validacionCorreo == true && validacionContrasena == true)
+    //cd if(noCuentaRFC.classList.contains)
+})
 
-});
-
-/*enviar.addEventListener("click", (evento) => {
-    if(validacionNoCuenta == true || validacionRFC == true && validacionCorreo == true && validacionContrasena == true)
-    //aqui va el fecth rescatando los datos del form y conectando al php
-})*/
+/*formulario.addEventListener('submit', (event) => {
+    
+    event.preventDefault();
+    //console.log(contadorValidar)
+    if(contadorValidar == 1)
+    {   
+        formulario.reset();
+        console.log("algo mal en los datos");
+        mensajeError.innerHTML = "Llena correctamente todos los campos ): <br>"
+    }
+    if(contadorValidar == 0)
+        formulario.submit();
+});*/

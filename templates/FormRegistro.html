@@ -7,9 +7,11 @@
     <title>Registro</title>
 </head>
 <body>
-    <form action="../dynamics/php/registro.php" method="post" id="formulario">
+    <form action="../dynamics/php/registro.php" method="post" id="formulario" autocomplete="off">
         <fieldset>
             <legend>Crea tu cuenta</legend>
+
+            <div id="mensaje-error"></div>
 
             <label>Número de cuenta o RFC:</label><br/>
             <input type="text" name="numeroCuenta" id="noCuentaRFC" required placeholder="Escriba su número de cuenta o rfc aquí">
@@ -23,9 +25,9 @@
             <input type="email" name="correo" id="correo" required placeholder="Escriba su correo aquí">
             <br/><br/>
 
-            <label>Usuario:</label><br/>
+            <!-- <label>Usuario:</label><br/>
             <input type="text" name="usuario" id="NomUsuario" required placeholder="Nombre de Usuario">
-            <br/><br/>
+            <br/><br/> -->
             
             <label>Contraseña:</label><br/>
             <input type="password" name="contrasena" id="contrasena" required placeholder="Escriba su contraseña aquí">
