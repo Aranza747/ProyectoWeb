@@ -14,7 +14,7 @@ if($datos==NULL){
     // echo "No de cuenta no existe, crear cuenta";
     header('Location: ../../templates/formregistro.html'); //../../templates/formregistro.html
 } else {
-    $sql = "SELECT contraseña FROM alumno WHERE contraseña='$contrasena'";
+    $sql = "SELECT contraseña FROM alumno WHERE contraseña='$contrasena' AND noDeCuenta=$noCuenta";
     $res = mysqli_query($con, $sql);
 
     $datos = mysqli_fetch_array($res);
