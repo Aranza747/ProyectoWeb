@@ -2,30 +2,61 @@
 require "config.php";
 
 $con = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
+//$res = mysqli_query($con, $sql);
 
-$noCuentaRFC = (isset($_POST["numeroCuenta"]) && $_POST["numeroCuenta"]!= "")?$_POST["numeroCuenta"]:false;
-$nombre = (isset($_POST["nombre"]) && $_POST["nombre"]!= "")?$_POST["nombre"]:false;//Condicionar Si es estudiante o profesor
+$noCuentaRFC = (isset($_POST["noCuentaRFC"]) && $_POST["noCuentaRFC"]!= "")?$_POST["noCuentaRFC"]:false;
+$nombre = (isset($_POST["nombre"]) && $_POST["nombre"]!= "")?$_POST["nombre"]:false;
 $correo = (isset($_POST["correo"]) && $_POST["correo"]!= "")?$_POST["correo"]:false;
-$usuario = (isset($_POST["usuario"]) && $_POST["usuario"]!= "")?$_POST["usuario"]:false;
 $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"]!= "")?$_POST["contrasena"]:false;
+$rfc = 0;
+$numCuenta = 0;
+$rol = "profesor";
 
-echo $noCuenta;
-echo $nombre;
-echo $correo;
-echo $usuario;
-echo $contrasena;
-
-
-$sql = "INSERT INTO alumno VALUES(null, $noCuenta, '$nombre', '$usuario', '$correo', null, '$contrasena')";//estudiante
-
-$sql = "INSERT INTO alumno VALUES(null, $noCuenta, '$nombre', '$usuario', '$correo', null, '$contrasena')";//Arrglar profesor
-
-$res = mysqli_query($con, $sql);
-
-if($res == false){
-    echo 'No se pudo conectar';
+function validarRFC($noCuentaRFC){
+    $regexRFC = "/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/";
+    $cadenaRFC = $noCuentaRFC;
+    if(preg_match($regexRFC, $cadenaRFC) == 1){
+        return $rfc = 1;
+    }else
+        return $rfc = 0;
 }
-else{
-    echo 'Si se pudo conectar';
+
+function validarNoCuenta($noCuentaRFC){
+    $regexNoCuenta = "/\d{9}/";
+    $cadenaNoCuenta = $noCuentaRFC;
+    if(preg_match($regexNoCuenta, $cadenaNoCuenta) == 1){
+        return $numCuenta = 1;
+    }else
+        return $numCuenta = 0;
 }
-?> 
+
+if(validarNoCuenta($noCuentaRFC) == 1){
+    $sql = "INSERT INTO alumno VALUES(null, $noCuentaRFC, '$nombre', '$correo', null, '$contrasena')";//falta agregar sal a la base de datos
+    $res = mysqli_query($con, $sql);
+
+    if($res == true)
+    {
+        echo ("alumno (:");
+    }else
+    {
+        echo mysqli_error($con);
+        echo ("alumno ):");
+    }
+}
+
+/*if(validarRFC($noCuentaRFC) == 1){
+    $sql = "INSERT INTO roles VALUES(null, $noCuentaRFC, '$correo', '$contrasena', $rol, null, '$nombre')";//profesor Aqui puse null sal y id de las materias 
+    $res = mysqli_query($con, $sql);
+    if($res == true)
+    {
+        echo ("roles (:");
+    }else
+    {
+        echo mysqli_error($con);
+        echo ("roles ):");
+    }
+}*/
+
+
+?>
+
