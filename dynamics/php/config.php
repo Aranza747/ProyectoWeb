@@ -2,4 +2,4 @@
   $db_host = "localhost";
   $db_user = "root";
   $db_pass = "";
-  $db_schema = "aula";
+  $db_schema = "aula2";
