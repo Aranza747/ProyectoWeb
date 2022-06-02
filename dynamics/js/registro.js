@@ -62,6 +62,7 @@ let validacionNoCuenta = 0;
 let validacionCorreo = 0;
 let validacionContrasena = 0;
 let contadorValidar = 0;
+
 const formulario = document.getElementById("formulario");
 const mensajeError = document.getElementById("mensaje-error");
 
@@ -123,19 +124,20 @@ formulario.addEventListener("keyup", (evento) => {
         contrasena.classList.remove("checked")
     }
 
-    //cd if(noCuentaRFC.classList.contains)
+    if(noCuentaRFC.classList.contains("checked") == true && nombre.classList.contains("checked") == true && correo.classList.contains("checked") == true && contrasena.classList.contains("checked") == true)
+        contadorValidar=1
+    console.log(contadorValidar)
+        
 })
 
-/*formulario.addEventListener('submit', (event) => {
+formulario.addEventListener('submit', (event) => {
     
     event.preventDefault();
-    //console.log(contadorValidar)
-    if(contadorValidar == 1)
+    if(contadorValidar == 0)
     {   
         formulario.reset();
-        console.log("algo mal en los datos");
-        mensajeError.innerHTML = "Llena correctamente todos los campos ): <br>"
+        mensajeError.innerHTML = "Llena correctamente todos los campos ): <br> <br>"
     }
-    if(contadorValidar == 0)
+    if(contadorValidar == 1)
         formulario.submit();
-});*/
+});
