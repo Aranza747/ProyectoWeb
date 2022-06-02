@@ -10,7 +10,6 @@ $correo = (isset($_POST["correo"]) && $_POST["correo"]!= "")?$_POST["correo"]:fa
 $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"]!= "")?$_POST["contrasena"]:false;
 $rfc = 0;
 $numCuenta = 0;
-$rol = "profesor";
 
 function validarRFC($noCuentaRFC){
     $regexRFC = "/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/";
@@ -44,8 +43,9 @@ if(validarNoCuenta($noCuentaRFC) == 1){
     }
 }
 
-/*if(validarRFC($noCuentaRFC) == 1){
-    $sql = "INSERT INTO roles VALUES(null, $noCuentaRFC, '$correo', '$contrasena', $rol, null, '$nombre')";//profesor Aqui puse null sal y id de las materias 
+if(validarRFC($noCuentaRFC) == 1){
+    $rol = "profesor";
+    $sql = "INSERT INTO roles VALUES(null, '$noCuentaRFC', '$correo', '$contrasena', '$rol', null, '$nombre')";//profesor Aqui puse null sal y id de las materias 
     $res = mysqli_query($con, $sql);
     if($res == true)
     {
@@ -55,7 +55,7 @@ if(validarNoCuenta($noCuentaRFC) == 1){
         echo mysqli_error($con);
         echo ("roles ):");
     }
-}*/
+}
 
 
 ?>
