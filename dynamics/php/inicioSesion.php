@@ -33,12 +33,14 @@ if(validarNoCuenta($noCuentaRFC) == 1){//alumno
     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
 }
 
-if(validarRFC($noCuentaRFC) == 1){//profesor
-    $sql = "SELECT RFC FROM roles WHERE RFC=$noCuentaRFC";
+if(validarNoCuenta($noCuentaRFC) == 1){//alumno
+    $sql = "SELECT noDeCuenta FROM alumno WHERE noDeCuenta=$noCuentaRFC";
     $res = mysqli_query($con, $sql);
     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
     echo "entras?";
 }
+
+
 
 
 

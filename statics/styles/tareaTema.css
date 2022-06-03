@@ -1,0 +1,49 @@
+@font-face{ /*froza*/
+    font-family: "froza"; 
+    src: url("../fonts/font1.ttf");
+}
+
+@font-face{
+    font-family: "averia"; /*Averia*/
+    src: url("../fonts/font2.ttf");
+}
+
+@font-face{
+    font-family: "mukta"; /*Mukta*/
+    src: url("../fonts/font3.ttf");
+}
+
+@font-face{
+    font-family: "jaldi"; /*Jaldi*/
+    src: url("../fonts/Jaldi-Bold.ttf");
+}
+
+@font-face{
+    font-family: "catamaran"; /*catamaran*/
+    src: url("../fonts/Catamaran-Regular.ttf");
+}
+
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+#nav {
+    background-color: #006778;
+    position: relative;
+}
+aside{
+    background-color: #006778;
+    width: 50px;
+    height: 100%;
+}
+
+#izquierda{
+    position: absolute;
+    width: 50%;
+    /* transform: translate(0, 50%); */
+}
+
+#derecha {
+    position: relative;
+    transform: translate(50%);
+}
