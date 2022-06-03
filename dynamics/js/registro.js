@@ -1,48 +1,60 @@
-function  validarRFC(noCuentaRFC){
+async function  validarNoCuenta(noCuentaRFC){ //indicar es asincronica async
+    let regexNoCuenta = /\d{9}/;//1,3 checar
+    cadenaNoCuenta = noCuentaRFC.value;
+
     let regexRFC = /^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/;
     cadenaRFC = noCuentaRFC.value;
 
+    if(regexNoCuenta.test(cadenaNoCuenta) || regexRFC.test(cadenaRFC)){
 
-    if(regexRFC.test(cadenaRFC)){
-        return true;
+        if(cadenaNoCuenta.length == 9)
+        {
+            await fetch("../dynamics/php/registro_AlumnoExistente.php?q="+cadenaNoCuenta) //await esperar al fetch
+            .then((response)=>{
+                return response.json();
+            })
+            .then((datosJSON)=>{
+                console.log(datosJSON)
+                if(datosJSON.length == 0)//USUARIO DISPONIBLE
+                {
+                    console.log("alumno disponible")
+                    noCuentaRFC.style.color = "green";
+                    noCuentaRFC.classList.add("checked");
+                }
+                else{ //USUARIO NO DISPONIBLE
+                    console.log("alumno no disponible")
+                }
+            });
+        }else{
+            noCuentaRFC.style.color = "red";
+            noCuentaRFC.classList.remove("checked")
+        }
+        if(cadenaRFC.length == 13)
+        {
+            await fetch("../dynamics/php/registro_RFCExistente.php?q="+cadenaRFC) //await esperar al fetch
+            .then((response)=>{
+                return response.json();
+            })
+            .then((datosJSON)=>{
+                console.log(datosJSON)
+                if(datosJSON.length == 0)//USUARIO DISPONIBLE
+                {
+                    noCuentaRFC.style.color = "green";
+                    noCuentaRFC.classList.add("checked");
+                    console.log("RFC disponible")
+                }
+                else{ //USUARIO NO DISPONIBLE
+                    console.log("RFC no disponible")
+                }
+            });
+        }
+
+    }else{
+        noCuentaRFC.style.color = "red";
+        noCuentaRFC.classList.remove("checked")
     }
-    else{
-        return false;
-    }
-    
 }
 
-function  validarNoCuenta(noCuentaRFC){
-    let regexNoCuenta = /\d{9}/;
-    cadenaNoCuenta = noCuentaRFC.value;
-
-    let alumnoExistente = 0;
-
-
-    if(regexNoCuenta.test(cadenaNoCuenta)){
-        fetch("../dynamics/php/registro_AlumnoExistente.php?q="+cadenaRFC)
-        .then((response)=>{
-            return response.json();
-        })
-        .then((datosJSON)=>{
-            console.log(datosJSON)
-            if(datosJSON.length == 0)//USUARIO DISPONIBLE
-            {
-                alumnoExistente = 1;
-                console.log("alumno disponible")
-            }
-            else //USUARIO NO DISPONIBLE
-                alumnoExistente = 0;
-        });
-    }
-    console.log(alumnoExistente)
-    if(regexNoCuenta.test(cadenaNoCuenta)==true && alumnoExistente == 0)
-        return true;
-    else
-        return false;
-}
-
-//agregar lo de validar num. de trabajador y falta que detecte que ese usuario no esta registrado. FETCH
 
 function  validarCorreo(correo){
     let regexCorreo = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
@@ -56,7 +68,13 @@ function  validarCorreo(correo){
 }
 
 function  validarContrasena(contrasena){
-    let regexContrasena = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/; //La contraseña debe tener al entre 8 y 16 caracteres, un numerito, minúscula y una mayúscula.Puede tener otros símbolos.
+    let regexContrasena = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+
+    // La contraseña debe tener al entre 8 y 16 caracteres
+    // al menos un dígito
+    // al menos una minúscula
+    // al menos una mayúscula
+
     cadenaContrasena = contrasena.value;
     if(regexContrasena.test(cadenaContrasena)){
         return true;
@@ -67,9 +85,11 @@ function  validarContrasena(contrasena){
 }
 
 function  validarNombre(nombre){
-    let regexNombre = /^[a-zA-Z\s]*$/; //Nombre solo admite letras y espacios
+    let regexNombre = /^[a-zA-Z\s]*$/; 
+    let regexAcentos = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
+
     cadenaNombre = nombre.value;
-    if(regexNombre.test(cadenaNombre)){
+    if(regexNombre.test(cadenaNombre) || regexAcentos.test(cadenaNombre)){
         return true;
     }
     else{
@@ -88,28 +108,20 @@ const formulario = document.getElementById("formulario");
 const mensajeError = document.getElementById("mensaje-error");
 
 
-formulario.addEventListener("keyup", (evento) => {
+formulario.addEventListener("keyup", async (evento) => { //async
 
     const noCuentaRFC = document.getElementById("noCuentaRFC");//DECLARACION DE CONSTANTES
     const nombre = document.getElementById("nombre");
     const correo = document.getElementById("correo");
     const contrasena = document.getElementById("contrasena");
+
     
-    validacionRFC = validarRFC(noCuentaRFC); //true or false
-    validacionNoCuenta= validarNoCuenta(noCuentaRFC);
+    await validarNoCuenta(noCuentaRFC);// await
     validacionCorreo= validarCorreo(correo);
     validacionContrasena= validarContrasena(contrasena);
     validacionNombre= validarNombre(nombre);
 
 
-    if(validacionRFC == true || validacionNoCuenta == true){//numero de cuenta o RFC
-        noCuentaRFC.style.color = "green";
-        noCuentaRFC.classList.add("checked");
-    }
-    else{
-        noCuentaRFC.style.color = "red";
-        noCuentaRFC.classList.remove("checked");
-    }
 
 
     if(validacionNombre == true){//nombre 
@@ -160,4 +172,3 @@ formulario.addEventListener('submit', (event) => {
 });
 
 //AGREGAR ESTILO
-//HACER EL FETCH PARA VER QUE EL USUARIO NO ESTERE REGISTRADO
