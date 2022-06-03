@@ -31,19 +31,30 @@ body{
     background-color: #006778;
     position: relative;
 }
-aside{
+
+#perfil {
+    color: #ffffff;
+    font-family: 'catamaran';
+}
+
+.navbar-nav{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#aside{
     background-color: #006778;
-    width: 50px;
+    position: absolute;
+    width: 5%;
     height: 100%;
 }
 
-#izquierda{
-    position: absolute;
-    width: 50%;
-    /* transform: translate(0, 50%); */
+#formTarea{
+    
+}
+  
+.hijos {
+   
 }
 
-#derecha {
-    position: relative;
-    transform: translate(50%);
-}
+

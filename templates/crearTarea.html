@@ -13,43 +13,53 @@
     <!--  Navbar -->
     <nav class="navbar navbar-expand-lg" id="nav"> 
         <div class="container-fluid">
-            
+
             <a class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
                 <img src="../statics/img/logoprepa.png" alt="" width="40" height="40">
             </a>
-            <!-- Necesario solo cuando no sea la vista principal  -->
-             <a class="navbar-brand" href="./inicio.html">
-                <img src="../statics/img/Logoaula.png" alt="" width="40" height="40">
-            </a>
-            
+            <!-- Necesario solo cuando no sea la vista principal -->
+    
+    
             <div class="navbar-nav">
-                <a class="nav-link" href="#" id="perfil">Perfil</a>    
+                <div>
+                    <a class="navbar-brand"  href="./inicio.html">
+                        <img id="inicio" src="../statics/img/Logoaula.png" alt="" width="30" height="30">
+                    </a>
+                </div>
+                <div>
+                    <a class="nav-link" href="#" id="perfil">Perfil</a>
+                </div> 
             </div>
-            
+    
         </div>
     </nav>
 
-    <aside>
+    
+
+
+    <aside id="aside">
         
     </aside>
 
-    <div id="formTarea">
-        <form action="../dynamics/php/crearTarea.php">
-            <div id="izquierda">
+    <div id="formTarea" class="col-xl-6"  class="col-lg-6" class="col-sm-12">
+        <form action="../dynamics/php/crearTarea.php" class="padre">
+
+            <div class="hijos">
                 <label class="etiqueta">Descripción:</label><br/>
                 <textarea name="descripcion" id="descripcion"></textarea>
-                <br/><br/>
             </div>
-            <div id="derecha">
-                <label class="etiqueta">Nombre de la tarea:</label><br/>
+
+            <div class="hijos">
+                <div><label class="etiqueta">Nombre de la tarea:</label><br/>
                 <input type="text" name="nombre" id="nombre" class="input" required placeholder="Escriba su número de cuenta o rfc aquí">
                 <br/><br/>
                 
-                <button id="subArchivo">Añadir material</button>
+                <div></div><button id="subArchivo">Añadir material</button>
+                <br/><br/></div>
 
-                <label class="etiqueta">Fecha de entrega:</label><br/>
+                <div><label class="etiqueta">Fecha de entrega:</label><br/>
                 <input type="date" name="fecha" id="fecha" class="input" required placeholder="Escriba su contraseña aquí">
-                <br/><br/>
+                <br/><br/></div>
                 
                 <label class="etiqueta">Hora de entrega:</label><br/>
                 <input type="time" name="fecha" id="fecha" class="input" required placeholder="Escriba su contraseña aquí">
