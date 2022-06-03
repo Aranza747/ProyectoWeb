@@ -1,24 +1,45 @@
 function  validarRFC(noCuentaRFC){
     let regexRFC = /^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/;
     cadenaRFC = noCuentaRFC.value;
+
+
     if(regexRFC.test(cadenaRFC)){
         return true;
     }
     else{
         return false;
     }
+    
 }
 
 function  validarNoCuenta(noCuentaRFC){
     let regexNoCuenta = /\d{9}/;
     cadenaNoCuenta = noCuentaRFC.value;
+
+    let alumnoExistente = 0;
+
+
     if(regexNoCuenta.test(cadenaNoCuenta)){
+        fetch("../dynamics/php/registro_AlumnoExistente.php?q="+cadenaRFC)
+        .then((response)=>{
+            return response.json();
+        })
+        .then((datosJSON)=>{
+            console.log(datosJSON)
+            if(datosJSON.length == 0)//USUARIO DISPONIBLE
+            {
+                alumnoExistente = 1;
+                console.log("alumno disponible")
+            }
+            else //USUARIO NO DISPONIBLE
+                alumnoExistente = 0;
+        });
+    }
+    console.log(alumnoExistente)
+    if(regexNoCuenta.test(cadenaNoCuenta)==true && alumnoExistente == 0)
         return true;
-        noCuentaRFC.classList.add("checked");
-    }
-    else{
+    else
         return false;
-    }
 }
 
 //agregar lo de validar num. de trabajador y falta que detecte que ese usuario no esta registrado. FETCH
@@ -75,13 +96,9 @@ formulario.addEventListener("keyup", (evento) => {
     const contrasena = document.getElementById("contrasena");
     
     validacionRFC = validarRFC(noCuentaRFC); //true or false
-
     validacionNoCuenta= validarNoCuenta(noCuentaRFC);
-
     validacionCorreo= validarCorreo(correo);
-
     validacionContrasena= validarContrasena(contrasena);
-
     validacionNombre= validarNombre(nombre);
 
 
@@ -123,16 +140,16 @@ formulario.addEventListener("keyup", (evento) => {
         contrasena.style.color = "red";
         contrasena.classList.remove("checked")
     }
-
+    
     if(noCuentaRFC.classList.contains("checked") == true && nombre.classList.contains("checked") == true && correo.classList.contains("checked") == true && contrasena.classList.contains("checked") == true)
         contadorValidar=1
-    console.log(contadorValidar)
         
 })
 
 formulario.addEventListener('submit', (event) => {
     
     event.preventDefault();
+
     if(contadorValidar == 0)
     {   
         formulario.reset();
@@ -141,5 +158,6 @@ formulario.addEventListener('submit', (event) => {
     if(contadorValidar == 1)
         formulario.submit();
 });
+
 //AGREGAR ESTILO
 //HACER EL FETCH PARA VER QUE EL USUARIO NO ESTERE REGISTRADO
