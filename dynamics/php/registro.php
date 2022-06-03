@@ -1,5 +1,6 @@
 <?php
 require "config.php";
+//require "seguridad.php";
 
 $con = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
 //$res = mysqli_query($con, $sql);
@@ -11,7 +12,11 @@ $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"]!= "")?$_POST[
 $rfc = 0;
 $numCuenta = 0;
 
+// session_start();
 
+// $_SESSION['nombre'] = $nombre;
+
+// $hasheo = hash("sha256", $contrasena.$pimienta.$sal);
 
 
 function validarRFC($noCuentaRFC){
@@ -31,9 +36,6 @@ function validarNoCuenta($noCuentaRFC){
     }else
         return $numCuenta = 0;
 }
-
-
-
 
 if(validarNoCuenta($noCuentaRFC) == 1){//alumno
     $sql = "INSERT INTO alumno (noDeCuenta, nombre, correo, contraseña) VALUES('$noCuentaRFC', '$nombre', '$correo', '$contrasena')";//falta agregar sal a la base de datos
@@ -61,12 +63,6 @@ if(validarRFC($noCuentaRFC) == 1){//profesor
         echo ("roles ):");
     }
 }
-
-
-
-
-
-
 
 
 
