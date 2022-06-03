@@ -11,6 +11,9 @@ $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"]!= "")?$_POST[
 $rfc = 0;
 $numCuenta = 0;
 
+
+
+
 function validarRFC($noCuentaRFC){
     $regexRFC = "/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/";
     $cadenaRFC = $noCuentaRFC;
@@ -29,27 +32,29 @@ function validarNoCuenta($noCuentaRFC){
         return $numCuenta = 0;
 }
 
-if(validarNoCuenta($noCuentaRFC) == 1){
+
+
+
+if(validarNoCuenta($noCuentaRFC) == 1){//alumno
     $sql = "INSERT INTO alumno (noDeCuenta, nombre, correo, contraseña) VALUES('$noCuentaRFC', '$nombre', '$correo', '$contrasena')";//falta agregar sal a la base de datos
     $res = mysqli_query($con, $sql);
 
     if($res == true)
     {
-        header ('Location: ../ProyectoWeb/inicioSesion.php');;
+        header ('Location: ../../inicioSesion.html');
     }else
     {
         echo mysqli_error($con);
         echo ("alumno ):");
     }
 }
-
-if(validarRFC($noCuentaRFC) == 1){
+if(validarRFC($noCuentaRFC) == 1){//profesor
     $rol = "profesor";
-    $sql = "INSERT INTO roles VALUES(null, '$noCuentaRFC', '$correo', '$contrasena', '$rol', null, '$nombre')";//profesor Aqui puse null sal y id de las materias 
+    $sql = "INSERT INTO roles (noDeCuenta, nombre, correo, contraseña) VALUES('$noCuentaRFC', '$nombre', '$correo', '$contrasena')";//profesor Aqui puse null sal y id de las materias 
     $res = mysqli_query($con, $sql);
     if($res == true)
     {
-        header ('Location: ../ProyectoWeb/inicioSesion.php');
+        header ('Location: ../../inicioSesion.html');
     }else
     {
         echo mysqli_error($con);
@@ -57,17 +62,22 @@ if(validarRFC($noCuentaRFC) == 1){
     }
 }
 
-$sql = "INSERT INTO alumno (noDeCuenta, nombre, usuario, correo, contraseña) VALUES('$noCuentaRFC', '$nombre', '$usuario', '$correo', '$contrasena')";//estudiante
-$res = mysqli_query($con, $sql);
+
+
+
+
+
+
+
 
 if($res == false){
     echo 'No se pudo conectar';
 }
 else{
     echo 'Si se pudo conectar';
-    header ('Location: ../ProyectoWeb/inicioSesion.php');
+    header ('Location: ../../inicioSesion.html');
 }
 ?>
 
-?>
+
 
