@@ -141,3 +141,5 @@ formulario.addEventListener('submit', (event) => {
     if(contadorValidar == 1)
         formulario.submit();
 });
+//AGREGAR ESTILO
+//HACER EL FETCH PARA VER QUE EL USUARIO NO ESTERE REGISTRADO

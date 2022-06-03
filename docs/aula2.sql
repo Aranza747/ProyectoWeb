@@ -26,17 +26,16 @@ CREATE TABLE `alumno` (
   `id_alumno` int(11) NOT NULL AUTO_INCREMENT,
   `noDeCuenta` int(11) NOT NULL,
   `nombre` char(100) NOT NULL,
-  `usuario` varchar(50) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `id_materia` int(11) DEFAULT NULL,
-  `contraseña` varchar(20) NOT NULL,
+  `contraseña` varchar(100) NOT NULL,
+  `sal` varchar(15) NOT NULL,
   PRIMARY KEY (`id_alumno`),
   UNIQUE KEY `noDeCuenta` (`noDeCuenta`),
-  UNIQUE KEY `usuario` (`usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `id_materia` (`id_materia`),
   CONSTRAINT `alumno_ibfk_1` FOREIGN KEY (`id_materia`) REFERENCES `materia` (`id_materia`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +44,7 @@ CREATE TABLE `alumno` (
 
 LOCK TABLES `alumno` WRITE;
 /*!40000 ALTER TABLE `alumno` DISABLE KEYS */;
+INSERT INTO `alumno` VALUES (10,123456789,'Araceli Michel Pueblita Zacarias','aracelimichel@yahoot.com',NULL,'IntentoSisis12',''),(12,321165848,'Junito Perez','123@gmail.com',NULL,'Junaito12',''),(13,321123848,'Mateo','mateo@gmail.com',NULL,'Palito3m','');
 /*!40000 ALTER TABLE `alumno` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,6 +303,7 @@ CREATE TABLE `materia` (
   `contrasena` varchar(100) NOT NULL,
   `foto` varchar(100) NOT NULL,
   `calificacionFinal` tinyint(5) NOT NULL,
+  `sal` varchar(15) NOT NULL,
   PRIMARY KEY (`id_materia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -351,17 +352,20 @@ DROP TABLE IF EXISTS `roles`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `roles` (
   `id_rol` int(11) NOT NULL AUTO_INCREMENT,
-  `noDeCuenta` int(11) NOT NULL,
+  `RFC` varchar(20) NOT NULL,
   `correo` varchar(50) NOT NULL,
   `contrasena` varchar(20) NOT NULL,
   `rol` varchar(15) NOT NULL,
   `id_materia` int(11) DEFAULT NULL,
+  `nombre` char(100) NOT NULL,
+  `sal` varchar(15) NOT NULL,
   PRIMARY KEY (`id_rol`),
-  UNIQUE KEY `noDeCuenta` (`noDeCuenta`),
+  UNIQUE KEY `noDeCuenta` (`RFC`),
   UNIQUE KEY `correo` (`correo`),
+  UNIQUE KEY `RFC` (`RFC`),
   KEY `id_materia` (`id_materia`),
   CONSTRAINT `roles_ibfk_1` FOREIGN KEY (`id_materia`) REFERENCES `materia` (`id_materia`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -370,6 +374,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'QUMA470929F37','14@gmail.com','1234PueblitMaest','profesor',NULL,'Maestrooos','');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-31 14:13:22
+-- Dump completed on 2022-06-02 20:17:31

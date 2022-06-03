@@ -30,12 +30,12 @@ function validarNoCuenta($noCuentaRFC){
 }
 
 if(validarNoCuenta($noCuentaRFC) == 1){
-    $sql = "INSERT INTO alumno VALUES(null, $noCuentaRFC, '$nombre', '$correo', null, '$contrasena')";//falta agregar sal a la base de datos
+    $sql = "INSERT INTO alumno (noDeCuenta, nombre, correo, contraseña) VALUES('$noCuentaRFC', '$nombre', '$correo', '$contrasena')";//falta agregar sal a la base de datos
     $res = mysqli_query($con, $sql);
 
     if($res == true)
     {
-        echo ("alumno (:");
+        header ('Location: ../ProyectoWeb/inicioSesion.php');;
     }else
     {
         echo mysqli_error($con);
@@ -49,7 +49,7 @@ if(validarRFC($noCuentaRFC) == 1){
     $res = mysqli_query($con, $sql);
     if($res == true)
     {
-        echo ("roles (:");
+        header ('Location: ../ProyectoWeb/inicioSesion.php');
     }else
     {
         echo mysqli_error($con);
@@ -57,6 +57,17 @@ if(validarRFC($noCuentaRFC) == 1){
     }
 }
 
+$sql = "INSERT INTO alumno (noDeCuenta, nombre, usuario, correo, contraseña) VALUES('$noCuentaRFC', '$nombre', '$usuario', '$correo', '$contrasena')";//estudiante
+$res = mysqli_query($con, $sql);
+
+if($res == false){
+    echo 'No se pudo conectar';
+}
+else{
+    echo 'Si se pudo conectar';
+    header ('Location: ../ProyectoWeb/inicioSesion.php');
+}
+?>
 
 ?>
 

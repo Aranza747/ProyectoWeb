@@ -30,6 +30,6 @@ if($datos==NULL){
     }
     
 }
-
+//VALIDAR DONDE TIENE QUE HACER LA BUSQUEDA ALUMNO O PROFESOR
 ?>
 
