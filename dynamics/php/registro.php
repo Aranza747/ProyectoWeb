@@ -1,6 +1,6 @@
 <?php
 require "config.php";
-//require "seguridad.php";
+require "seguridad.php";
 
 $con = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
 //$res = mysqli_query($con, $sql);
@@ -12,12 +12,23 @@ $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"]!= "")?$_POST[
 $rfc = 0;
 $numCuenta = 0;
 
-// session_start();
+session_start();
 
-// $_SESSION['nombre'] = $nombre;
+$_SESSION['nombre'] = $nombre;
 
-// $hasheo = hash("sha256", $contrasena.$pimienta.$sal);
+$sal = generar_sal();
 
+$pimienta = generar_pimienta();
+
+$hasheo = hash("sha256", $contrasena.$pimienta.$sal);
+
+echo $contrasena;
+echo "<br>";
+echo $hasheo;
+echo "<br>";
+echo $pimienta;
+echo "<br>";
+echo $sal;
 
 function validarRFC($noCuentaRFC){
     $regexRFC = "/^([A-ZÑ&]{3,4}) ?(?:- ?)?(\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])) ?(?:- ?)?([A-Z\d]{2})([A\d])$/";
@@ -38,7 +49,7 @@ function validarNoCuenta($noCuentaRFC){
 }
 
 if(validarNoCuenta($noCuentaRFC) == 1){//alumno
-    $sql = "INSERT INTO alumno (noDeCuenta, nombre, correo, contraseña) VALUES('$noCuentaRFC', '$nombre', '$correo', '$contrasena')";//falta agregar sal a la base de datos
+    $sql = "INSERT INTO alumno (noDeCuenta, nombre, correo, contraseña, sal) VALUES('$noCuentaRFC', '$nombre', '$correo', '$hasheo', '$sal')";//falta agregar sal a la base de datos
     $res = mysqli_query($con, $sql);
 
     if($res == true)
@@ -52,10 +63,11 @@ if(validarNoCuenta($noCuentaRFC) == 1){//alumno
 }
 if(validarRFC($noCuentaRFC) == 1){//profesor
     $rol = "profesor";
-    $sql = "INSERT INTO roles (noDeCuenta, nombre, correo, contraseña) VALUES('$noCuentaRFC', '$nombre', '$correo', '$contrasena')";//profesor Aqui puse null sal y id de las materias 
+    $sql = "INSERT INTO roles (noDeCuenta, nombre, correo, contraseña, sal) VALUES('$noCuentaRFC', '$nombre', '$correo', '$hasheo', '$sal')";//profesor Aqui puse null sal y id de las materias 
     $res = mysqli_query($con, $sql);
     if($res == true)
     {
+        echo "true";
         header ('Location: ../../inicioSesion.html');
     }else
     {
@@ -63,6 +75,7 @@ if(validarRFC($noCuentaRFC) == 1){//profesor
         echo ("roles ):");
     }
 }
+
 
 
 
