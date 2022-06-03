@@ -4,8 +4,8 @@ formulario.addEventListener("keyup", (evento) => {
 
 });
 
-
-formulario.addEventListener('submit', (event) => {
+const enviar = document.getElementById("enviar");
+enviar.addEventListener('submit', (event) => {
     event.preventDefault();
 
 });
