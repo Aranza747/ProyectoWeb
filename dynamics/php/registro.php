@@ -63,7 +63,7 @@ if(validarNoCuenta($noCuentaRFC) == 1){//alumno
 }
 if(validarRFC($noCuentaRFC) == 1){//profesor
     $rol = "profesor";
-    $sql = "INSERT INTO roles (noDeCuenta, nombre, correo, contraseña, sal) VALUES('$noCuentaRFC', '$nombre', '$correo', '$hasheo', '$sal')";//profesor Aqui puse null sal y id de las materias 
+    $sql = "INSERT INTO roles (RFC, correo, contrasena, rol, nombre, sal) VALUES('$noCuentaRFC', '$correo', '$hasheo', '$rol', '$nombre', '$sal')";//profesor Aqui puse null sal y id de las materias 
     $res = mysqli_query($con, $sql);
     if($res == true)
     {
