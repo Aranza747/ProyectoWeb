@@ -41,7 +41,7 @@ if(validarNoCuenta($noCuentaRFC) == 1){//alumno
 
     if($res == true)
     {
-        header ('Location: ../ProyectoWeb/inicioSesion.php');;
+        header ('Location: ../../inicioSesion.html');
     }else
     {
         echo mysqli_error($con);
@@ -54,7 +54,7 @@ if(validarRFC($noCuentaRFC) == 1){//profesor
     $res = mysqli_query($con, $sql);
     if($res == true)
     {
-        header ('Location: ../ProyectoWeb/inicioSesion.php');
+        header ('Location: ../../inicioSesion.html');
     }else
     {
         echo mysqli_error($con);
@@ -75,7 +75,7 @@ if($res == false){
 }
 else{
     echo 'Si se pudo conectar';
-    header ('Location: ../ProyectoWeb/inicioSesion.php');
+    header ('Location: ../../inicioSesion.html');
 }
 ?>
 

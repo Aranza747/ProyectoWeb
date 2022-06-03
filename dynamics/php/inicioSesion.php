@@ -22,7 +22,7 @@ if($datos==NULL){
     if($datos == NULL){
         // echo "contraseña mal";
         echo "Contraseña incorrecta";
-        header('Location: ../../inicioSesion.php'); //../../templates/formregistro.html
+        header('Location: ../../inicioSesion.html'); //../../templates/formregistro.html
         
     } 
     else{
