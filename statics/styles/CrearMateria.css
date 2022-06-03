@@ -22,7 +22,6 @@
     font-family: "catamaran"; /*catamaran*/
     src: url("../fonts/Catamaran-Regular.ttf");
 }
-
 body{
     background-color: rgb(255, 255, 255);
 }
@@ -39,19 +38,22 @@ aside{
     background-color: #006778;
     
 }
-
-.btn-opcion {
-    /* top: -20px; */
-    background-color: #006778;
-    color: #ffffff;
-    font-family: 'catamaran';
-    text-align: center;
-    border-color: #ffffff;
-    /* padding: 10; */
-
-}
 #perfil {
     color: #ffffff;
     font-family: 'catamaran';
 }
-
+.navbar-nav{
+    display: flex;
+    flex-wrap: nowrap;
+}
+/*CURSO
+------------------------------------------------------------------------------------*/
+.contenedor{
+    position:  relative;
+    display: flex;
+    flex-direction: column;
+    transform: translate(120px, 0);
+    margin: 2%;
+    width: 350px;
+    height: auto;
+}
