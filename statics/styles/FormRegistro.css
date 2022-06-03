@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "font1";
+    src: url(../fonts/font1.ttf);
+}
+
+@font-face {
+    font-family: "font2";
+    src: url(../fonts/font2.ttf);
+}
+
+@font-face {
+    font-family: "font3";
+    src: url(../fonts/font3.ttf);
+}
+
+
+/*HEADER
+------------------------------------------------------------------------------------*/
+h1{
+    color:#33873A;
+    font-family: "font2", 'Lucinda Sans', serif;
+    margin: 15px;
+}
+
+/*BACKGROUND
+    ------------------------------------------------------------------------------------*/
+
+    body{
+        background-image: url("../img/registro.jpg");
+        background-color: #DD6693;
+    }
+
+/*CONTENT
+------------------------------------------------------------------------------------*/
+fieldset{
+    position: relative;
+    top:450px;
+    left:350px;
+    width:650px;
+    height:325px;
+    margin: auto;
+    border-style: solid;
+    border-color: #33873A;
+    background-color: rgba(255, 255, 255, 0.739);
+    border-radius:10px 10px 10px 10px;
+    box-shadow:0px 0px 0px 0px   #292f20;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    text-align: center;
+}
+/*IMPUTS
+------------------------------------------------------------------------------------*/
+.input{
+    width: 300px;
+    height:30px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: "font3", 'Lucinda Sans', serif;
+    margin: 5px;
+    border-color: #33873A;
+}
+
+
+.etiqueta{
+    margin:2px 10px -25px ;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-family: "font3", 'Lucinda Sans', serif;
+}
+/*FLEX
+------------------------------------------------------------------------------------*/
+.cuadros{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*BUTTON
+------------------------------------------------------------------------------------*/
+#enviar{
+    background-color: #33873A;
+    border-width: 1px;
+    color: white;
+    width: 300px;
+    height:35px;
+    border-radius: 5px 5px 5px 5px;
+    font-family: "font2", 'Lucinda Sans', serif;
+    font-size: .5cm;
+    margin: 5px;
+    cursor: pointer;
+}

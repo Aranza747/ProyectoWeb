@@ -18,18 +18,17 @@ if($datos==NULL){
     $res = mysqli_query($con, $sql);
 
     $datos = mysqli_fetch_array($res);
-    
+
     if($datos == NULL){
         // echo "contraseña mal";
         echo "Contraseña incorrecta";
         header('Location: ../../inicioSesion.html'); //../../templates/formregistro.html
-        
+
     } 
     else{
         header('Location: ../../templates/inicio.html');
     }
-    
+
 }
 //VALIDAR DONDE TIENE QUE HACER LA BUSQUEDA ALUMNO O PROFESOR
 ?>
-

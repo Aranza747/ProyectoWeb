@@ -5,31 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="../statics/styles/FormRegistro.css ">
 </head>
 <body>
     <form action="../dynamics/php/registro.php" method="post" id="formulario" autocomplete="off">
         <fieldset>
-            <legend>Crea tu cuenta</legend>
+            <h1>Crea tu cuenta</h1>
 
             <div id="mensaje-error"></div>
+        <div class="cuadros">
+            <div>
+                <label class="etiqueta">Número de cuenta o RFC:</label><br/>
+                <input type="text" name="noCuentaRFC" id="noCuentaRFC" class="input" required placeholder="Escriba su número de cuenta o rfc aquí">
+                <br/><br/>
+            </div>
 
-            <label>Número de cuenta o RFC:</label><br/>
-            <input type="text" name="noCuentaRFC" id="noCuentaRFC" required placeholder="Escriba su número de cuenta o rfc aquí">
-            <br/><br/>
-            
-            <label>Nombre y apellidos:</label><br/>
-            <input type="text" name="nombre" id="nombre" required placeholder="Escriba su nombre completo aquí">
-            <br/><br/>
+            <div>
+                <label class="etiqueta">Nombre y apellidos:</label><br/>
+                <input type="text" name="nombre" id="nombre" class="input" required placeholder="Escriba su nombre completo aquí">
+                <br/><br/>
+            </div>
 
-            <label>Correo electrónico:</label><br/>
-            <input type="email" name="correo" id="correo" required placeholder="Escriba su correo aquí">
-            <br/><br/>
+            <div>
+                <label class="etiqueta">Correo electrónico:</label><br/>
+                <input type="email" name="correo" id="correo" class="input" required placeholder="Escriba su correo aquí">
+                <br/><br/>
+            </div>
 
-            <label>Contraseña:</label><br/>
-            <input type="password" name="contrasena" id="contrasena" required placeholder="Escriba su contraseña aquí">
-            <br/><br/>
+            <div>
+                <label class="etiqueta">Contraseña:</label><br/>
+                <input type="password" name="contrasena" id="contrasena" class="input" required placeholder="Escriba su contraseña aquí">
+                <br/><br/>
+            </div>
+        </div>
 
-            ¿Eres un robot?<input type="checkbox" required><br>
+            <span> ¿Eres un robot?<input type="checkbox" required><br></span>
 
             <button type="submit" id="enviar">Ingresar al sistema</button>
         </fieldset>
