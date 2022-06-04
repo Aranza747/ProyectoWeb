@@ -42,27 +42,30 @@
     </aside>
 
     <div id="formTarea" class="col-xl-6"  class="col-lg-6" class="col-sm-12">
-        <form action="../dynamics/php/crearTarea.php" class="padre">
+        <form action="../dynamics/php/crearTarea.php" enctype="multipart/form-data" method="post">
 
-            <div class="hijos">
+            <div class="hijos" class="col-xl-3"  class="col-lg-6" class="col-sm-12">
                 <label class="etiqueta">Descripción:</label><br/>
                 <textarea name="descripcion" id="descripcion"></textarea>
             </div>
 
-            <div class="hijos">
-                <div><label class="etiqueta">Nombre de la tarea:</label><br/>
+            <div class="hijos" class="col-xl-3"  class="col-lg-6" class="col-sm-12">
+                <label class="etiqueta">Nombre de la tarea:</label><br/>
                 <input type="text" name="nombre" id="nombre" class="input" required placeholder="Escriba su número de cuenta o rfc aquí">
                 <br/><br/>
                 
-                <div></div><button id="subArchivo">Añadir material</button>
-                <br/><br/></div>
+                <div class="mb-3">
+                    <label for="formFileSm" class="form-label">Seleccionar archivo</label>
+                    <input class="form-control form-control-sm" id="formFileSm" name="archivo" type="file">
+                  </div>
+                <br/><br/>
 
-                <div><label class="etiqueta">Fecha de entrega:</label><br/>
+                <label class="etiqueta">Fecha de entrega:</label><br/>
                 <input type="date" name="fecha" id="fecha" class="input" required placeholder="Escriba su contraseña aquí">
-                <br/><br/></div>
+                <br/><br/>
                 
                 <label class="etiqueta">Hora de entrega:</label><br/>
-                <input type="time" name="fecha" id="fecha" class="input" required placeholder="Escriba su contraseña aquí">
+                <input type="time" name="hora" id="hora" class="input" required placeholder="Escriba su contraseña aquí">
                 <br/><br/>
 
                 <button type="submit" id="enviar">Guardar</button>
