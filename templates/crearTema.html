@@ -40,13 +40,17 @@
     </aside>
 
     <div id="formTarea">
-        <form action="../dynamics/php/crearTarea.php">
+        <form action=".."  enctype="multipart/form-data" method="post">
             <div id="contenedor">
                 <div id="izquierda">
                     <label class="etiqueta">Nombre del tema:</label><br />
                     <input type="text" name="nombre" id="nombre" class="input" required
-                        placeholder="Escriba su número de cuenta o rfc aquí"><br/>
-                    <button id="subArchivo">Añadir material</button><br/><br/>
+                        placeholder="Escriba el nombre del tema"><br/>
+
+                    <div class="mb-3">
+                        <label for="formFileSm" class="archivo" class="form-label">Seleccionar archivo</label>
+                        <input class="form-control form-control-sm" id="formFileSm" name="archivo" type="file" required>
+                    </div>
                     <button type="submit" id="enviar">Guardar</button>
                 </div>
                 <div id="derecha">
