@@ -22,59 +22,55 @@ $nombre = (isset($_POST["nombre"]) && $_POST["nombre"]!= "")?$_POST["nombre"]:fa
 $fecha = (isset($_POST["fecha"]) && $_POST["fecha"]!= "")?$_POST["fecha"]:false;
 $hora = (isset($_POST["hora"]) && $_POST["hora"]!= "")?$_POST["hora"]:false;
 
-echo $descripcion;
-echo $nombre;
-echo $fecha;
-echo $hora;
 
 print_r ($_FILES);
 
 if(isset($_FILES['archivo'])){
     // $titulo = $_POST['archivo'];
     $name= $_FILES['archivo']['name'];   
-    echo $name;
     $arch= $_FILES['archivo']['tmp_name'];
     $ext= pathinfo($name, PATHINFO_EXTENSION);
     if($ext=="png" || $ext=="jpg" || $ext=="jpeg"){
-        $ruta = "../../descargas/img/$name.$ext";
+        $ruta = "../../descargas/img/$name";
     } else if($ext=="avi" || $ext=="mp4" || $ext=="mpg" || $ext=="mpeg" || $ext=="asf" || $ext=="mp3" || $ext=="au" || $ext=="ma4" || $ext=="mid"){
-        $ruta = "../../descargas/media/$name.$ext";
+        $ruta = "../../descargas/media/$name";
     } else {
-        $ruta = "../../descargas/docs/$name.$ext";
+        $ruta = "../../descargas/docs/$name";
     }
     
     rename($arch, "$ruta");
-    // echo $ruta;
 }
 
 
 
-// $sql = "INSERT INTO archivoTarea (ruta, fechaEntrega) VALUES($ruta, '$fechaAct')";
-// $res = mysqli_query($con, $sql);
+$sql = "INSERT INTO archivoTarea (ruta, fechaEntrega) VALUES('$ruta', '$fechaAct')";
+$res = mysqli_query($con, $sql);
 
-// if($res==false){
-//     echo"no se pudo conectar";
-// } else {
-//     echo "se conectó";
-//     $id_archivoTarea = $datos['id_archivoTarea'];
+if($res==false){
+    echo"no se pudo conectar";
+} else {
 
-//     $sql = "INSERT INTO tarea VALUES(null, null, null, '$id_archivoTarea', null, '$fecha', '$hora', null, '$descripcion')";
-//     $res = mysqli_query($con, $sql);
-//     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
-//     if($datos == NULL){
-//         echo "no podemos conectar los datos";
-//     } else {
-//         $descripcion = $datos ['descrpcion'];
-//         $nombre = $datos['nombre'];
-//         $ruta = $datos ['ruta'];
-//         $fecha = $datos['nombre'];
-//         $hora = $datos['hora'];
-//         header ('Location: ./tarea.php');
-        
-//     }
-     
-// }
+    $sql = "SELECT id_archivoTarea FROM archivoTarea WHERE ruta='$ruta'";
+    $res = mysqli_query($con, $sql);
+    var_dump($res);
+    $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
+    var_dump($datos);
+    
+    if($res == false){
+        echo "no recibí id de archivos";
+    } else {
 
+        $id_archivoTarea = $datos['id_archivoTarea'];
+        $sql = "INSERT INTO tarea (id_archivoTarea, fecha, hora, descripcion) VALUES('$id_archivoTarea', '$fecha', '$hora', '$descripcion')";
+        $res = mysqli_query($con, $sql);
+    
+        if($res == NULL){
+            echo "no podemos conectar los datos";
+        } else {
+            header ('Location: ./tarea.php');
+        }
+    }
+}
 
 
 
