@@ -44,16 +44,31 @@ aside{
     margin: 2%;
     width:85%;
 }
+/*TITULO
+------------------------------------------------------------------------------------*/
 .titulo{
     margin: 1%;
     padding: 1rem;
     background-color: #65cac28e;
     border-radius: 10px 10px 10px 10px;
+
+}
+#nombre{
+    border-radius: 10px 10px 10px 10px;
+    width:48%;
+    font-size: .7cm;
+    border-color: #65cac28e;
+    color: rgb(185, 185, 179);
+}
+.modulo{
     font-family: "averia", 'Lucinda Sans', serif;
     font-size: 1cm;
     font-weight:400;
     color: #497BA9;
 }
+
+/*CONTENIDO
+------------------------------------------------------------------------------------*/
 .tabla{
     position: relative;
     display: flex;
@@ -86,11 +101,24 @@ aside{
     text-align: center;
 }
 .abajo{
-    margin-top: 10%;
+    margin-top: 8%;
     justify-content: center;
     font-family: "catamaran", 'Lucinda Sans', serif;
     font-size: .9cm;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    cursor: pointer;
+}
+/*BOTON
+------------------------------------------------------------------------------------*/
+#enviar{
+    position: absolute;
+    left: 89%;
+    top: 100%;
+    border-radius: 10px 10px 10px 10px;
+    width: 90px;
+    background-color: #DBD6D6;
+    color: #636864;
+    font-size: .5cm;
 }
