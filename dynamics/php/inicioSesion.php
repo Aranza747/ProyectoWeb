@@ -46,7 +46,7 @@ if(validarNoCuenta($noCuentaRFC) == 1){//alumno
 
 if($datos==NULL){
     var_dump($datos);
-    // header('Location: ../../templates/FormRegistro.html'); //../../templates/formregistro.html
+    header('Location: ../../templates/FormRegistro.html'); //../../templates/formregistro.html
 } else {
     if(validarNoCuenta($noCuentaRFC) == 1){//alumno
         $sql = "SELECT sal FROM alumno WHERE noDeCuenta=$noCuentaRFC";
