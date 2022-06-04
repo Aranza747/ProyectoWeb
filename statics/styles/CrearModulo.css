@@ -1,0 +1,96 @@
+@font-face{
+    font-family: "averia"; /*Averia*/
+    src: url("../fonts/font2.ttf");
+}
+
+@font-face{
+    font-family: "jaldi"; /*Jaldi*/
+    src: url("../fonts/Jaldi-Bold.ttf");
+}
+
+@font-face{
+    font-family: "catamaran"; /*catamaran*/
+    src: url("../fonts/Catamaran-Regular.ttf");
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+/*NAVBAR
+------------------------------------------------------------------------------------*/
+#nav {
+    background-color: #006778;
+}
+
+aside{
+    position: absolute;
+    width: 5%;
+    height: 100%;
+    background-color: #006778;
+    
+}
+#perfil {
+    color: #ffffff;
+    font-family: 'catamaran';
+}
+.navbar-nav{
+    display: flex;
+    flex-wrap: nowrap;
+}
+/*MODULOS
+------------------------------------------------------------------------------------*/
+.contenedor{
+    position:  relative;
+    transform: translate(120px, 0);
+    margin: 2%;
+    width:85%;
+}
+.titulo{
+    margin: 1%;
+    padding: 1rem;
+    background-color: #65cac28e;
+    border-radius: 10px 10px 10px 10px;
+    font-family: "averia", 'Lucinda Sans', serif;
+    font-size: 1cm;
+    font-weight:400;
+    color: #497BA9;
+}
+.tabla{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.columna{
+    margin: 1%;
+    width:48%;
+    background-color: #65cac28e;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
+.arriba{
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 1rem;
+    margin: 1rem;
+    font-family: "jaldi", 'Lucinda Sans', serif;
+    font-size: .6cm;
+    border-radius: 10px 10px 10px 10px;
+}
+.Columna2{
+    margin: 1%;
+    width:48%;   
+    height: 200px;
+    padding: 1rem;
+    background-color: #65cac28e;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
+.abajo{
+    margin-top: 10%;
+    justify-content: center;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    font-size: .9cm;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
