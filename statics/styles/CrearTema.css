@@ -71,7 +71,7 @@ aside{
     border-color: #006778;
     border-style: solid;
     width:40%; 
-    height: 700px;
+    height: 37rem;
     border-radius: 10px 10px 10px 10px;
 }
 /*DERECHA
@@ -83,7 +83,7 @@ aside{
     border-color: #006778;
     border-style: solid;
     width:60%;
-    height: 700px;
+    height: 37rem;
     border-radius: 10px 10px 10px 10px;
 }
 /* TEXTO / INPUT
@@ -110,7 +110,7 @@ aside{
 }
 /*BOTON
 ------------------------------------------------------------------------------------*/
-#subArchivo{
+/* #subArchivo{
     margin: 2%;
     border-radius: 10px 10px 10px 10px;
     width: 200px;
@@ -118,12 +118,12 @@ aside{
     color: #636864;
     font-size: .5cm;
     font-family: "catamaran", 'Lucinda Sans', serif;
-}
+} */
 #enviar{
     position: relative;
     margin: 2%;
     float: right;
-    top: 55%;
+    top: 40%;
     padding: 7px 40px;
     border-radius: 10px 10px 10px 10px;
     width: 140px;
@@ -131,4 +131,23 @@ aside{
     color: #636864;
     font-size: .5cm;
     font-family: "catamaran", 'Lucinda Sans', serif;
+}
+.archivo{
+    margin-left:  2%;
+    color: #000000;
+    font-size: .6cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+}
+.form-control-sm {
+    min-height: 8%;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+}
+.form-control{
+    width: 50%;
+    margin-left:  2%;
+    background-color: #0066789a;
+    border: 1px solid #006778;
+    border-radius: 10px 10px 10px 10px;
 }
