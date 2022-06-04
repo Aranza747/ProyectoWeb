@@ -1,0 +1,63 @@
+@font-face{ /*froza*/
+    font-family: "froza"; 
+    src: url("../fonts/font1.ttf");
+}
+
+@font-face{
+    font-family: "averia"; /*Averia*/
+    src: url("../fonts/font2.ttf");
+}
+
+@font-face{
+    font-family: "mukta"; /*Mukta*/
+    src: url("../fonts/font3.ttf");
+}
+
+@font-face{
+    font-family: "jaldi"; /*Jaldi*/
+    src: url("../fonts/Jaldi-Bold.ttf");
+}
+
+@font-face{
+    font-family: "catamaran"; /*catamaran*/
+    src: url("../fonts/Catamaran-Regular.ttf");
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+/*NAVBAR
+------------------------------------------------------------------------------------*/
+#nav {
+    background-color: #006778;
+}
+
+aside{
+    position: absolute;
+    width: 120px;
+    height: 100%;
+    background-color: #006778;
+    
+}
+#perfil {
+    color: #ffffff;
+    font-family: 'catamaran';
+}
+.navbar-nav{
+    display: flex;
+    flex-wrap: nowrap;
+}
+/*CURSO
+------------------------------------------------------------------------------------*/
+.contenedor{
+    position:  relative;
+    display: flex;
+    flex-direction: column;
+    transform: translate(120px, 0);
+    margin: 2%;
+    width: 350px;
+    height: auto;
+}
+
+#imagenRelacionada{
+    background-color: rgb(154, 192, 192);
+}
