@@ -108,8 +108,8 @@ aside{
 #nombre{
     border-radius: 10px 10px 10px 10px;
     width:50%;
-    height: 7%;
-    margin: 1%;
+    height: 8%;
+    margin: 2%;
 }
 #descripcion{
     border-radius: 10px 10px 10px 10px;
@@ -129,7 +129,7 @@ aside{
     padding: 7px 40px;
 }
 .form-control-sm {
-    min-height: 7%;
+    min-height: 8%;
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
     border-radius: 0.25rem;
