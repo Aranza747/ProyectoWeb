@@ -47,11 +47,10 @@ if(isset($_FILES['archivo'])){
     // echo $ruta;
 }
 
-// echo $ruta;
+
 
 // $sql = "INSERT INTO archivoTarea (ruta, fechaEntrega) VALUES($ruta, '$fechaAct')";
 // $res = mysqli_query($con, $sql);
-// // $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 // if($res==false){
 //     echo"no se pudo conectar";
@@ -77,31 +76,6 @@ if(isset($_FILES['archivo'])){
 // }
 
 
-// $peticion = "SELECT  * FROM usuario WHERE nombre_usuario = '$sesion'"; 
-//                     $query = mysqli_query( $conexion, $peticion);
-//                     $datos= mysqli_fetch_array($query, MYSQLI_ASSOC);
-//                     $id_avatar=$datos['ID_avatar'];
-            
-//         if(isset($_FILES['avatar'])==true){//{/if(isset($_FILES["avatar"])==TRUE){
-//             $name=$_FILES['avatar']['name'];
-    
-//             $ext=pathinfo($name,PATHINFO_EXTENSION);//Aqui la variable toma la extension del archivo
-//             $ruta="../statics/img_avatar/$parte"."_"."$sesion.$ext";
-           
-//             //unlink($ruta);
-//             $ext=strtolower($ext);
-//             if($ext=="png" || $ext=="jpg" || $ext=="jpeg"){
-//                 $arch=$_FILES['avatar']['tmp_name'];
-               
-        
-//                 rename($arch,$ruta);//ponerle nombre de la parte del cuerpo
-            
 
-//                 $peticion = "UPDATE avatar SET $parte = '$ruta' WHERE ID_avatar=$id_avatar"; 
-//                 $query = mysqli_query( $conexion, $peticion);
-//             }
-//             else{
-//                 echo"$name.  No se puede subir";
-//             }
 
 ?>
