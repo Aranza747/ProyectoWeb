@@ -31,7 +31,7 @@
 
             <div class="navbar-nav">
                 <div>
-                    <a class="navbar-brand" href="./inicio.html">
+                    <a class="navbar-brand" href="./pagInicio.php">
                         <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
                     </a>
                 </div>

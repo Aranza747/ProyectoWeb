@@ -2,6 +2,8 @@
     session_name("SesionUsuario");
     session_id("123456789");
     session_start();
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -28,55 +30,55 @@
             <!-- Necesario solo cuando no sea la vista principal -->
             <div class="navbar-nav">
                 <div>
-                    <a class="navbar-brand" href="./pagInicio.php">
-                        <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
-                    </a>
+                    <form action='./CerrarSesion.php' method='post' turget='_self'>
+                        <button>Cerrar Sesión</button>
+                    </form>
                 </div>
                 <div>
-                    <a class="nav-link" href="#" id="perfil">Perfil</a>
+                    <button class="list-group-item btn-opcion" id="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
+                    
                 </div>
             </div>
 
         </div>
     </nav>
     
-    <?php
-    echo $_SESSION["nombre"];
-    echo $_SESSION["id_alumno"];
-    echo $_SESSION["noDeCuenta"];
-
-    
+    <?php    
+        echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
+                Nombre: '.$_SESSION["nombre"].'
+                <br><br>
+                Correo: '.$_SESSION["correo"].'
+                <br><br>
+                Rol: '.$_SESSION["rol"].'
+            </div>
+        </div>'
     ?>
-
+    <!-- Perfil -->
+    
 
     <aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
-            <button class="list-group-item btn-opcion" id="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
-                  Nombre: Fulanito Petronilo Pancraseo
-                  <br><br>
-                  Correo: arroba@gmail.com
-                  <br><br>
-                  Rol: Alumno
-                </div>
-              </div>
+            
+            
             <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
             <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./formCrearMateria.php'">Crear Materia</button>  <!-- Profesor-->
             <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> <!-- Alumno -->
             <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button> <!-- Administrador-->
+            
         </ul>
     </aside>   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    
 
 </body>
     

@@ -47,12 +47,11 @@
     </aside>
 
     <div id="formTarea">
-        <form action=".."  enctype="multipart/form-data" method="post">
+        <form action="./crearTema.php"  enctype="multipart/form-data" method="post">
             <div id="contenedor">
                 <div id="izquierda">
                     <label class="etiqueta">Nombre del tema:</label><br />
-                    <input type="text" name="nombre" id="nombre" class="input" required
-                        placeholder="Escriba el nombre del tema"><br/>
+                    <input type="text" name="nombre" id="nombre" class="input" required placeholder="Escriba el nombre del tema"><br/>
 
                     <div class="mb-3">
                         <label for="formFileSm" class="archivo" class="form-label">Seleccionar archivo</label>

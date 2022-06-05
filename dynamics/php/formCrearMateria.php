@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg" id="nav">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
+        <a class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
                 <img src="../../statics/img/logoprepa.png" alt="" width="40" height="40">
             </a>
             <!-- Necesario solo cuando no sea la vista principal -->
@@ -32,7 +32,7 @@
 
             <div class="navbar-nav">
                 <div>
-                    <a class="navbar-brand" href="./pagInicio.php">
+                <a class="navbar-brand" href="./pagInicio.php">
                         <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
                     </a>
                 </div>
@@ -51,8 +51,7 @@
         <div class="titulo">
             <span id="materia">Crear materia</span>
         </div>
-        <form action="../dynamics/php/CrearMateria.php" method="post" id="formulario" autocomplete="off"
-            enctype="multipart/form-data">
+        <form action="./CrearMateria.php" method="post" id="formulario" autocomplete="off" enctype="multipart/form-data">
             <div class="contenedor">
                 <div id="izquierda">
                     <div>
@@ -93,7 +92,7 @@
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../dynamics/js/CrearMateria.js"></script>
+    <script src="../js/CrearMateria.js"></script>
 </body>
 
 </html>
