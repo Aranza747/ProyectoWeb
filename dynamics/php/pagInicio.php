@@ -23,23 +23,20 @@
     <!--  Navbar -->
     <nav class="navbar navbar-expand-lg" id="nav">
         <div class="container-fluid">
-
             <a class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
-                <img src="../../statics/img/logoprepa.png" alt="" width="40" height="40">
+                <img src="../../statics/img/logoprepa.png" alt="" width="50" height="50">
             </a>
             <!-- Necesario solo cuando no sea la vista principal -->
             <div class="navbar-nav">
                 <div>
                     <form action='./CerrarSesion.php' method='post' turget='_self'>
-                        <button>Cerrar Sesión</button>
+                        <button id="cerrar">Cerrar Sesión</button>
                     </form>
                 </div>
                 <div>
                     <button class="list-group-item btn-opcion" id="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
-                    
                 </div>
             </div>
-
         </div>
     </nav>
     

@@ -34,10 +34,10 @@ h1{
 ------------------------------------------------------------------------------------*/
 fieldset{
     position: relative;
-    top:450px;
-    left:350px;
-    width:650px;
-    height:325px;
+    top: 27rem;
+    left: 18%;
+    width: 34%;
+    height: inherit;
     margin: auto;
     border-style: solid;
     border-color: #33873A;
