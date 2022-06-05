@@ -69,3 +69,14 @@ aside{
     position: absolute;
     transform: translate(125px, 0px);
 }
+.grande{
+    margin:  4% 4% 0 8%;
+    padding: 7px 40px;
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 80%;
+    height: 12rem;
+    border-radius: 10px 10px 10px 10px;
+    border-style: none;
+}

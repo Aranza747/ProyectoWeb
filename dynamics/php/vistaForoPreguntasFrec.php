@@ -3,7 +3,6 @@
     session_id("123456789");
     session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +29,7 @@
 
             <div class="navbar-nav">
                 <div>
-                    <a class="navbar-brand" href="./pagInicio.php">
+                    <a class="navbar-brand" href="./inicio.html">
                         <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
                     </a>
                 </div>
@@ -42,8 +41,7 @@
         </div>
     </nav>
     
-    <aside>
-        <!-- columna -->
+    <!-- <aside>
         <ul class="list-group list-group-flush"> 
             <button class="list-group-item btn-opcion" id="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
@@ -52,7 +50,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                  <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
+                  <img src="../dynamics/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
                   Nombre: Fulanito Petronilo Pancraseo
                   <br><br>
                   Correo: arroba@gmail.com
@@ -60,14 +58,14 @@
                   Rol: Alumno
                 </div>
               </div>
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foroPreguntasFrecuentes.html'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
-            <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./formCrearMateria.php'">Crear Materia</button>  <!-- Profesor -->
-            <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> <!-- Alumno -->
-            <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button> <!-- Administrador -->
+            <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./CrearMateria.html'">Crear Materia</button>  
+            <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> 
+            <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>
         </ul>
-    </aside>
+    </aside> -->
 
     <!-- <div id="preguntasFrecuentes"> -->
         <div id="preguntasFrecuentes" class="card border-primary mb-3" style="max-width: 18rem;">
@@ -79,6 +77,36 @@
           </div>
         </div>
     <!-- </div> -->
+
+    <!-- Button modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Añadir 
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Preguntas frecuentes</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formulario" action="./foroPreguntasFrecuentes.php" method="post">
+                    Escribe la pregunta<br>
+                    <textarea name="preguntaFrecuente" id="preguntaFrecuente" class="grande" placeholder="Pregunta Frecuente" required></textarea><br>
+                    <textarea name="respuestaPreguntaFrecuente" id="respuestaPreguntaFrecuente" class="grande" placeholder="Respuesta" required></textarea><br>
+                </form>
+                <div id="msgError"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="enviar" type="submit" class="btn btn-primary">Crear</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
     <aside id="asideDerecha">
         <ul>
             <button type="button" class="list-group-item" id="foroEstudiante">Foro Estudiantes</button>
