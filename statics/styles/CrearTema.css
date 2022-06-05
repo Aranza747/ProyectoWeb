@@ -30,18 +30,30 @@ body{
 ------------------------------------------------------------------------------------*/
 #nav {
     background-color: #006778;
+    padding: 9px 10px ;
 }
 
 aside{
     position: absolute;
-    width: 5%;
+    width: 170px;
     height: 100%;
     background-color: #006778;
-    
+    z-index: 4;
 }
-#perfil {
+.btn-opcion {
+    /* top: -20px; */
+    background-color: #006778;
     color: #ffffff;
     font-family: 'catamaran';
+    text-align: center;
+    border-color: #ffffff;
+    padding: 15px 10px;
+
+}
+#foro {
+    color: #ffffff;
+    font-family: 'catamaran';
+    padding: 9px 9px;
 }
 .navbar-nav{
     display: flex;
@@ -51,9 +63,9 @@ aside{
 ------------------------------------------------------------------------------------*/
 #formTarea{
     position: absolute;
-    transform: translate(120px, 0);
-    margin: 2%;
-    width:85%;
+    transform: translate(170px, 0);
+    margin: 4% 0 0 6%;
+    width:80%;
 }
 /*CONTENEDOR
 ------------------------------------------------------------------------------------*/
@@ -70,7 +82,7 @@ aside{
     top: 0;
     border-color: #006778;
     border-style: solid;
-    width:40%; 
+    width:33%; 
     height: 37rem;
     border-radius: 10px 10px 10px 10px;
 }

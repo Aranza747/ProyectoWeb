@@ -1,6 +1,16 @@
+@font-face{ /*froza*/
+    font-family: "froza"; 
+    src: url("../fonts/font1.ttf");
+}
+
 @font-face{
     font-family: "averia"; /*Averia*/
     src: url("../fonts/font2.ttf");
+}
+
+@font-face{
+    font-family: "mukta"; /*Mukta*/
+    src: url("../fonts/font3.ttf");
 }
 
 @font-face{
@@ -19,18 +29,30 @@ body{
 ------------------------------------------------------------------------------------*/
 #nav {
     background-color: #006778;
+    padding: 9px 10px ;
 }
 
 aside{
     position: absolute;
-    width: 5%;
+    width: 170px;
     height: 100%;
     background-color: #006778;
-    
+    z-index: 4;
 }
-#perfil {
+.btn-opcion {
+    /* top: -20px; */
+    background-color: #006778;
     color: #ffffff;
     font-family: 'catamaran';
+    text-align: center;
+    border-color: #ffffff;
+    padding: 15px 10px;
+
+}
+#foro {
+    color: #ffffff;
+    font-family: 'catamaran';
+    padding: 9px 9px;
 }
 .navbar-nav{
     display: flex;
@@ -47,11 +69,11 @@ aside{
 /*TITULO
 ------------------------------------------------------------------------------------*/
 .titulo{
-    margin: 1%;
+    margin: 4% 1% 0 14%;
     padding: 1rem;
     background-color: #65cac28e;
     border-radius: 10px 10px 10px 10px;
-
+    width: 80%;
 }
 #nombre{
     border-radius: 10px 10px 10px 10px;
@@ -74,10 +96,11 @@ label{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin: 1% 1% 1% 20%;
 }
 .columna{
-    margin: 1%;
-    width:48%;
+    margin: 2%;
+    width:40%;
     background-color: #65cac28e;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
@@ -92,16 +115,15 @@ label{
     border-radius: 10px 10px 10px 10px;
 }
 .Columna2{
-    margin: 1%;
-    width:48%;   
-    height: 200px;
+    margin: 2%;
+    width:40%;   
+    height: 20%;
     padding: 1rem;
     background-color: #65cac28e;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
 }
 .abajo{
-    margin-top: 8%;
     justify-content: center;
     font-family: "catamaran", 'Lucinda Sans', serif;
     font-size: .9cm;
