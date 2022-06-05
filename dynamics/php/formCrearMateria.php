@@ -47,20 +47,49 @@
     </aside>
 
     <!-- crear materia -->
-    <div class="contenedor">
-        Crear materia
-        <form action="./CrearMateria.php" method="post" id="formulario" autocomplete="off" enctype="multipart/form-data">
-            <input name="nombreMateria" id="nombreMateria" placeholder="Ingresa el nombre de la materia" required>
-            <input name="descripcion" id="descripcion" placeholder="Breve descripcion" required>
-            <input name="datosProfesor" id="datosProfesor" placeholder="Datos del Profesor" required>
-            <!-- Aqui vamos a poner el cuadrito donde se muestre la imagen -->
-            <img id="imagenRelacionada"></img>
-            <!--  -->
-            <!-- Este es el boton de files -->
-            <input type='file' name='ImagenRelacionada' id="InputImagenRelacionada"><div id="archivoInvalido"></div>
-            <!--  -->
-            <input name="contrasena" id="contrasena" placeholder="Contraseña de acceso" required>
-            <button type="submit" id="crear" onclick="location.href='./vistaMateria.html'">Crear</button>
+    <div class="formMateria">
+        <div class="titulo">
+            <span id="materia">Crear materia</span>
+        </div>
+        <form action="../dynamics/php/CrearMateria.php" method="post" id="formulario" autocomplete="off"
+            enctype="multipart/form-data">
+            <div class="contenedor">
+                <div id="izquierda">
+                    <div>
+                        <input name="nombreMateria" id="nombreMateria" placeholder="Ingresa el nombre de la materia"
+                            required>
+                    </div>
+                    <div>
+                        <textarea name="descripcion" id="descripcion" class="grande" placeholder="Una breve descripcion"
+                            required></textarea>
+                    </div>
+                    <div>
+                        <input name="datosProfesor" id="datosProfesor" class="grande" placeholder="Datos del Profesor"
+                            required>
+                    </div>
+                </div>
+                <div id="derecha">
+                    <!-- Aqui vamos a poner el cuadrito donde se muestre la imagen -->
+                    <div >
+                        <img id="imagenRelacionada"></img>
+                    </div>
+                    <!--  -->
+                    <!-- Este es el boton de files -->
+                    <div class="mb-3">
+                        <input type="file" class="form-control form-control-sm" name='ImagenRelacionada'
+                            id="InputImagenRelacionada" multiple required>
+                        <div id="archivoInvalido"></div>
+                    </div>
+                    <!--  -->
+                    <div>
+                        <input name="contrasena" id="contrasena" placeholder="Contraseña de acceso" required>
+                        <br/><br/>
+                    </div>
+                    <div>
+                        <button type="submit" id="crear">Crear</button>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>

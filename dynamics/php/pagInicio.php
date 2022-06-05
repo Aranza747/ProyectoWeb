@@ -25,14 +25,12 @@
             <a class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
                 <img src="../../statics/img/logoprepa.png" alt="" width="40" height="40">
             </a>
-
-            
             <!-- Necesario solo cuando no sea la vista principal -->
             <div class="navbar-nav">
                 <div>
-                    <form action='./cerrarSesion.php' method='post' turget='_self'>
-                        <button>Cerrar Sesión</button>
-                    </form>
+                    <a class="navbar-brand" href="./pagInicio.php">
+                        <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
+                    </a>
                 </div>
                 <div>
                     <a class="nav-link" href="#" id="perfil">Perfil</a>
@@ -42,6 +40,15 @@
         </div>
     </nav>
     
+    <?php
+    echo $_SESSION["nombre"];
+    echo $_SESSION["id_alumno"];
+    echo $_SESSION["noDeCuenta"];
+
+    
+    ?>
+
+
     <aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
@@ -67,14 +74,7 @@
             <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> <!-- Alumno -->
             <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button> <!-- Administrador-->
         </ul>
-    </aside>
-
-    <!-- <ph
-    echo $_SESSION["nombre"];
-    echo $_SESSION["noDeCuenta"];
-    echo $_SESSION["id_alumno"];
-    ?> -->
-
+    </aside>   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
