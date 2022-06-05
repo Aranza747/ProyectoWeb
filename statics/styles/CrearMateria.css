@@ -46,18 +46,125 @@ aside{
     display: flex;
     flex-wrap: nowrap;
 }
-/*CURSO
+
+/*
+------------------------------------------------------------------------------------*/
+.titulo{
+    margin: 0 0 1% 0;
+    padding: 1rem;
+    background-color: #65cac28e;
+    border-radius: 10px 10px 10px 10px;
+    width: inherit;
+}
+#materia{
+    font-family: "averia", 'Lucinda Sans', serif;
+    font-size: 1cm;
+    font-weight:400;
+    color: #497BA9;
+}
+/*MATERIA
+------------------------------------------------------------------------------------*/
+.formMateria{
+    position: absolute;
+    transform: translate(120px, 0);
+    margin-top: 3%;
+    margin-left: 9%;
+    width:85%;
+}
+/*CONTENEDOR
 ------------------------------------------------------------------------------------*/
 .contenedor{
-    position:  relative;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    transform: translate(120px, 0);
+    flex-wrap: wrap;
+}
+/*IZQUIERDA
+------------------------------------------------------------------------------------*/
+#izquierda{
+    position: relative;
+    left: 0%;
+    top: 0;
+    border-color: #4EAB47;
+    border-style: solid;
+    width:40%;
+    height: 37rem;
+    border-radius: 10px 10px 10px 10px;
+    background-color: #4EAB47;
+}
+/*BOTONES
+------------------------------------------------------------------------------------*/
+#nombreMateria{
+    margin:  8% 4% 0 8%;
+    padding: 7px 40px;
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 80%;
+    height: 7%;
+    border-radius: 10px 10px 10px 10px;
+    border-style: none;
+
+}
+.grande{
+    margin:  4% 4% 0 8%;
+    padding: 7px 40px;
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 80%;
+    height: 12rem;
+    border-radius: 10px 10px 10px 10px;
+    border-style: none;
+}
+/*DERECHA
+------------------------------------------------------------------------------------*/
+#derecha{
+    position: relative;
+    left: 5%;
+    top: 0;
+    background-color: #ffa201af;
+    border-color: #ffa201af;
+    border-style: solid;
+    width:40%; 
+    height: 37rem;
+    border-radius: 10px 10px 10px 10px;
+}
+/*BOTONES
+------------------------------------------------------------------------------------*/
+.form-control-sm {
+    min-height: 8%;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+}
+.form-control{
+    width: 50%;
+    margin-left:  2%;
+    background-color: #0066789a;
+    border: 1px solid #006778;
+    border-radius: 10px 10px 10px 10px;
+}
+#contrasena{
+    margin:  8% 4% 0 8%;
+    padding: 7px 40px;
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 80%;
+    height: 7%;
+    border-radius: 10px 10px 10px 10px;
+    border-style: none;
+}
+#crear{
     margin: 2%;
-    width: 350px;
-    height: auto;
+    float: right;
+    padding: 7px 40px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: #006678;
+    background-color: #0066789a;
+    color: #ffffff;
+    font-size: .5cm;
+    font-weight:bolder;
+    font-family: "catamaran", 'Lucinda Sans', serif;
 }
 
-#imagenRelacionada{
-    background-color: rgb(154, 192, 192);
-}
