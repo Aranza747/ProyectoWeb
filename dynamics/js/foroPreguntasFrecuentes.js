@@ -1,8 +1,20 @@
-const divPreguntasFrecuentes = document.getElementById("preguntasFrecuentes")
+const enviar = document.getElementById("enviar");
+const msgError = document.getElementById("msgError");
+const formulario = document.getElementById("formulario");
 
-var html = "<div id='preguntasFrecuentes' class='card border-primary mb-3' style='max-width: 18rem;'><div class='card-header'>Header</div><div class='card-body text-primary'><h5 class='card-title'>Primary card title</h5><p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p></div></div></div>";
+enviar.addEventListener("click", (evento) => {
+    evento.preventDefault();
 
-const añadir = document.getElementById("añadir")
-añadir.addEventListener("click", (evento) => {
-    divPreguntasFrecuentes.innerHTML += html;
+    const respuestaPreguntaFrecuente = document.getElementById("respuestaPreguntaFrecuente").value
+    const preguntaFrecuente = document.getElementById("preguntaFrecuente").value
+
+    if(respuestaPreguntaFrecuente == 0 || preguntaFrecuente == 0)
+        msgError.innerHTML = "Necesitas rellenar correctamente todos los campos";
+        
+    if(respuestaPreguntaFrecuente != 0 && preguntaFrecuente != 0){
+        msgError.innerHTML = "";
+        formulario.submit();
+        formulario.reset();
+    }
+
 })

@@ -44,7 +44,7 @@ if(isset($_FILES['ImagenRelacionada']))
     if($ext=="png" || $ext=="jpg" || $ext=="jpeg"){
         $ruta = "../../descargas/img/img_portadaMaterias/$idMateria.$nombreMateria.$ext";
     rename($arch, "$ruta");
-    $sql = "INSERT INTO materia (foto) VALUES('$ruta')";//falta agregar sal a la base de datos
+    $sql = "INSERT INTO materia (foto) VALUES('$ruta') WHERE id_materia LIKE '$idMateria'";//falta agregar sal a la base de datos
     $res = mysqli_query($con, $sql);
     }
 }

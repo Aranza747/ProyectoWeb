@@ -60,28 +60,19 @@
         </div>'
     ?>
     <!-- Perfil -->
+
+    <h1>Ingresar a curso nuevo</h1>
     
-
-    <aside>
-        <!-- columna-->
-        <ul class="list-group list-group-flush"> 
-            
-            
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
-            <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
-            <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
-            <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./formCrearMateria.php'">Crear Materia</button>  <!-- Profesor-->
-            <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> <!-- Alumno -->
-            <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button> <!-- Administrador-->
-            
-        </ul>
-    </aside>   
-
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button" onclick="location.href='./formIngresarMateria.php'">Ingresar a curso nuevo</button>
+    <div id="contenedor-buscador">
+      <input id="buscador" placeholder="Busca la clase">
+      <div id="contenedor-resultados"></div>
     </div>
 
+
+    <script src="../js/ingresarMateria.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    
+
 </body>
     
 </html>
