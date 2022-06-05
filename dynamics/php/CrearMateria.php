@@ -1,4 +1,9 @@
 <?php
+
+session_name("SesionUsuario");
+session_id("123456789");
+session_start();
+
 require "config.php";
 
 $con = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
@@ -42,6 +47,6 @@ if(isset($_FILES['ImagenRelacionada']))
     // echo $ruta;
     }
 }
-header('Location: ../../templates/vistaMateria.html');
+header('Location: ./vistaMateria.php');
 
 ?>

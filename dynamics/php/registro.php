@@ -12,9 +12,6 @@ $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"]!= "")?$_POST[
 $rfc = 0;
 $numCuenta = 0;
 
-session_start();
-
-$_SESSION['nombre'] = $nombre;
 
 $sal = generar_sal();
 

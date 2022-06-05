@@ -60,6 +60,28 @@ if($datos==NULL){
         $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
 
         $hasheo = $datos['contraseña'];
+
+        $sql = "SELECT nombre FROM alumno WHERE noDeCuenta=$noCuentaRFC";
+        $res = mysqli_query($con, $sql);
+        $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
+
+        $alumno = $datos['nombre'];
+
+        $sql = "SELECT id_alumno FROM alumno WHERE noDeCuenta=$noCuentaRFC";
+        $res = mysqli_query($con, $sql);
+        $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
+
+        $id = $datos['id_alumno'];
+
+        session_name("SesionUsuario");
+        session_id("123456789");
+        session_start();
+
+        $_SESSION["nombre"]=$alumno;
+        $_SESSION["noDeCuenta"]=$noCuentaRFC;
+        $_SESSION["id_alumno"]= $id;
+
+
     }
     if(validarRFC($noCuentaRFC) == 1){//profesor
         $sql = "SELECT sal FROM roles WHERE RFC=$noCuentaRFC";
@@ -78,10 +100,10 @@ if($datos==NULL){
     
 
     if(verificar_contra_pimienta($contrasena, $sal, $hasheo)){
-        header('Location: ../../templates/inicio.html');
+        header('Location: ./pagInicio.php');
     } else{
         //var_dump($pimienta);
-        header('Location: ../../inicioSesion.html');
+        header('Location: ./pagInicio.php');
     }
 
 

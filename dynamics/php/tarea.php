@@ -1,3 +1,9 @@
+<?php
+    session_name("SesionUsuario");
+    session_id("123456789");
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +13,7 @@
     
     <link rel="stylesheet" href="../../libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="">
-    <title> Crear Tarea</title>
+    <title>Tarea</title>
 </head>
 <body>
     <!--  Navbar -->
@@ -20,7 +26,7 @@
             <!-- Necesario solo cuando no sea la vista principal -->
             <div class="navbar-nav">
                 <div>
-                    <a class="navbar-brand"  href="../../templates/inicio.html">
+                    <a class="navbar-brand"  href="./pagInicio.php">
                         <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
                     </a>
                 </div>

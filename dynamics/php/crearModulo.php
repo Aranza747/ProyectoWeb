@@ -1,4 +1,9 @@
 <?php
+
+session_name("SesionUsuario");
+session_id("123456789");
+session_start();
+
 require "config.php";
 
 $con = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
@@ -10,7 +15,7 @@ $res = mysqli_query($con, $sql);
 
 if($res == true)
 {
-    header ('Location: ../../templates/modulo.html');
+    header ('Location: ./modulo.php');
 }else
 {
     echo "no se conectó";

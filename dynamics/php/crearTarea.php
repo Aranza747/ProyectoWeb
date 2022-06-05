@@ -1,15 +1,8 @@
 <?php
-// session_name("SesionUsuario");
-// session_id("123456789");
-// session_start();
-// if(isset( $_SESSION["nombre"])!=true)
-// {
-//     $nuevaURL='../inicio1.php';
-//     header('Location: '.$nuevaURL);
-// }
 
-// $sesion =  $_SESSION["nombre"]; 
-
+session_name("SesionUsuario");
+session_id("123456789");
+session_start();
 
 date_default_timezone_set('America/Mexico_City');
 $fechaAct=date('Y-m-d');
