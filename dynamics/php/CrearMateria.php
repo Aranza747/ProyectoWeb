@@ -42,9 +42,10 @@ if(isset($_FILES['ImagenRelacionada']))
     $arch= $_FILES['ImagenRelacionada']['tmp_name'];
     $ext= pathinfo($name, PATHINFO_EXTENSION);
     if($ext=="png" || $ext=="jpg" || $ext=="jpeg"){
-        $ruta = "../../descargas/img/img_materias/$idMateria.$nombreMateria";
+        $ruta = "../../descargas/img/img_portadaMaterias/$idMateria.$nombreMateria.$ext";
     rename($arch, "$ruta");
-    // echo $ruta;
+    $sql = "INSERT INTO materia (foto) VALUES('$ruta')";//falta agregar sal a la base de datos
+    $res = mysqli_query($con, $sql);
     }
 }
 header('Location: ./vistaMateria.php');
