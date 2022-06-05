@@ -31,13 +31,11 @@ if(validarNoCuenta($noCuentaRFC) == 1){//alumno
     $sql = "SELECT noDeCuenta FROM alumno WHERE noDeCuenta=$noCuentaRFC";
     $res = mysqli_query($con, $sql);
     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
-}
-
-if(validarNoCuenta($noCuentaRFC) == 1){//alumno
-    $sql = "SELECT noDeCuenta FROM alumno WHERE noDeCuenta=$noCuentaRFC";
+} else {//profe
+    $sql = "SELECT RFC FROM roles WHERE RFC='$noCuentaRFC'";
     $res = mysqli_query($con, $sql);
     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
-    echo "entras?";
+    var_dump($datos);
 }
 
 
@@ -45,8 +43,8 @@ if(validarNoCuenta($noCuentaRFC) == 1){//alumno
 
 
 if($datos==NULL){
-    var_dump($datos);
-    header('Location: ../../templates/FormRegistro.html'); //../../templates/formregistro.html
+    // var_dump($datos);
+    header('Location: ../../templates/FormRegistro.html');
 } else {
     if(validarNoCuenta($noCuentaRFC) == 1){//alumno
         $sql = "SELECT sal FROM alumno WHERE noDeCuenta=$noCuentaRFC";
@@ -73,6 +71,12 @@ if($datos==NULL){
 
         $id = $datos['id_alumno'];
 
+        $sql = "SELECT correo FROM alumno WHERE noDeCuenta=$noCuentaRFC";
+        $res = mysqli_query($con, $sql);
+        $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
+
+        $correo = $datos['correo'];
+
         session_name("SesionUsuario");
         session_id("123456789");
         session_start();
@@ -80,21 +84,58 @@ if($datos==NULL){
         $_SESSION["nombre"]=$alumno;
         $_SESSION["noDeCuenta"]=$noCuentaRFC;
         $_SESSION["id_alumno"]= $id;
+        $_SESSION["correo"]= $correo;
+        $_SESSION["rol"]= "Alumno";
 
 
-    }
-    if(validarRFC($noCuentaRFC) == 1){//profesor
-        $sql = "SELECT sal FROM roles WHERE RFC=$noCuentaRFC";
+    } else {//profesor
+        $sql = "SELECT sal FROM roles WHERE RFC='$noCuentaRFC'";
         $res = mysqli_query($con, $sql);
         $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
 
         $sal = $datos['sal'];
 
-        $sql = "SELECT contrasena FROM roles WHERE RFC=$noCuentaRFC";
+        $sql = "SELECT contrasena FROM roles WHERE RFC='$noCuentaRFC'";
         $res = mysqli_query($con, $sql);
         $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
 
         $hasheo = $datos['contrasena'];
+
+        $sql = "SELECT nombre FROM roles WHERE RFC='$noCuentaRFC'";
+        $res = mysqli_query($con, $sql);
+        $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
+
+        $alumno = $datos['nombre'];
+
+        $sql = "SELECT id_rol FROM roles WHERE RFC='$noCuentaRFC'";
+        $res = mysqli_query($con, $sql);
+        $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
+
+        $id = $datos['id_rol'];
+
+        $sql = "SELECT correo FROM roles WHERE RFC='$noCuentaRFC'";
+        $res = mysqli_query($con, $sql);
+        $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
+
+        $correo = $datos['correo'];
+
+        $sql = "SELECT rol FROM roles WHERE RFC='$noCuentaRFC'";
+        $res = mysqli_query($con, $sql);
+        $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
+
+        $rol = $datos['rol'];
+
+        session_name("SesionUsuario");
+        session_id("123456789");
+        session_start();
+
+        $_SESSION["nombre"]=$alumno;
+        $_SESSION["noDeCuenta"]=$noCuentaRFC;
+        $_SESSION["id_alumno"]= $id;
+        $_SESSION["correo"]= $correo;
+        $_SESSION["rol"]= $rol;
+
+        
     }
     
     
@@ -103,7 +144,7 @@ if($datos==NULL){
         header('Location: ./pagInicio.php');
     } else{
         //var_dump($pimienta);
-        header('Location: ./pagInicio.php');
+        header('Location: ../../inicioSesion.html');
     }
 
 
