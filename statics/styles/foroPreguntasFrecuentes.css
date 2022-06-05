@@ -30,7 +30,6 @@ body{
 ------------------------------------------------------------------------------------*/
 #nav {
     background-color: #006778;
-    width: inherit;
 }
 
 aside{
@@ -38,7 +37,7 @@ aside{
     width: 120px;
     height: 100%;
     background-color: #006778;
-    z-index: 1;
+    z-index: 4;
 }
 
 #asideDerecha{
@@ -47,8 +46,8 @@ aside{
     position: relative;
     width: 120px;
     height: 100%;
+    z-index: 4;
     background-color: #5ba8b6;
-    /* z-index: 1; */
 }
 
 .btn-opcion {
@@ -59,4 +58,25 @@ aside{
     text-align: center;
     border-color: #ffffff;
     /* padding: 10; */
+
+}
+#perfil {
+    color: #ffffff;
+    font-family: 'catamaran';
+}
+.foroPreguntasFrecuentes, .mb-3{
+    margin: 2%;
+    position: absolute;
+    transform: translate(125px, 0px);
+}
+.grande{
+    margin:  4% 4% 0 8%;
+    padding: 7px 40px;
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 80%;
+    height: 12rem;
+    border-radius: 10px 10px 10px 10px;
+    border-style: none;
 }

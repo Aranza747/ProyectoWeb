@@ -59,7 +59,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="../dynamics/php/crearModulo.php" method="post">
+                <form action="./crearModulo.php" method="post">
                     <label for="nombreMod">Escribe el nombre del módulo: </label><br>
                     <input type="text" name="nombreMod">
                     <button type="submit" class="btn btn-primary" >Crear</button>
