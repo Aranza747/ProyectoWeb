@@ -17,18 +17,18 @@ $contrasena = (isset($_POST["contrasena"]) && $_POST["contrasena"]!= "")?$_POST[
 $sql = "INSERT INTO materia (descripcion, contrasena, nombreMateria) VALUES('$descripcion', '$contrasena', '$nombreMateria')";//falta agregar sal a la base de datos
 $res = mysqli_query($con, $sql);
 
-if($res == false){
-    echo 'No se pudo conectar';
-}
-else{
-    echo 'Si se pudo conectar INSERT        ';
-}
+// if($res == false){
+//     echo 'No se pudo conectar';
+// }
+// else{
+//     echo 'Si se pudo conectar INSERT        ';
+// }
 $idMateria = mysqli_insert_id($con); //id de la ultima materia creada
-echo $idMateria;
+// echo $idMateria;
 
 $sql = "SELECT id_materia FROM materia WHERE nombreMateria LIKE '$nombreMateria'";
 $res = mysqli_query($con, $sql);
-var_dump($res);
+// var_dump($res);
 
 if(isset($_FILES['ImagenRelacionada']))
 {
@@ -39,9 +39,9 @@ if(isset($_FILES['ImagenRelacionada']))
     if($ext=="png" || $ext=="jpg" || $ext=="jpeg"){
         $ruta = "../../descargas/img/img_materias/$idMateria.$nombreMateria";
     rename($arch, "$ruta");
-    echo $ruta;
+    // echo $ruta;
     }
 }
-
+header('Location: ../../templates/vistaMateria.html');
 
 ?>
