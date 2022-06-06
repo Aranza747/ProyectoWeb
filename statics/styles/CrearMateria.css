@@ -29,18 +29,30 @@ body{
 ------------------------------------------------------------------------------------*/
 #nav {
     background-color: #006778;
+    padding: 9px 10px ;
 }
 
 aside{
     position: absolute;
-    width: 120px;
+    width: 170px;
     height: 100%;
     background-color: #006778;
-    
+    z-index: 4;
 }
-#perfil {
+.btn-opcion {
+    /* top: -20px; */
+    background-color: #006778;
     color: #ffffff;
     font-family: 'catamaran';
+    text-align: center;
+    border-color: #ffffff;
+    padding: 15px 10px;
+
+}
+#foro {
+    color: #ffffff;
+    font-family: 'catamaran';
+    padding: 9px 9px;
 }
 .navbar-nav{
     display: flex;
@@ -50,7 +62,7 @@ aside{
 /*
 ------------------------------------------------------------------------------------*/
 .titulo{
-    margin: 0 0 1% 0;
+    margin-bottom: 2%;
     padding: 1rem;
     background-color: #65cac28e;
     border-radius: 10px 10px 10px 10px;
@@ -68,7 +80,7 @@ aside{
     position: absolute;
     transform: translate(120px, 0);
     margin-top: 3%;
-    margin-left: 9%;
+    margin-left: 8.5%;
     width:85%;
 }
 /*CONTENEDOR
@@ -77,6 +89,7 @@ aside{
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
 }
 /*IZQUIERDA
 ------------------------------------------------------------------------------------*/
@@ -100,7 +113,7 @@ aside{
     font-size: .4cm;
     font-family: "catamaran", 'Lucinda Sans', serif;
     width: 80%;
-    height: 7%;
+    height: 2%;
     border-radius: 10px 10px 10px 10px;
     border-style: none;
 
@@ -155,7 +168,7 @@ aside{
     border-radius: 10px 10px 10px 10px;
     border-style: none;
 }
-#crear{
+.crear{
     margin: 2%;
     float: right;
     padding: 7px 40px;

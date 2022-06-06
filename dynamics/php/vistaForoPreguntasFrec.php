@@ -29,7 +29,7 @@
 
             <div class="navbar-nav">
                 <div>
-                    <a class="navbar-brand" href="./inicio.html">
+                    <a class="navbar-brand" href="./pagInicio.php">
                         <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
                     </a>
                 </div>
@@ -67,8 +67,8 @@
         </ul>
     </aside> -->
 
-    <div id="preguntasFrecuentes">
-        <div id="preguntasFrecuentes" class="card border-primary mb-3" style="max-width: 18rem;">
+    <!-- <div id="preguntasFrecuentes">
+        <div class="card border-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">Header</div>
             <div class="card-body text-primary">
               <h5 class="card-title">Primary card title</h5>
@@ -76,6 +76,9 @@
             </div>
           </div>
         </div>
+    </div> -->
+
+    <div id="preguntasFrecuentes">
     </div>
 
     <!-- Button modal -->
