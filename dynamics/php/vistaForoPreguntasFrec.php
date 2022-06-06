@@ -67,7 +67,7 @@
         </ul>
     </aside> -->
 
-    <!-- <div id="preguntasFrecuentes"> -->
+    <div id="preguntasFrecuentes">
         <div id="preguntasFrecuentes" class="card border-primary mb-3" style="max-width: 18rem;">
             <div class="card-header">Header</div>
             <div class="card-body text-primary">
@@ -76,7 +76,7 @@
             </div>
           </div>
         </div>
-    <!-- </div> -->
+    </div>
 
     <!-- Button modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

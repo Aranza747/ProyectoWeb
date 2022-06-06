@@ -65,7 +65,8 @@
     
     <div id="contenedor-buscador">
       <input id="buscador" placeholder="Busca la clase">
-      <div id="contenedor-resultados"></div>
+      <div id="contenedor-resultados">
+      </div>
     </div>
 
 

@@ -1,6 +1,6 @@
 window.addEventListener("load", ()=>{
     const buscador = document.getElementById("buscador");
-    const resultados = document.getElementById("contenedor-resultados");
+    const divResultados = document.getElementById("contenedor-resultados");
 
     buscador.addEventListener("keyup", (evento) => {
         let termino = buscador.value;
@@ -13,7 +13,7 @@ window.addEventListener("load", ()=>{
           })
           .then((datosJSON) => {
             console.log(datosJSON);
-            for(pokemon of datosJSON){
+            for(materia of datosJSON){
               let div = document.createElement("div");
               div.innerHTML = materia.nombreMateria;
               div.dataset.id = materia.id_materia;

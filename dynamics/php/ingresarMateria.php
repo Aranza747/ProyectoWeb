@@ -25,7 +25,7 @@ else{
 
     $res = mysqli_query($con, $sql);
     $row = mysqli_fetch_assoc($res);
-      
+    $datos = [];
     $datos = array("id"=>$row['id_materia'], "nombre"=>$row['nombreMateria'], "descripcion"=>$row['descripcion'], "foto"=>$row['foto']);
 
     $respuesta = array("ok"=>true, "datos"=>$datos);

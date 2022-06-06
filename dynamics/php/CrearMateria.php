@@ -31,21 +31,21 @@ $res = mysqli_query($con, $sql);
 $idMateria = mysqli_insert_id($con); //id de la ultima materia creada
 // echo $idMateria;
 
-$sql = "SELECT id_materia FROM materia WHERE nombreMateria LIKE '$nombreMateria'";
-$res = mysqli_query($con, $sql);
+// $sql = "SELECT id_materia FROM materia WHERE nombreMateria LIKE '$nombreMateria'";
+// $res = mysqli_query($con, $sql);
 // var_dump($res);
 
 if(isset($_FILES['ImagenRelacionada']))
 {
     $name= $_FILES['ImagenRelacionada']['name'];   
-    // echo $name;
     $arch= $_FILES['ImagenRelacionada']['tmp_name'];
     $ext= pathinfo($name, PATHINFO_EXTENSION);
     if($ext=="png" || $ext=="jpg" || $ext=="jpeg"){
         $ruta = "../../descargas/img/img_portadaMaterias/$idMateria.$nombreMateria.$ext";
-    rename($arch, "$ruta");
-    $sql = "INSERT INTO materia (foto) VALUES('$ruta') WHERE id_materia LIKE '$idMateria'";//falta agregar sal a la base de datos
-    $res = mysqli_query($con, $sql);
+        rename($arch, "$ruta");
+        $sql = "UPDATE materia SET foto='$ruta' WHERE id_materia='$idMateria'";
+        $res = mysqli_query($con, $sql);
+        echo $idMateria;
     }
 }
 header('Location: ./vistaMateria.php');
