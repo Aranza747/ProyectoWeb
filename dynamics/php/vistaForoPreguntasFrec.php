@@ -34,7 +34,9 @@
                     </a>
                 </div>
                 <div>
-                <button class="list-group-item btn-opcion" class="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
+                    <button class="list-group-item btn-opcion" class="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        Perfil
+                    </button>
                 </div>
             </div>
         </div>
@@ -89,17 +91,10 @@
         </div>
     </div> -->
 
-    <!-- donde se aguarda las preguntas -->
-    <div class=contenedor>
-    <div id="preguntasFrecuentes">
-    </div>
-</div>
-
-
     <!-- Button modal -->
     <div class=contenedor>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Añadir 
+        <button type="button" class="añadir" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <img id="MAS" src="../../statics/img/+.png" alt="" width="40" height="50">
         </button>
     </div>
 
@@ -127,14 +122,20 @@
         </div>
     </div>
 
+     <!-- donde se aguarda las preguntas -->
+     <div class=contenedor>
+    <div id="preguntasFrecuentes">
+    </div>
+    </div>
+
     <!-- segundo aside -->
-    <aside id="asideDerecha">
+    <!-- <aside id="asideDerecha">
         <ul>
-            <button type="button" class="list-group-item" id="preguntasFrecuentes" onclick="location.href='./vistaForoEstudiantes.php'">Foro Estudiantes</button>
+            <button type="button" class="list-group-item" id="foroEstudiante">Foro Estudiantes</button>
             <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
-            <button type="button" class="list-group-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="añadir">Añadir</button>
+            <button type="button" class="list-group-item" id="añadir">Añadir</button>
         </ul>
-    </aside>
+    </aside> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/foroPreguntasFrecuentes.js"></script>

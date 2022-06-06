@@ -60,7 +60,11 @@ aside{
     flex-wrap: nowrap;
 }
 
-#asideDerecha{
+#inicio{
+    margin-top: 8%;
+}
+
+/* #asideDerecha{
     margin-top: 5%;
     float: right;
     position: relative;
@@ -68,7 +72,7 @@ aside{
     height: 100%;
     z-index: 4;
     background-color: #5ba8b6;
-}
+} */
 
 /*FORO
 ------------------------------------------------------------------------------------*/
@@ -84,7 +88,8 @@ aside{
     margin: 2%;
     width:85%;
 }
-
+/*RESPONDER VENTANILLA
+------------------------------------------------------------------------------------*/
 .grande{
     margin:  4% 4% 0 8%;
     padding: 7px 40px;
@@ -96,9 +101,47 @@ aside{
     border-radius: 10px 10px 10px 10px;
     border-style: none;
 }
+/*BOTON DE AGREGAR
+------------------------------------------------------------------------------------*/
+.añadir{
+    position: absolute;
+    border-radius: 100%;
+    top: -4.7rem;
+    background-color: #006778;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ffffff;
+}
+#MAS{
+    padding: 10%;
+}
 
-#asideDerecha{
-    border: #000000;
-    border-width: 5px;
-    margin: auto;
+.accordion{
+    margin-top: 1% ;
+}
+
+/*VISTA DE PREGUNTAS FRECUENTES
+------------------------------------------------------------------------------------*/
+.accordion-button{
+    background-color: #5ba8b6;
+    color: #ffffff;
+    font-family: 'catamaran';
+}
+.accordion-button:not(.collapsed) {
+    color: #000000;
+    font-family: 'catamaran';
+    background-color: #5ba8b683;
+}
+.eliminar{
+    background-color: #006778;
+    position: relative;
+    left: 92%;
+    top: 100%;
+    border-radius: 10px 10px 10px 10px;
+    width: 90px;
+    color: #ffffff;
+    font-family: 'catamaran';
+    font-size: .5cm;
+    margin: 1%;
+    border-style: none;
 }
