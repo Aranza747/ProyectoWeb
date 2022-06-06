@@ -30,9 +30,9 @@
             <!-- Necesario solo cuando no sea la vista principal -->
             <div class="navbar-nav">
                 <div>
-                    <form action='./CerrarSesion.php' method='post' turget='_self'>
-                        <button>Cerrar Sesión</button>
-                    </form>
+                    <a class="navbar-brand" href="./pagInicio.php">
+                        <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
+                    </a>
                 </div>
                 <div>
                     <button class="list-group-item btn-opcion" id="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
