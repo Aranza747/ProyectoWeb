@@ -91,8 +91,8 @@
             <a href="./vistaForoPreguntasFrec.php" class="stretched-link">Preguntas frecuentes</a>
         </div>
     </div>
-<!-- 
-    <aside id="asideDerecha">
+
+    <!-- <aside id="asideDerecha">
         <ul>
             <button type="button" class="list-group-item" id="preguntasFrecuentes" onclick="location.href='./vistaForoPreguntasFrecuentes.php'">Preguntas Frecuentes</button>
             <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
