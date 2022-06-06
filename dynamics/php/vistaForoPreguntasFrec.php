@@ -118,9 +118,9 @@
     <!-- segundo aside -->
     <aside id="asideDerecha">
         <ul>
-            <button type="button" class="list-group-item" id="foroEstudiante">Foro Estudiantes</button>
+            <button type="button" class="list-group-item" id="preguntasFrecuentes" onclick="location.href='./vistaForoEstudiantes.php'">Foro Estudiantes</button>
             <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
-            <button type="button" class="list-group-item" id="añadir">Añadir</button>
+            <button type="button" class="list-group-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="añadir">Añadir</button>
         </ul>
     </aside>
 
