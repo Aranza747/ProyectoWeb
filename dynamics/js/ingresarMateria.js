@@ -1,6 +1,10 @@
 window.addEventListener("load", ()=>{
     const buscador = document.getElementById("buscador");
     const divResultados = document.getElementById("contenedor-resultados");
+    const divDatos = document.getElementById("contenedor-mostrar");
+    const contrasena = document.getElementById("contrasena");
+    let contra = 0;
+    // const btnContrasena = document.getElementById("btnContrasena");
 
     buscador.addEventListener("keyup", (evento) => {
         let termino = buscador.value;
@@ -33,14 +37,29 @@ window.addEventListener("load", ()=>{
             })
             .then((datosJSON) => {
               if(datosJSON.ok == true){
-                divDatos.innerHTML += "<div class='dato'><strong>Nombre</strong>" + datosJSON.datos.nombre + "</div>";
-                divDatos.innerHTML += "<div class='dato'><strong>Altura</strong>" + datosJSON.datos.descripcion + "</div>";
-                divDatos.innerHTML += "<div class='dato'><strong>Peso</strong>" + datosJSON.datos.foto + "</div>";
-                // divDatos.innerHTML += "<div class='dato'><strong>Tipo</strong>" + datosJSON.datos.tipo + "</div>";
-                // divDatos.innerHTML += "<button id='btn-eliminar' data-id='" + id + "'>contraseña</button>";
-                divDatos.style.display="flex";
+                divDatos.innerHTML += "<div class='dato'><strong>" + datosJSON.datos.nombre + "</strong></div>";
+                divDatos.innerHTML += "<div class='dato'>" + datosJSON.datos.descripcion + "</div>";
+                divDatos.innerHTML += "<div class='dato'>Imagen Relacionada: " + datosJSON.datos.foto + "</div>";
+                divDatos.innerHTML += "<button id='btnContrasena' data-id='" + id + "'>►</button>";
+                // console.log(datosJSON.datos);
+                divDatos.style.display="block";
+                contra = datosJSON.datos.contrasena;
+                console.log(contra);
               }
             })
         }
-      })
+      });
+
+
+      divDatos.addEventListener("click", (evento)=>{
+        if(evento.target.id == "btnContrasena"){
+          console.log(divDatos.children[0].value); 
+          if(divDatos.children[0].value == contra){ //compara el valor del input de contraseña (children[0]) con la conraseña que viene de base de datos
+            alert("bien");
+          } else {
+            alert("mal");
+          }
+        }
+      });
+     
 });

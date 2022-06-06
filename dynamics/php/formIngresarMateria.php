@@ -69,6 +69,12 @@
       </div>
     </div>
 
+    <div id="contenedor-mostrar" style="display:none">
+      <!-- <div id="sinResult" style="display:none">No se encontraron coincidencias</div> -->
+      <input type="text" id="contrasena" placeholder='Escriba la contraseña aquí' >
+      
+    </div>
+
 
     <script src="../js/ingresarMateria.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
