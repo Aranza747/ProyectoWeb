@@ -54,7 +54,7 @@ if($res==false){
     } else {
 
         $id_archivoTarea = $datos['id_archivoTarea'];
-        $sql = "INSERT INTO tarea (id_archivoTarea, fecha, hora, descripcion) VALUES('$id_archivoTarea', '$fecha', '$hora', '$descripcion')";
+        $sql = "INSERT INTO tarea (id_archivoTarea, fecha, hora, descripcion, nombreTarea) VALUES('$id_archivoTarea', '$fecha', '$hora', '$descripcion', '$nombre')";
         $res = mysqli_query($con, $sql);
     
         if($res == NULL){

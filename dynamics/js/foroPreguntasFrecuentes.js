@@ -29,7 +29,7 @@ fetch("./consultarPreguntasFrecuentes.php")
   console.log(datosJSON);
   let preguntaFrecuente = document.getElementById("preguntasFrecuentes");
   for(dato of datosJSON){
-    preguntaFrecuente.innerHTML += '<div>'+dato.preguntaFrecuente+'<br>'+dato.respuesta+'<br>'+'<br>'+'<button type="button" id="'+dato.id_preguntasFrecuentes+'" class="eliminar">Eliminar</button></div>'
+    preguntaFrecuente.innerHTML += '<div class="padre">'+'<div class=hijoP>'+dato.preguntaFrecuente+'</div>'+'<div class=hijoR>'+dato.respuesta+'</div>'+'<div class=botonPropio>'+'<button type="button" id="'+dato.id_preguntasFrecuentes+'"'+'class="eliminar">Eliminar</button>'+'</div>'+'</div>';
     }
 });
 

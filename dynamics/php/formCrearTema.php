@@ -56,7 +56,7 @@
     </aside>
 
     <div id="formTarea">
-        <form action=".."  enctype="multipart/form-data" method="post">
+        <form action="./crearTema.php"  enctype="multipart/form-data" method="post">
             <div id="contenedor">
                 <div id="izquierda">
                     <label class="etiqueta">Nombre del tema:</label><br />

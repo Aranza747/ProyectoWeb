@@ -9,12 +9,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <title>foroEstudiantes</title>
     <link rel="stylesheet" href="../../libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../statics/styles/foroPreguntasFrecuentes.css">
-
-    <title>AulaP6</title>
+    <link href="../../statics/styles/foroEstudiantes.css" rel="stylesheet">
 </head>
 <body>
     <!--  Navbar -->
@@ -49,7 +47,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                  <img src="../descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
+                  <img src="../dynamics/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
                   Nombre: Fulanito Petronilo Pancraseo
                   <br><br>
                   Correo: arroba@gmail.com
@@ -65,66 +63,44 @@
             <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>
         </ul>
     </aside>
-
-    <!-- <div id="preguntasFrecuentes">
-        <div class="card border-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body text-primary">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+    <!-- Perfil -->
+    <?php    
+        echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-          </div>
-        </div>
-    </div> -->
-
-    <!-- Button modal -->
-    <div class=contenedor>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Añadir 
-        </button>
-    </div>
-
-    <!-- Modal, el recuadro que emerge de hacer click en el boton -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Preguntas frecuentes</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="formulario" action="./foroPreguntasFrecuentes.php" method="post">
-                        Escribe la pregunta<br>
-                        <textarea name="preguntaFrecuente" id="preguntaFrecuente" class="grande" placeholder="Pregunta Frecuente" required></textarea><br>
-                        <textarea name="respuestaPreguntaFrecuente" id="respuestaPreguntaFrecuente" class="grande" placeholder="Respuesta" required></textarea><br>
-                    </form>
-                    <div id="msgError"></div>
-                </div>
-                <div class="modal-footer">
-                    <button id="enviar" type="submit" class="btn btn-primary">Crear</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                </div>
+            <div class="offcanvas-body">
+                <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
+                Nombre: '.$_SESSION["nombre"].'
+                <br><br>
+                Correo: '.$_SESSION["correo"].'
+                <br><br>
+                Rol: '.$_SESSION["rol"].'
             </div>
+        </div>'
+    ?>
+  
+
+    <div class="d-flex position-relative pregunta">
+        <img src="..." class="flex-shrink-0 me-3" alt="...">
+        <div>
+            <h5 class="mt-0">Custom component with stretched link</h5>
+            <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+            <a href="#" class="stretched-link">Go somewhere</a>
         </div>
     </div>
 
-     <!-- donde se aguarda las preguntas -->
-     <div class=contenedor>
-    <div id="preguntasFrecuentes">
-    </div>
-    </div>
-
-    <!-- segundo aside -->
     <aside id="asideDerecha">
         <ul>
-            <button type="button" class="list-group-item" id="foroEstudiante">Foro Estudiantes</button>
+            <button type="button" class="list-group-item" id="preguntasFrecuentes" onclick="location.href='./vistaForoPreguntasFrecuentes.php'">Preguntas Frecuentes</button>
             <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
-            <button type="button" class="list-group-item" id="añadir">Añadir</button>
+            <button type="button" class="list-group-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="añadir">Añadir</button>
         </ul>
     </aside>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/foroPreguntasFrecuentes.js"></script>
+    <script src="../js/foroEstudiantes.js"></script>
 </body>
-    
 </html>

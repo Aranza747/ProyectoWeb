@@ -23,20 +23,23 @@
     <!--  Navbar -->
     <nav class="navbar navbar-expand-lg" id="nav">
         <div class="container-fluid">
+
             <a class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
-                <img src="../../statics/img/logoprepa.png" alt="" width="50" height="50">
+                <img src="../../statics/img/logoprepa.png" alt="" width="40" height="40">
             </a>
             <!-- Necesario solo cuando no sea la vista principal -->
             <div class="navbar-nav">
                 <div>
                     <form action='./CerrarSesion.php' method='post' turget='_self'>
-                        <button id="cerrar">Cerrar Sesión</button>
+                        <button>Cerrar Sesión</button>
                     </form>
                 </div>
                 <div>
                     <button class="list-group-item btn-opcion" id="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
+                    
                 </div>
             </div>
+
         </div>
     </nav>
     
@@ -57,28 +60,26 @@
         </div>'
     ?>
     <!-- Perfil -->
+
+    <h1>Ingresar a curso nuevo</h1>
     
-
-    <aside>
-        <!-- columna-->
-        <ul class="list-group list-group-flush"> 
-            
-            
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
-            <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
-            <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
-            <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./formCrearMateria.php'">Crear Materia</button>  <!-- Profesor-->
-            <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> <!-- Alumno -->
-            <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button> <!-- Administrador-->
-            
-        </ul>
-    </aside>   
-
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button" onclick="location.href='./formIngresarMateria.php'">Ingresar a curso nuevo</button>
+    <div id="contenedor-buscador">
+      <input id="buscador" placeholder="Busca la clase">
+      <div id="contenedor-resultados">
+      </div>
     </div>
 
+    <div id="contenedor-mostrar" style="display:none">
+      <!-- <div id="sinResult" style="display:none">No se encontraron coincidencias</div> -->
+      <input type="text" id="contrasena" placeholder='Escriba la contraseña aquí' >
+      
+    </div>
+
+
+    <script src="../js/ingresarMateria.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    
+
 </body>
     
 </html>
