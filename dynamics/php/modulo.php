@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../statics/styles/CrearModulo.css">
 
-    <title>Crear modulo</title>
+    <title>Módulo</title>
 </head>
 
 <body>
@@ -42,52 +42,84 @@
         </div>
     </nav>
 
+    <!-- Perfil -->
+    <?php    
+        echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
+                Nombre: '.$_SESSION["nombre"].'
+                <br><br>
+                Correo: '.$_SESSION["correo"].'
+                <br><br>
+                Rol: '.$_SESSION["rol"].'
+            </div>
+        </div>'
+    ?>
+
 
     <aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
-            
-            
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+        <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
-            <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./formCrearMateria.php'">Crear Materia</button>  <!-- Profesor-->
-            <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> <!-- Alumno -->
-            <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button> <!-- Administrador-->
+            <?php
+                if($_SESSION["rol"] == "Profesor"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                } else if ($_SESSION["rol"] == "Administrador"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
+                } else if ($_SESSION["rol"] == "Alumno"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
+                } else if ($_SESSION["rol"] == "Moderador"){
+
+                }
+            ?>
             
         </ul>
     </aside>
 
     <!-- crar materia -->
-    <div class="contenedor">
-        <div class="titulo">
-            <div>
-                <label class="modulo">Nombre del modulo: &nbsp; </label>
-                <input type="text" id="nombre" class="input" required placeholder="Escriba el nombre del modulo">
-            </div>
-        </div>
-        <div class="tabla">
-            <div class="columna">
-                <div class="arriba">Material del trabajo</div>
-            </div>
-            <div class="columna">
-                <div class="arriba">Tarea</div>
-            </div>
-            <div class="Columna2" onclick="location.href='./formCrearTema.php'">
-                <div class="abajo">
-                    <div><img id="inicio" src="../../statics/img/+.png" alt="" width="30" height="30"></div>
-                    <div>Añadir material</div>
+    <?php
+        if($_SESSION["rol"] == "Profesor" || $_SESSION["rol"] == "Administrador"){
+            echo '<div class="contenedor">
+                <div class="titulo">
+                    <div>
+                        <label class="modulo">Nombre del modulo: &nbsp; </label>
+                        <input type="text" id="nombre" class="input" required placeholder="Escriba el nombre del modulo">
+                    </div>
+                </div>
+                <div class="tabla">
+                    <div class="columna">
+                        <div class="arriba">Material del trabajo</div>
+                    </div>
+                    <div class="columna">
+                        <div class="arriba">Tarea</div>
+                    </div>
+                    <div class="Columna2" onclick="location.href="./formCrearTema.php"">
+                        <div class="abajo">
+                            <div><img id="inicio" src="../../statics/img/+.png" alt="" width="30" height="30"></div>
+                            <div>Añadir material</div>
+                        </div>
+                    </div>
+                    <div class="Columna2" onclick="location.href="./formCrearTarea.php"">
+                        <div class=" abajo">
+                            <div><img id="inicio" src="../../statics/img/+.png" alt="" width="30" height="30"></div>
+                            <div>Crear tarea</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="Columna2" onclick="location.href='./formCrearTarea.php'">
-                <div class=" abajo">
-                    <div><img id="inicio" src="../../statics/img/+.png" alt="" width="30" height="30"></div>
-                    <div>Crear tarea</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <button type="submit" id="enviar">Guardar</button>
+            <button type="submit" id="enviar">Guardar</button>';
+            
+        }
+    
+    ?>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

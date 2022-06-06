@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../statics/styles/foroPreguntasFrecuentes.css">
 
-    <title>AulaP6</title>
+    <title>preguntasFrecuentes</title>
 </head>
 <body>
     <!--  Navbar -->
@@ -39,30 +39,42 @@
             </div>
         </div>
     </nav>
+
+    <!-- Perfil -->
+    <?php    
+        echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
+                Nombre: '.$_SESSION["nombre"].'
+                <br><br>
+                Correo: '.$_SESSION["correo"].'
+                <br><br>
+                Rol: '.$_SESSION["rol"].'
+            </div>
+        </div>'
+    ?>
     
     <aside>
         <ul class="list-group list-group-flush"> 
-            <button class="list-group-item btn-opcion" id="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <img src="../dynamics/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
-                  Nombre: Fulanito Petronilo Pancraseo
-                  <br><br>
-                  Correo: arroba@gmail.com
-                  <br><br>
-                  Rol: Alumno
-                </div>
-              </div>
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foroPreguntasFrecuentes.html'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
-            <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./CrearMateria.html'">Crear Materia</button>  
-            <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> 
-            <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>
+            <?php
+                if($_SESSION["rol"] == "Profesor"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                } else if ($_SESSION["rol"] == "Administrador"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
+                } else if ($_SESSION["rol"] == "Alumno"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
+                } else if ($_SESSION["rol"] == "Moderador"){
+
+                }
+            ?>
         </ul>
     </aside>
 
