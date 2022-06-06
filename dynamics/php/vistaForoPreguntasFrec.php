@@ -22,7 +22,7 @@
         <div class="container-fluid">
 
             <a class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
-                <img src="../../statics/img/logoprepa.png" alt="" width="40" height="40">
+                <img src="../../statics/img/logoprepa.png" alt="" width="50" height="50">
             </a>
             <!-- Necesario solo cuando no sea la vista principal -->
 
@@ -30,18 +30,17 @@
             <div class="navbar-nav">
                 <div>
                     <a class="navbar-brand" href="./pagInicio.php">
-                        <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="30" height="30">
+                        <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="40" height="40">
                     </a>
                 </div>
                 <div>
-                    <a class="nav-link" href="#" id="perfil">Perfil</a>
+                <button class="list-group-item btn-opcion" class="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
                 </div>
             </div>
-
         </div>
     </nav>
     
-    <!-- <aside>
+    <aside>
         <ul class="list-group list-group-flush"> 
             <button class="list-group-item btn-opcion" id="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
@@ -65,7 +64,7 @@
             <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> 
             <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>
         </ul>
-    </aside> -->
+    </aside>
 
     <!-- <div id="preguntasFrecuentes">
         <div class="card border-primary mb-3" style="max-width: 18rem;">
@@ -78,45 +77,53 @@
         </div>
     </div> -->
 
+    <!-- donde se aguarda las preguntas -->
+    <div class=contenedor>
     <div id="preguntasFrecuentes">
     </div>
+</div>
+
 
     <!-- Button modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Añadir 
-    </button>
+    <div class=contenedor>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Añadir 
+        </button>
+    </div>
 
-    <!-- Modal -->
+    <!-- Modal, el recuadro que emerge de hacer click en el boton -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Preguntas frecuentes</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Preguntas frecuentes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formulario" action="./foroPreguntasFrecuentes.php" method="post">
+                        Escribe la pregunta<br>
+                        <textarea name="preguntaFrecuente" id="preguntaFrecuente" class="grande" placeholder="Pregunta Frecuente" required></textarea><br>
+                        <textarea name="respuestaPreguntaFrecuente" id="respuestaPreguntaFrecuente" class="grande" placeholder="Respuesta" required></textarea><br>
+                    </form>
+                    <div id="msgError"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="enviar" type="submit" class="btn btn-primary">Crear</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <form id="formulario" action="./foroPreguntasFrecuentes.php" method="post">
-                    Escribe la pregunta<br>
-                    <textarea name="preguntaFrecuente" id="preguntaFrecuente" class="grande" placeholder="Pregunta Frecuente" required></textarea><br>
-                    <textarea name="respuestaPreguntaFrecuente" id="respuestaPreguntaFrecuente" class="grande" placeholder="Respuesta" required></textarea><br>
-                </form>
-                <div id="msgError"></div>
-            </div>
-            <div class="modal-footer">
-                <button id="enviar" type="submit" class="btn btn-primary">Crear</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            </div>
-        </div>
         </div>
     </div>
 
+    <!-- segundo aside -->
     <aside id="asideDerecha">
         <ul>
-            <button type="button" class="list-group-item" id="foroEstudiante">Foro Estudiantes</button>
+            <button type="button" class="list-group-item" id="preguntasFrecuentes" onclick="location.href='./vistaForoEstudiantes.php'">Foro Estudiantes</button>
             <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
-            <button type="button" class="list-group-item" id="añadir">Añadir</button>
+            <button type="button" class="list-group-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="añadir">Añadir</button>
         </ul>
     </aside>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/foroPreguntasFrecuentes.js"></script>
 </body>
