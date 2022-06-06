@@ -88,15 +88,41 @@ aside{
     border-style: none;
 }
 
-#asideDerecha{
+/* #asideDerecha{
     border: #000000;
     border-width: 5px;
     margin: auto;
-}
+} */
 
+/*FORO ALUMNOS
+------------------------------------------------------------------------------------*/
 .pregunta{
     position: relative;
-    transform: translate(125px, 0px);
-    margin: 5%;
-    justify-content: center;
+    transform: translate(170px, 0px);
+    margin: 3%;
+    width: 50%;
+    display: flex;
+    justify-content:flex-start;
+    background-color: #006778;
+    border-radius: 10px 10px 10px 10px;
+}
+#imagenAlum{
+    width: 20%;
+    margin: 2%;
+}
+#contenido{
+    margin: 2%;
+}
+h5, p{
+    color: #ffffff;
+    font-family: 'catamaran';
+}
+a{
+    color: #ffffff;
+    font-family: 'mukta';
+
+}
+a:hover{
+    color:rgb(224, 141, 46);
+    text-decoration: underline;
 }

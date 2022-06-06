@@ -84,11 +84,11 @@
   
 
     <div class="d-flex position-relative pregunta">
-        <img src="..." class="flex-shrink-0 me-3" alt="...">
-        <div>
-            <h5 class="mt-0">Custom component with stretched link</h5>
-            <p>This is some placeholder content for the custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
-            <a href="#" class="stretched-link">Go somewhere</a>
+        <img src="..." id="imagenAlum" class="flex-shrink-0 me-3" alt="...">
+        <div id="contenido">
+            <h5 class="mt-0">Nombre del alumno:</h5>
+            <p>Comentario:</p>
+            <a href="./vistaForoPreguntasFrec.php" class="stretched-link">Preguntas frecuentes</a>
         </div>
     </div>
 <!-- 
