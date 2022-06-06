@@ -91,14 +91,14 @@
             <a href="#" class="stretched-link">Go somewhere</a>
         </div>
     </div>
-
+<!-- 
     <aside id="asideDerecha">
         <ul>
             <button type="button" class="list-group-item" id="preguntasFrecuentes" onclick="location.href='./vistaForoPreguntasFrecuentes.php'">Preguntas Frecuentes</button>
             <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
             <button type="button" class="list-group-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="añadir">Añadir</button>
         </ul>
-    </aside>
+    </aside> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/foroEstudiantes.js"></script>

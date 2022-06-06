@@ -34,7 +34,9 @@
                     </a>
                 </div>
                 <div>
-                <button class="list-group-item btn-opcion" class="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Perfil</button>
+                    <button class="list-group-item btn-opcion" class="foro" class="btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        Perfil
+                    </button>
                 </div>
             </div>
         </div>
@@ -57,10 +59,10 @@
                   Rol: Alumno
                 </div>
               </div>
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foroPreguntasFrecuentes.html'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foroPreguntasFrecuentes.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
-            <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./CrearMateria.html'">Crear Materia</button>  
+            <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./CrearMateria.php'">Crear Materia</button>  
             <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> 
             <button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>
         </ul>
@@ -79,8 +81,8 @@
 
     <!-- Button modal -->
     <div class=contenedor>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Añadir 
+        <button type="button" class="añadir" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <img id="MAS" src="../../statics/img/+.png" alt="" width="40" height="50">
         </button>
     </div>
 
@@ -115,13 +117,13 @@
     </div>
 
     <!-- segundo aside -->
-    <aside id="asideDerecha">
+    <!-- <aside id="asideDerecha">
         <ul>
             <button type="button" class="list-group-item" id="foroEstudiante">Foro Estudiantes</button>
             <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
             <button type="button" class="list-group-item" id="añadir">Añadir</button>
         </ul>
-    </aside>
+    </aside> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/foroPreguntasFrecuentes.js"></script>
