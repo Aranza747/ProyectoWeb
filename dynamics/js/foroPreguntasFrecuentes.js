@@ -49,7 +49,7 @@ preguntaFrecuente.addEventListener("click", (evento) => {
           if(datosJSON.ok ==true)
           {
             //alert("Se elimino la preguntaza");
-            window.location.reload();//Se recarga la pagina para dejar de mostrar la informacion del pokemon que se elimino
+            window.location.reload();
           }
           else
             alert("No se pudo eliminar");
