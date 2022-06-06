@@ -3,15 +3,6 @@ const msgError = document.getElementById("msgError");
 
 const formulario = document.getElementById("formulario");
 
-// const guardar = document.getElementById("guardarCambios");
-
-var html = '<div id="preguntasFrecuentes" class="card border-primary mb-3" style="max-width: 18rem;">'+
-            '<div class="card-header">Header</div>'+
-            '<div class="card-body text-primary">'+
-            '<h5 class="card-title">Primary card title</h5>'+
-            '<p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>'+
-            '</div></div></div>';
-
 
 enviar.addEventListener("click", (evento) => {
     evento.preventDefault();
@@ -38,6 +29,32 @@ fetch("./consultarPreguntasFrecuentes.php")
   console.log(datosJSON);
   let preguntaFrecuente = document.getElementById("preguntasFrecuentes");
   for(dato of datosJSON){
-    preguntaFrecuente.innerHTML += dato.preguntaFrecuente+'<br>'+dato.respuesta+'<br>'
-  }
+    preguntaFrecuente.innerHTML += '<div>'+dato.preguntaFrecuente+'<br>'+dato.respuesta+'<br>'+'<br>'+'<button type="button" id="'+dato.id_preguntasFrecuentes+'" class="eliminar">Eliminar</button></div>'
+    }
 });
+
+const preguntaFrecuente = document.getElementById("preguntasFrecuentes");
+
+preguntaFrecuente.addEventListener("click", (evento) => {
+    const divClickeado = document.getElementById(evento.target.id);
+    if(divClickeado.classList.contains("eliminar")){
+        let datosForm = new FormData();
+        datosForm.append("id", evento.target.id);
+        fetch("./borrarPreguntaFrecuente.php",{
+          method:"POST",
+          body: datosForm,
+        }).then((response)=>{
+          return response.json();
+        }).then((datosJSON)=>{
+          if(datosJSON.ok ==true)
+          {
+            alert("Se elimino la preguntaza");
+            window.location.reload();//Se recarga la pagina para dejar de mostrar la informacion del pokemon que se elimino
+          }
+          else
+            alert("No se pudo eliminar");
+        });
+
+    }
+        
+})
