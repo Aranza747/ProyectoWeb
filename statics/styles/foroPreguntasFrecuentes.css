@@ -80,3 +80,9 @@ aside{
     border-radius: 10px 10px 10px 10px;
     border-style: none;
 }
+
+#asideDerecha{
+    border: #000000;
+    border-width: 5px;
+    margin: auto;
+}
