@@ -30,14 +30,34 @@ body{
 ------------------------------------------------------------------------------------*/
 #nav {
     background-color: #006778;
+    padding: 9px 10px ;
 }
 
 aside{
     position: absolute;
-    width: 120px;
+    width: 170px;
     height: 100%;
     background-color: #006778;
     z-index: 4;
+}
+.btn-opcion {
+    /* top: -20px; */
+    background-color: #006778;
+    color: #ffffff;
+    font-family: 'catamaran';
+    text-align: center;
+    border-color: #ffffff;
+    padding: 15px 10px;
+
+}
+.foro {
+    color: #ffffff;
+    font-family: 'catamaran';
+    padding: 9px 9px;
+}
+.navbar-nav{
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 #asideDerecha{
@@ -50,25 +70,21 @@ aside{
     background-color: #5ba8b6;
 }
 
-.btn-opcion {
-    /* top: -20px; */
-    background-color: #006778;
-    color: #ffffff;
-    font-family: 'catamaran';
-    text-align: center;
-    border-color: #ffffff;
-    /* padding: 10; */
-
-}
-#perfil {
-    color: #ffffff;
-    font-family: 'catamaran';
-}
-.foroPreguntasFrecuentes, .mb-3{
+/*FORO
+------------------------------------------------------------------------------------*/
+/* .foroPreguntasFrecuentes, .mb-3{
     margin: 2%;
     position: absolute;
     transform: translate(125px, 0px);
+} */
+
+.contenedor{
+    position:  relative;
+    transform: translate(170px, 0);
+    margin: 2%;
+    width:85%;
 }
+
 .grande{
     margin:  4% 4% 0 8%;
     padding: 7px 40px;
