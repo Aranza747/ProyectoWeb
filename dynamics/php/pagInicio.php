@@ -63,7 +63,7 @@
                     </dl> 
                 </div>
             </div>
-        </div>'
+        </div>';
     ?>
     <!-- Perfil -->
     
@@ -79,7 +79,7 @@
                 if($_SESSION["rol"] == "Profesor"){
                     echo '<button type="button" class="list-group-item btn-opcion" onclick="redireccionar();">Crear Materia</button>'  ;
                 } else if ($_SESSION["rol"] == "Administrador"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
                 } else if ($_SESSION["rol"] == "Alumno"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
