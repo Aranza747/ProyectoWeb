@@ -44,16 +44,24 @@
     <?php    
         echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
+                <span class="offcanvas-title" id="offcanvasRightLabel">Perfil</span>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
-                Nombre: '.$_SESSION["nombre"].'
-                <br><br>
-                Correo: '.$_SESSION["correo"].'
-                <br><br>
-                Rol: '.$_SESSION["rol"].'
+            <div class="offcanvas-body" id="padre">
+                    <img  id="hijo" src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="80%" height="25%">
+                <div class="hijo">
+                    <dl><dt class="cabeza">Nombre: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["nombre"].'
+                        </dd>
+                    </dl>
+
+                    <dl><dt class="cabeza">Correo: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["correo"].'
+                        </dd>
+                    </dl>
+
+                    <dl><dt class="cabeza">Rol: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["rol"].'
+                    </dd>
+                    </dl> 
+                </div>
             </div>
         </div>'
     ?>
@@ -69,7 +77,7 @@
             <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
             <?php
                 if($_SESSION["rol"] == "Profesor"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" onclick="redireccionar();">Crear Materia</button>'  ;
                 } else if ($_SESSION["rol"] == "Administrador"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
@@ -79,6 +87,7 @@
 
                 }
             ?>
+            <button type="button" class="list-group-item btn-opcion" onclick="redireccionar();">Crear Materia</button>
             
         </ul>
     </aside>   
@@ -94,6 +103,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../jsredireccionar.js"></script>
 </body>
     
 </html>
