@@ -1,0 +1,82 @@
+@font-face{ /*froza*/
+    font-family: "froza"; 
+    src: url("../fonts/font1.ttf");
+}
+
+@font-face{
+    font-family: "averia"; /*Averia*/
+    src: url("../fonts/font2.ttf");
+}
+
+@font-face{
+    font-family: "mukta"; /*Mukta*/
+    src: url("../fonts/font3.ttf");
+}
+
+@font-face{
+    font-family: "jaldi"; /*Jaldi*/
+    src: url("../fonts/Jaldi-Bold.ttf");
+}
+
+@font-face{
+    font-family: "catamaran"; /*catamaran*/
+    src: url("../fonts/Catamaran-Regular.ttf");
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+/*NAVBAR
+------------------------------------------------------------------------------------*/
+#nav {
+    background-color: #006778;
+    padding: 9px 10px ;
+}
+
+aside{
+    position: absolute;
+    width: 170px;
+    height: 100%;
+    background-color: #006778;
+    z-index: 4;
+}
+
+.btn-opcion {
+    /* top: -20px; */
+    background-color: #006778;
+    color: #ffffff;
+    font-family: 'catamaran';
+    text-align: center;
+    border-color: #ffffff;
+    padding: 15px 10px;
+
+}
+#foro {
+    color: #ffffff;
+    font-family: 'catamaran';
+    padding: 9px 9px;
+}
+#cerrar{
+    color: #ffffff;
+    font-family: 'catamaran';
+    padding: 8px 40px;
+    border-style: none;
+    background-color: #006778;
+}
+.contenedor{
+    position:  relative;
+    transform: translate(170px, 0);
+    margin: 2%;
+    width:85%;
+}
+.crearPublicacion{
+    margin: 2%;
+    background-color:rgb(231, 239, 247);
+    width:85%;
+    padding: 4%;
+    border-radius: 10px;
+    border: solid 5px rgb(192, 204, 221);
+}
+.crearPublicacion:hover{
+    background-color:rgb(255, 255, 255);
+}

@@ -56,7 +56,7 @@
                 </div>
               </div>
             <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foroPreguntasFrecuentes.html'">Foro </button>
-            <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
+            <button type="button" class="list-group-item btn-opcion" id="tablon" onclick="location.href='./vistaTablon.php'">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
             <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href='./CrearMateria.html'">Crear Materia</button>  
             <button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button> 
