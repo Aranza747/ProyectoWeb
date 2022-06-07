@@ -90,17 +90,18 @@
         </ul>
     </aside>
 
-    <div id="contenedor">
-        <!-- Button modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Crear Módulo
-        </button>
-    </div>
+    
 
     <!-- Modal -->
     <?php
         if($_SESSION["rol"] == "Profesor" || $_SESSION["rol"] == "Administrador"){
-            echo '<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            echo '<div id="contenedor">
+                <!-- Button modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Crear Módulo
+                </button>
+            </div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">

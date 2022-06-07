@@ -64,65 +64,12 @@
     ?>
     <!-- Perfil -->
     
-
-    <aside>
-    <input type="date">
-
-    </aside>
-
-    <!-- Carrusel -->
-    <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-                <img src="..." class="d-block w-100" alt="...">
-                <div id="contenedor-calendario">
-                    <div id="tabla-calendario">
-                        <table class="table" >
-                            <thead>
-                                <tr>
-                                    <th colspan="7" id="Ano_mes"><input type="date"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th colspan="7" id="año-mes"></th>
-                                </tr>
-                                <tr>
-                                    <th id="domingo">Domingo</th>
-                                    <th id="lunes">Lunes</th>
-                                    <th id="martes">Martes</th>
-                                    <th id="miercoles">Miércoles</th>
-                                    <th id="jueves">Jueves</th>
-                                    <th id="viernes">Viernes</th>                                        <th id="sabado">Sábado</th>
-                                </tr>
-                                <div id="crear">
-
-                                </div>
-                                    
-                            </tbody>
-                        </table>    
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div> -->
-
     
-    <button type="button" class="btn btn-outline-info" id="anterior"><</button>
-    <button type="button" class="btn btn-outline-info" id="siguiente">></button>
+    
     
     <div id="contenedor-calendario">
         <div id="tabla-calendario">
-            <table class="table" >
+            <table style = "border-collapse: collapse">
                 
                 <thead>
                     <tr>
@@ -145,6 +92,28 @@
                 </tbody>
             </table>    
         </div>
+    </div>
+
+    <button type="button" class="btn btn-outline-info" id="siguiente">></button>
+    <button type="button" class="btn btn-outline-info" id="anterior"><</button>
+    
+
+    <?php
+        if($_SESSION["rol"]=="Administrador"){
+            echo '<button id="editar">Editar</button>';
+        }
+    ?>
+    
+    
+
+    <div id="formEvento" style="display: none">     
+
+
+        <form action="./agregarEventos.php" id="Formulario" method="post">
+
+            
+            
+        </form>
     </div>
 
     
