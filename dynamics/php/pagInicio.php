@@ -2,6 +2,7 @@
     session_name("SesionUsuario");
     session_id("123456789");
     session_start();
+    
 
     
 ?>
@@ -63,9 +64,9 @@
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
             
-        <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
-            <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
+            <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
             <?php
                 if($_SESSION["rol"] == "Profesor"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;

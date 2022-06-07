@@ -29,7 +29,7 @@
             <!-- Necesario solo cuando no sea la vista principal -->
             <div class="navbar-nav">
                 <div>
-                <a class="navbar-brand" href="./pagInicio.php">
+                    <a class="navbar-brand" href="./pagInicio.php">
                         <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="40" height="40">
                     </a>
                 </div>

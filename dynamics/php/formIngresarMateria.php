@@ -17,7 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../statics/styles/principal.css">
 
-    <title>AulaP6</title>
+    <title>Ingresar a Curso</title>
 </head>
 <body>
     <!--  Navbar -->
@@ -71,7 +71,7 @@
 
     <div id="contenedor-mostrar" style="display:none">
       <!-- <div id="sinResult" style="display:none">No se encontraron coincidencias</div> -->
-      <input type="text" id="contrasena" placeholder='Escriba la contraseña aquí' >
+      <input type="password" id="contrasena" placeholder='Escriba la contraseña aquí' >
       
     </div>
 
