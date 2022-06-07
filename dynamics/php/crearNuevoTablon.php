@@ -58,7 +58,7 @@ $idTablon = mysqli_insert_id($con);
 
 $noDeCuenta = $_SESSION['noDeCuenta'];
 
-
+ 
 $sql = "SELECT id_alumno FROM alumno WHERE noDeCuenta=$noDeCuenta";
 
 $res = mysqli_query($con, $sql);
