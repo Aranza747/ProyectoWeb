@@ -63,3 +63,39 @@ aside{
     border-style: none;
     background-color: #006778;
 }
+/*CONTENEDOR DE PERFIL
+------------------------------------------------------------------------------------*/
+#padre{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+}
+.offcanvas-header{
+    background-color: #65cac2a2;
+}
+#offcanvasRightLabel{
+    font-size: .7cm;
+    color: #000000;
+    font-family: 'averia';
+    font-weight:bolder ;
+    margin-left: 3%;
+    padding: 3px;
+}
+/*INFORMACION DE PERFIL
+------------------------------------------------------------------------------------*/
+.hijo{
+    margin-top: 8%;
+    font-size: .5cm;
+}
+.cabeza{
+    color:#FFA001;
+    font-family: 'catamaran';
+    font-weight:bolder ;
+}
+.dato{
+    font-weight:bolder ;
+    color:#006778;
+    font-family: 'jaldi';
+}
