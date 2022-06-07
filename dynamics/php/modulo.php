@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg" id="nav">
         <div class="container-fluid">
 
-            <a class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
+            <a id="logo" class="navbar-brand" href="https://www.prepa6.unam.mx/ENP6/_P6/">
                 <img src="../../statics/img/logoprepa.png" alt="" width="50" height="50">
             </a>
             <!-- Necesario solo cuando no sea la vista principal -->
@@ -46,16 +46,24 @@
     <?php    
         echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
+                <span class="offcanvas-title" id="offcanvasRightLabel">Perfil</span>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
-                Nombre: '.$_SESSION["nombre"].'
-                <br><br>
-                Correo: '.$_SESSION["correo"].'
-                <br><br>
-                Rol: '.$_SESSION["rol"].'
+            <div class="offcanvas-body" id="padre">
+                    <img  id="hijo" src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="80%" height="25%">
+                <div class="hijo">
+                    <dl><dt class="cabeza">Nombre: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["nombre"].'
+                        </dd>
+                    </dl>
+
+                    <dl><dt class="cabeza">Correo: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["correo"].'
+                        </dd>
+                    </dl>
+
+                    <dl><dt class="cabeza">Rol: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["rol"].'
+                    </dd>
+                    </dl> 
+                </div>
             </div>
         </div>'
     ?>
@@ -64,14 +72,14 @@
     <aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
-        <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
-            <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
+            <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
             <?php
                 if($_SESSION["rol"] == "Profesor"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                 } else if ($_SESSION["rol"] == "Administrador"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
                 } else if ($_SESSION["rol"] == "Alumno"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
@@ -100,13 +108,13 @@
                     <div class="columna">
                         <div class="arriba">Tarea</div>
                     </div>
-                    <div class="Columna2" onclick="location.href="./formCrearTema.php"">
+                    <div class="Columna2" onclick="location.href=\'./formCrearTema.php\'">
                         <div class="abajo">
                             <div><img id="inicio" src="../../statics/img/+.png" alt="" width="30" height="30"></div>
                             <div>Añadir material</div>
                         </div>
                     </div>
-                    <div class="Columna2" onclick="location.href="./formCrearTarea.php"">
+                    <div class="Columna2" onclick="location.href=\'./formCrearTarea.php\'">
                         <div class=" abajo">
                             <div><img id="inicio" src="../../statics/img/+.png" alt="" width="30" height="30"></div>
                             <div>Crear tarea</div>
