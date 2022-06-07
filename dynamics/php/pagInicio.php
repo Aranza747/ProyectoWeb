@@ -76,7 +76,7 @@
             <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
             <?php
                 if($_SESSION["rol"] == "Profesor"){
-                    echo '<button type="button" class="list-group-item btn-opcion" onclick="location="./formCrearMateria.php"")>Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" onclick="redireccionar();">Crear Materia</button>'  ;
                 } else if ($_SESSION["rol"] == "Administrador"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
@@ -86,6 +86,7 @@
 
                 }
             ?>
+            <button type="button" class="list-group-item btn-opcion" onclick="redireccionar();">Crear Materia</button>
             
         </ul>
     </aside>   
@@ -101,6 +102,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../jsredireccionar.js"></script>
 </body>
     
 </html>
