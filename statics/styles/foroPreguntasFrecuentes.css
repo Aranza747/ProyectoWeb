@@ -60,9 +60,6 @@ aside{
     flex-wrap: nowrap;
 }
 
-#inicio{
-    margin-top: 8%;
-}
 
 /* #asideDerecha{
     margin-top: 5%;
@@ -155,6 +152,7 @@ aside{
 .accordion{
     margin-top: 1% ;
 }
+
 
 /*VISTA DE PREGUNTAS FRECUENTES
 ------------------------------------------------------------------------------------*/
