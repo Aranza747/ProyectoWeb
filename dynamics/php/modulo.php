@@ -69,7 +69,7 @@
     ?>
 
 
-    <aside>
+<aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
             <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
@@ -125,6 +125,9 @@
             <button type="submit" id="enviar">Guardar</button>';
             
         }
+ 
+        echo $_SESSION["modulo"];
+        
     
     ?>
     

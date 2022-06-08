@@ -26,6 +26,6 @@
             // $respuesta = array("ok"=>true, "datos"=>$datos);
 
             echo json_encode($resultados);
-        }
+    }
 
 ?>
