@@ -1,4 +1,5 @@
 <?php
+
 date_default_timezone_set('America/Mexico_City');
 session_name("SesionUsuario");
 session_id("123456789");
