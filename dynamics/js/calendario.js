@@ -2,11 +2,40 @@ const anterior = document.getElementById ("anterior");
 const siguiente = document.getElementById("siguiente");
 const MesAno = document.getElementById("Ano_mes")
 const tabla = document.getElementById("tabla");
-// const crear = document.getElementById("crear");
+const formEvento = document.getElementById("formEvento");
+const formulario = document.getElementById("Formulario");
+const editar = document.getElementById("editar");
+const anadir = document.getElementById("anadir");
+const fecha = document.getElementById("fecha");
 
 const date = new Date();
 const [diaAct, semAct, mesAct, anoAct] = [date.getDate(), date.getDay(), date.getMonth(), date.getFullYear()];
 console.log([mesAct, diaAct, anoAct]);
+
+function mostrarEventos(fecha){
+    // let fecha = buscador.value;
+    //   divResultados.innerHTML = "";
+
+      
+        fetch("../php/mostrandoEventos.php?q="+fecha)
+        .then((response) => {
+          return response.json();
+        })
+        .then((datosJSON) => {
+          console.log(datosJSON);
+          if(datosJSON.ok == true){
+            var nombre = datosJSON.evento;
+          }else{
+            alert(datosJSON.texto);
+          }
+        // var nombre= calendarioGlobal.nombre;
+        // console.log(nombre);
+            // }
+        })
+        
+        return nombre;
+    
+}
 
 function dibujarCal (diaSem,  diaAct, mesAct){
     MesAno.innerHTML = mes[mesBien]+' '+anoBien;
@@ -23,11 +52,15 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                 for (let k = 1; k<=6; k++){ //columna
              
                     if (orden <= cuenta){
-                        if(orden==diaAct && mesBien==mesAct+1){
-                            cadena +='<td class="columna" id='+orden+'> **'+orden+'** </td>';
-                        } else {
-                            cadena +='<td class="columna" id='+orden+'>'+orden+'</td>';
-                        }
+                        if (mesBien < 10 && orden <10){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien < 10 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden < 10){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                        } 
                     }  
                     orden++;
                 }
@@ -37,11 +70,15 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                 for (let k = 1; k<=5; k++){ //columna
              
                     if (orden <= cuenta){
-                        if(orden==diaAct){
-                            cadena +='<td class="columna" id='+orden+'> **'+orden+'** </td>';
-                        } else {
-                            cadena +='<td class="columna" id='+orden+'>'+orden+'</td>';
-                        }
+                        if (mesBien < 10 && orden <10){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien < 10 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden < 10){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                        } 
                     }  
                     orden++;
                 }
@@ -52,11 +89,15 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                 for (let k = 1; k<=4; k++){ //columna
              
                     if (orden <= cuenta){
-                        if(orden==diaAct){
-                            cadena +='<td class="columna" id='+orden+'> **'+orden+'** </td>';
-                        } else {
-                            cadena +='<td class="columna" id='+orden+'>'+orden+'</td>';
-                        }
+                        if (mesBien < 10 && orden <10){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien < 10 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden < 10){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                        } 
                         
                     }  
                     orden++;
@@ -68,11 +109,15 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                 cadena +='<td class="columna" id="3"></td>';
                 for (let k = 1; k<=3; k++){ //columna
                     if (orden <= cuenta){
-                        if(orden==diaAct){
-                            cadena +='<td class="columna" id='+orden+'> **'+orden+'** </td>';
-                        } else {
-                            cadena +='<td class="columna" id='+orden+'>'+orden+'</td>';
-                        }
+                        if (mesBien < 10 && orden <10){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien < 10 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden < 10){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                        } 
                         
                     }  
                     orden++;
@@ -86,11 +131,15 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                 for (let k = 1; k<=2; k++){ //columna
              
                     if (orden <= cuenta){
-                        if(orden==diaAct){
-                            cadena +='<td class="columna" id='+orden+'> **'+orden+'** </td>';
-                        } else {
-                            cadena +='<td class="columna" id='+orden+'>'+orden+'</td>';
-                        }
+                        if (mesBien < 10 && orden <10){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien < 10 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden < 10){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                        } 
                         
                     }  
                     orden++;
@@ -105,11 +154,15 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                 for (let k = 1; k<=1; k++){ //columna
              
                     if (orden <= cuenta){
-                        if(orden==diaAct){
-                            cadena +='<td class="columna" id='+orden+'> **'+orden+'** </td>';
-                        } else {
-                            cadena +='<td class="columna" id='+orden+'>'+orden+'</td>';
-                        }
+                        if (mesBien < 10 && orden <10){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien < 10 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden < 10){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                        } else if(mesBien > 9 && orden > 9){
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                        } 
                     }  
                     orden++;
                 }
@@ -118,11 +171,15 @@ function dibujarCal (diaSem,  diaAct, mesAct){
             for (let k = 1; k<=7; k++){ //columna
              
                 if (orden <= cuenta){
-                    if(orden==diaAct){
-                        cadena +='<td class="columna" id='+orden+'> **'+orden+'** </td>';
-                    } else {
-                        cadena +='<td class="columna" id='+orden+'>'+orden+'</td>';
-                    }
+                    if (mesBien < 10 && orden <10){
+                        cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                    } else if(mesBien < 10 && orden > 9){
+                        cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                    } else if(mesBien > 9 && orden < 10){
+                        cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                    } else if(mesBien > 9 && orden > 9){
+                        cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                    } 
                     
                 }  
                 orden++;
@@ -171,9 +228,9 @@ var dia = [];
     dia [7] = 'Sun';
     
 
-    if((anoBien == 2024 && mesBien == 2) || (anoBien == 2020 && mesBien == 2)){
-        duracion[2] == 29;
-    }
+if((anoBien == 2024 && mesBien == 2) || (anoBien == 2020 && mesBien == 2)){
+    duracion[2] = 29;
+}
 
 // MesAno.innerHTML = mes[mesAct+1]+' '+anoAct;
 
@@ -199,21 +256,11 @@ console.log(duracion[mesAct+1]);
 console.log(dia[semAct]);
 
 anterior.addEventListener("click", () =>{
-    if((anoBien == 2024 && mesBien == 2) || (anoBien == 2020 && mesBien == 2)){
-        duracion[2] == 29;
+    if((anoBien == 2024 && mesBien == 1) || (anoBien == 2020 && mesBien == 1)){
+        duracion[2] = 29;
     }
     tabla.innerHTML='';
 
-    if(mesBien==1){
-        mesBien = 12;
-        anoBien -= 1;
-    } else {
-        mesBien-=1;
-    }
-    console.log("antes");
-    console.log(mes[mesBien]);
-    console.log(anoBien);  
-    diaSem-=1;
     for(let i = 1; i < duracion[mesBien]; i++){
         if(diaSem == 1)
         {   
@@ -223,13 +270,40 @@ anterior.addEventListener("click", () =>{
         }
     }
     console.log(diaSem);
+
+    if(diaSem == 1){   
+        diaSem = 7;
+    } else {
+        diaSem--;
+    } 
+    // diaSem-=1;
+    console.log(diaSem);
+
+    if(mesBien==1){
+        mesBien = 12;
+        anoBien -= 1;
+    } else {
+        mesBien-=1;
+    }
+    // console.log("antes");
+    // console.log(mes[mesBien]);
+    // console.log(anoBien);  
+    
+    
+    console.log(diaSem);
     dibujarCal(diaSem,  diaAct, mesAct);
     
 });
 
 siguiente.addEventListener("click", (evento) =>{
-    if((anoBien == 2024 && mesBien == 2) && (anoBien == 2020 && mesBien == 2)){
-        duracion[2] == 29;
+    if((anoBien == 2024 && mesBien == 1) || (anoBien == 2020 && mesBien == 1)){
+        duracion[2] = 29;
+        console.log("entras?");
+        console.log(duracion[2]);
+        console.log(anoBien);
+        console.log(mesBien);
+
+
     }
     tabla.innerHTML='';
     for(let i = 1; i < duracion[mesBien]; i++){
@@ -253,10 +327,10 @@ siguiente.addEventListener("click", (evento) =>{
         mesBien+=1;
     }
     // MesAno.innerHTML = mes[mesBien]+' '+anoAct; //No se imprime bien
-    console.log("después");
-    console.log(mes[mesBien]);
-    console.log(anoBien);
-    console.log(diaSem);
+    // console.log("después");
+    // console.log(mes[mesBien]);
+    // console.log(anoBien);
+    // console.log(diaSem);
     dibujarCal(diaSem,  diaAct, mesAct);
 
 });
@@ -264,6 +338,34 @@ siguiente.addEventListener("click", (evento) =>{
 
 MesAno.innerHTML = mes[mesBien]+' '+anoBien;
 dibujarCal(diaSem,  diaAct);
+
+
+editar.addEventListener("click", (evento) =>{
+
+    tabla.addEventListener("click", (evento) =>{
+        formulario.innerHTML = '';
+        formulario.innerHTML += '<label for="nombre">Nombre del evento</label><br>';
+        formulario.innerHTML += '    <input type="text" id="nombre" name="nombre"><br><br>';
+
+        formulario.innerHTML += '    <label for="descripcion">Descripción del evento</label><br>';
+        formulario.innerHTML += '    <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea><br><br>';
+
+        formulario.innerHTML += '    <label for="hora">Hora del evento</label><br>';
+        formulario.innerHTML += '    <input type="time" name="hora" id="hora"><br><br>';
+            
+        formulario.innerHTML += '   <label for="fecha">Fecha del evento</label><br>'
+        formulario.innerHTML += '<input type="date" name="fecha" id="fecha" value="'+evento.target.id+'"> <br><br>';
+
+        formulario.innerHTML += '    <button type="submit" id="anadir">Añadir evento</button>';
+        
+        formEvento.style.display = "block";
+    });
+    
+});
+
+// anadir.addEventListener("click", (evento)=>{
+//     formEvento.style.display = "none";
+// });
 
 
 
