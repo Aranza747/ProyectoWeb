@@ -36,6 +36,7 @@ if(isset($_FILES['archivo'])){
     rename($arch, "$ruta");
 }
 
+echo $mod;
 
 
 $sql = "INSERT INTO archivoTema (ruta) VALUES('$ruta')";

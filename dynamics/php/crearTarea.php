@@ -18,7 +18,7 @@ $fecha = (isset($_POST["fecha"]) && $_POST["fecha"]!= "")?$_POST["fecha"]:false;
 $hora = (isset($_POST["hora"]) && $_POST["hora"]!= "")?$_POST["hora"]:false;
 
 
-print_r ($_FILES);
+// print_r ($_FILES);
 
 if(isset($_FILES['archivo'])){
     // $titulo = $_POST['archivo'];
@@ -34,12 +34,18 @@ if(isset($_FILES['archivo'])){
     }
     
     rename($arch, "$ruta");
+    
 }
 
 
+echo $fechaAct;
+echo $ruta;
+echo $mod;
 
 $sql = "INSERT INTO archivoTarea (ruta, fechaEntrega) VALUES('$ruta', '$fechaAct')";
 $res = mysqli_query($con, $sql);
+// var_dump($res);
+
 
 if($res==false){
     echo"no se pudo conectar";
@@ -47,10 +53,10 @@ if($res==false){
 
     $sql = "SELECT id_archivoTarea FROM archivoTarea WHERE ruta='$ruta'";
     $res = mysqli_query($con, $sql);
-    var_dump($res);
+    // var_dump($res);
     echo '</br></br>';
     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
-    var_dump($datos);
+    // var_dump($datos);
     echo '</br>';
 
     

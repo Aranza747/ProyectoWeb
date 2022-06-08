@@ -4,6 +4,8 @@
     session_start();
 
     $_SESSION["modulo"] = 0;
+    $_SESSION["tarea"] = 0;
+
 ?>
 
 <!DOCTYPE html>
