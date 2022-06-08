@@ -14,7 +14,7 @@ fetch("./consultarTablon.php")
                 '<div>Autor: '+dato.nombre+"  Materia: "+dato.materia+'</div>'+
                 '<div>'+dato.descripcion+'</div>'+
                 '<div>'+dato.fechaCreacion+'</div>'+
-                '<button id="'+dato.id_tablon+'" class="likes">❤'+dato.likes+'</button>'+
+                '<button id="'+dato.id_tablon+'" class="fa-solid fa-heart>'+dato.likes+'</button>'+
                 '<button id="'+dato.id_tablon+'" class="reportes">🚩'+dato.reportes+'</button>'+
             '</div>';
         if(dato.ruta != null)

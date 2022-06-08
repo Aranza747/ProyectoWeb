@@ -12,6 +12,7 @@
     
     <link rel="stylesheet" href="../../libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../libs/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.css" rel="styleshet">
     <link rel="stylesheet" href="../../statics/styles/tablon.css">
 
     <title>Tablon</title>
