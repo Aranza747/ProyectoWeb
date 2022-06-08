@@ -100,7 +100,7 @@ aside{
 
 /*CALENDARIO
 ------------------------------------------------------------------------------------*/
-/* table{
+table{
     background-color: #006778;
     border-color: #ffffff;
     position: absolute;
@@ -116,6 +116,8 @@ thead{
     text-align: center;
 }
 
+/*BOTONES DE AVANZAR
+------------------------------------------------------------------------------------*/
 #anterior {
     position: absolute;
     margin: 20px;
@@ -132,6 +134,8 @@ thead{
      left: 77%;
 }
 
+/*SOLO PARA ADMIN
+------------------------------------------------------------------------------------*/
 #editar {
     position: relative;
     transform: translate(15%);
@@ -147,6 +151,8 @@ thead{
     border-radius: 9px;
 }
 
+/* FORMULARIO DE JAVA
+------------------------------------------------------------------------------------*/
 #Formulario {
     position: relative;
     width: 300px;
@@ -169,5 +175,5 @@ thead{
     border-color: #ffffff;
     padding: 5px 15px;
     border-radius: 9px;
-} */
+}
 
