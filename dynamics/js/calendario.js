@@ -145,12 +145,12 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                     orden++;
                 }
             } else if (diaSem == 6){
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="5"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="5"></td>';
                 for (let k = 1; k<=1; k++){ //columna
              
                     if (orden <= cuenta){
