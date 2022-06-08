@@ -28,9 +28,11 @@ if(!$con){
         $resNombre = mysqli_query($con, $sqlNombre);
         $nombre= mysqli_fetch_array($resNombre, MYSQLI_ASSOC);
 
+        $sqlnoDeCuenta = "SELECT noDeCuenta FROM alumno WHERE id_alumno=$idAlumno";
+        $resnoDeCuenta = mysqli_query($con, $sqlnoDeCuenta);
+        $noDeCuenta= mysqli_fetch_array($resnoDeCuenta, MYSQLI_ASSOC);
 
-
-        $resultados[] = array("id_tablon" => $row["id_tablon"], "nombre" => $nombre["nombre"], "materia" => $row["materia"], "descripcion" => $row["descripcion"], "fechaCreacion" => $fechaCreacion["fechaCreacion"], "ruta" => $ruta["ruta"], "likes" => $row["likes"], "reportes" => $row["reportes"]);
+        $resultados[] = array("id_tablon" => $row["id_tablon"], "nombre" => $nombre["nombre"], "materia" => $row["materia"], "descripcion" => $row["descripcion"], "fechaCreacion" => $fechaCreacion["fechaCreacion"], "ruta" => $ruta["ruta"], "likes" => $row["likes"], "reportes" => $row["reportes"], "noDeCuenta" => $noDeCuenta);
 
     }
   
