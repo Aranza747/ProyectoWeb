@@ -45,6 +45,55 @@
             </div>
         </div>
     </nav>
+
+       <!-- Perfil -->
+       <?php    
+        echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
+            <div class="offcanvas-header">
+                <span class="offcanvas-title" id="offcanvasRightLabel">Perfil</span>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body" id="padre">
+                    <img  id="hijo" src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="80%" height="25%">
+                <div class="hijo">
+                    <dl><dt class="cabeza">Nombre: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["nombre"].'
+                        </dd>
+                    </dl>
+
+                    <dl><dt class="cabeza">Correo: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["correo"].'
+                        </dd>
+                    </dl>
+
+                    <dl><dt class="cabeza">Rol: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["rol"].'
+                    </dd>
+                    </dl> 
+                </div>
+            </div>
+        </div>'
+    ?>
+
+
+    <aside>
+        <!-- columna-->
+        <ul class="list-group list-group-flush"> 
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
+            <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
+            <?php
+                if($_SESSION["rol"] == "Profesor"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
+                } else if ($_SESSION["rol"] == "Administrador"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
+                } else if ($_SESSION["rol"] == "Alumno"){
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
+                } else if ($_SESSION["rol"] == "Moderador"){
+
+                }
+            ?>
+            
+        </ul>
+    </aside>
     
     <?php    
         echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">

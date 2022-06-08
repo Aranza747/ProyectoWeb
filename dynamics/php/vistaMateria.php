@@ -200,9 +200,26 @@
         }
 ?>
 
+<<<<<<< HEAD
+=======
+
+    ?>
+
+    <div id="datosMateria">
+
+    </div>
+
+
+
+    <div id="contModulos">
+
+
+    </div>
+>>>>>>> a70240c08a91d912cf994d38f6dde83428abf5dc
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/materia.js"></script>
 </body>
 
 </html>

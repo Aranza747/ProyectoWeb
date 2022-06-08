@@ -27,11 +27,21 @@ body{
 }
 /*NAVBAR
 ------------------------------------------------------------------------------------*/
+#logo{
+    padding: 4.5px 0px;
+}
 #nav {
     background-color: #006778;
-    padding: 9px 10px ;
+    padding: 9px 10px;
 }
 
+aside{
+    position: absolute;
+    width: 170px;
+    height: 100%;
+    background-color: #006778;
+    z-index: 4;
+}
 .btn-opcion {
     /* top: -20px; */
     background-color: #006778;
@@ -42,13 +52,55 @@ body{
     padding: 15px 10px;
 
 }
- 
+#foro {
+    color: #ffffff;
+    font-family: 'catamaran';
+    padding: 10px 9px;
+}
 .navbar-nav{
     display: flex;
     flex-wrap: nowrap;
 }
+/*CONTENEDOR DE PERFIL
+------------------------------------------------------------------------------------*/
+#padre{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+}
+.offcanvas-header{
+    background-color: #65cac2a2;
+}
+#offcanvasRightLabel{
+    font-size: .7cm;
+    color: #000000;
+    font-family: 'averia';
+    font-weight:bolder ;
+    margin-left: 3%;
+    padding: 3px;
+}
+/*INFORMACION DE PERFIL
+------------------------------------------------------------------------------------*/
+.hijo{
+    margin-top: 8%;
+    font-size: .5cm;
+}
+.cabeza{
+    color:#FFA001;
+    font-family: 'catamaran';
+    font-weight:bolder ;
+}
+.dato{
+    font-weight:bolder ;
+    color:#006778;
+    font-family: 'jaldi';
+}
 
-table{
+/*CALENDARIO
+------------------------------------------------------------------------------------*/
+/* table{
     background-color: #006778;
     border-color: #ffffff;
     position: absolute;
@@ -66,7 +118,6 @@ thead{
 
 #anterior {
     position: absolute;
-    /* transform: translate(75%); */
     margin: 20px;
     top: 6%;
     float: right;
@@ -75,7 +126,6 @@ thead{
 
 #siguiente {
     position: absolute;
-    /* transform: translate(75%);  */
     margin: 20px;
     top: 6%;
     float: right;
@@ -119,5 +169,5 @@ thead{
     border-color: #ffffff;
     padding: 5px 15px;
     border-radius: 9px;
-}
+} */
 
