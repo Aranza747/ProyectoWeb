@@ -78,6 +78,7 @@
             <?php
                 if($_SESSION["rol"] == "Profesor"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
+                    
                 } else if ($_SESSION["rol"] == "Administrador"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
@@ -86,7 +87,11 @@
                 } else if ($_SESSION["rol"] == "Moderador"){
 
                 }
+
+                
             ?>
+
+            
             
         </ul>
     </aside>
@@ -96,9 +101,8 @@
         if($_SESSION["rol"] == "Profesor" || $_SESSION["rol"] == "Administrador"){
             echo '<div class="contenedor">
                 <div class="titulo">
-                    <div>
-                        <label class="modulo">Nombre del modulo: &nbsp; </label>
-                        <input type="text" id="nombre" class="input" required placeholder="Escriba el nombre del modulo">
+                    <div id="datosMod">
+                        
                     </div>
                 </div>
                 <div class="tabla">
@@ -121,8 +125,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <button type="submit" id="enviar">Guardar</button>';
+            </div>';
             
         }
  
@@ -133,6 +136,7 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/modulo.js"></script>
 </body>
 
 </html>
