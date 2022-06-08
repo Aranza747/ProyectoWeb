@@ -116,9 +116,35 @@ aside{
     flex: 4;
     margin: 1%;
 }
-#botones{
-    float: right;
-    margin: 1%;
+
+
+/* #contModulos{
+    position: absolute;
+    transform: translate(170px, 0);
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+} */
+
+.titulo{
+    margin: 4% 1% 0 14%;
+    padding: 1rem;
+    background-color: #65cac28e;
+    border-radius: 10px 10px 10px 10px;
+    width: 80%;
 }
 
+.descripcion{
+    margin: 5px 1% 0 14%;
+    padding: 1rem;
+    background-color: #65cac28e;
+    border-radius: 10px 10px 10px 10px;
+    width: 60%;
+}
+
+/* .btn-primary{
+    float: right;
+    transform: translate(62%, 0);
+    margin: 1%;
+} */
 

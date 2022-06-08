@@ -42,7 +42,7 @@
     <!-- Perfil -->
     <?php    
         echo $_SESSION["modulo"];
-        echo $_SESSION["tarea"];
+        echo $_SESSION["tema"];
         echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
