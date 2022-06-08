@@ -62,7 +62,7 @@ if($res==false){
         if($res == false){
             echo "no podemos conectar los datos";
         } else {
-            header ('Location: ./tema.php');
+            header ('Location: ./modulo.php');
         }
     }
 }
