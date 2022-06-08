@@ -56,12 +56,18 @@
                         </dd>
                     </dl>
 
-                    <dl><dt class="cabeza">Rol: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["rol"].'
-                    </dd>
+                    <dl><dt class="cabeza">Rol: &nbsp</dt>'.'<dd id="noDeCuentaRFC" class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["rol"].'
+                        </dd>
                     </dl> 
+
+                    <dl><dt class="cabeza">Numero de Cuenta o RFC: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["noDeCuenta"].'
+                        </dd>
+                    </dl>
+
                 </div>
             </div>
         </div>'
+
     ?>
     
 
