@@ -51,10 +51,6 @@ $res = mysqli_query($con, $sql);
 
 if($res==false){
     echo"no se pudo conectar";
-<<<<<<< HEAD
-}else{//si la consulta es buena 
-    $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); //los metemos en un arreglo
-=======
 }
 $idTablon = mysqli_insert_id($con);
 
@@ -69,7 +65,6 @@ if($res==false){
     echo"no se pudo conectar";
 }else{
     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
->>>>>>> cbef455d64b3b78188c03b47c804e9937099f4af
     $idAlumno = $datos['id_alumno'];
     $sql = "INSERT INTO tablon (id_alumno, id_archivoTablon, materia, descripcion) VALUES('$idAlumno', '$idArchivoTablon', '$materia', '$descripcion')";//checar
     $res = mysqli_query($con, $sql);

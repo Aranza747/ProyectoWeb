@@ -103,7 +103,7 @@
             </div>
         </div>
 
-        <div id="publicaciones populares"></div>
+        <!-- <div id="publicaciones populares"></div> -->
 
     </div>
 
