@@ -9,24 +9,21 @@ session_start();
 
 // $_SESSION["modulo"]="0";
 
-$mate = $_SESSION["materia"];
-
-
-
+$mod = $_SESSION["modulo"];
 
 if(isset($_GET['id'])){
 
-    $_SESSION["modulo"] = $_GET['id'];
+    $_SESSION["tema"] = $_GET['id'];
 
-    echo json_encode($_SESSION["modulo"]);
+    echo json_encode($_SESSION["tema"]);
 
-  } else {         
-    $sql ="SELECT id_modulo, nombreMod FROM modulo WHERE id_materia = '$mate'";
+  } else {         // hace el boton a la tarea
+    $sql ="SELECT id_tema, nombreTema FROM tarea WHERE id_modulo = '$mod'";
     // $sql = "SELECT id_materia FROM rolHasMateria WHERE id_rol = $usuario;
     $res = mysqli_query($con, $sql);
     $resultados=[];
     while($row = mysqli_fetch_assoc($res)){
-        $resultados[] = array("id_modulo"=>$row['id_modulo'], "nombreMod"=>$row['nombreMod']);
+        $resultados[] = array("id_tema"=>$row['id_tema'], "nombreTema"=>$row['nombreTema']);
     }
     
     // $respuesta = array("ok"=>true, "datos"=>$datos);

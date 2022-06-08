@@ -76,7 +76,7 @@
     <aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
             <?php
@@ -116,36 +116,37 @@
     
     
     
-    <div id="contenedor-calendario">
-        <div id="tabla-calendario">
-            <table style = "border-collapse: collapse">
-                
+    <div id="contenedor">
+        <div id="hijoCalendario">
+            <table class="cuerpo" style = "border-collapse: collapse">
                 <thead>
                     <tr>
-                        <th colspan="7" id="Ano_mes"></th>
+                        <div id="año">
+                                <th colspan="7" id="titulo"><button type="button" class="btn btn-outline-info" id="anterior"><</button>
+                                <span id="Ano_mes"></span>
+                                <button type="button" class="btn btn-outline-info" id="siguiente">></button></th>
+                        </div>
                     </tr>
                     <tr>
-                        <th id="domingo">Domingo</th>
-                        <th id="lunes">Lunes</th>
-                        <th id="martes">Martes</th>
-                        <th id="miercoles">Miércoles</th>
-                        <th id="jueves">Jueves</th>
-                        <th id="viernes">Viernes</th>                                        
-                        <th id="sabado">Sábado</th>
+                        <th id="domingo" class="dias">Domingo</th>
+                        <th id="lunes" class="dias">Lunes</th>
+                        <th id="martes" class="dias">Martes</th>
+                        <th id="miercoles" class="dias">Miércoles</th>
+                        <th id="jueves" class="dias">Jueves</th>
+                        <th id="viernes" class="dias">Viernes</th>                                        
+                        <th id="sabado" class="dias">Sábado</th>
                     </tr>
                 </thead>
+
                 <tbody id="tabla">
                     <!-- <div id="crear">
 
                     </div>  -->
                 </tbody>
-            </table>    
+
+            </table> 
         </div>
     </div>
-
-    <button type="button" class="btn btn-outline-info" id="siguiente">></button>
-    <button type="button" class="btn btn-outline-info" id="anterior"><</button>
-    
 
     <?php
         if($_SESSION["rol"]=="Administrador"){

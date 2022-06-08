@@ -4,6 +4,8 @@ session_name("SesionUsuario");
 session_id("123456789");
 session_start();
 
+$mod = $_SESSION["modulo"];
+
 date_default_timezone_set('America/Mexico_City');
 $fechaAct=date('Y-m-d');
 
@@ -34,6 +36,7 @@ if(isset($_FILES['archivo'])){
     rename($arch, "$ruta");
 }
 
+echo $mod;
 
 
 $sql = "INSERT INTO archivoTema (ruta) VALUES('$ruta')";
@@ -53,10 +56,10 @@ if($res==false){
     } else {
 
         $id_archivoTema = $datos['id_archivoTema'];
-        $sql = "INSERT INTO tema (id_archivoTema, descripcion, fecha, nombreTema) VALUES('$id_archivoTema', '$descripcion', '$fechaAct', '$nombre')";
+        $sql = "INSERT INTO tema (id_modulo, id_archivoTema, descripcion, fecha, nombreTema) VALUES('$mod', '$id_archivoTema', '$descripcion', '$fechaAct', '$nombre')";
         $res = mysqli_query($con, $sql);
     
-        if($res == NULL){
+        if($res == false){
             echo "no podemos conectar los datos";
         } else {
             header ('Location: ./tema.php');

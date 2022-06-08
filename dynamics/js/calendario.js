@@ -48,7 +48,7 @@ function dibujarCal (diaSem,  diaAct, mesAct){
         let cadena = '<tr class="fila">'
         if(j==1){
             if(diaSem == 1){
-                cadena +='<td class="columna" id="7"></td>';
+                cadena +='<td class="columna2" id="7"></td>';
                 for (let k = 1; k<=6; k++){ //columna
              
                     if (orden <= cuenta){
@@ -65,8 +65,8 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                     orden++;
                 }
             } else if (diaSem == 2){
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="1"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="1"></td>';
                 for (let k = 1; k<=5; k++){ //columna
              
                     if (orden <= cuenta){
@@ -83,9 +83,9 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                     orden++;
                 }
             } else if (diaSem == 3){
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="2"></td>';
+                cadena +='<td class="columna2"  id="0"></td>';
+                cadena +='<td class="columna2"  id="0"></td>';
+                cadena +='<td class="columna2"  id="2"></td>';
                 for (let k = 1; k<=4; k++){ //columna
              
                     if (orden <= cuenta){
@@ -103,10 +103,10 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                     orden++;
                 }
             } else if (diaSem == 4){
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="3"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="3"></td>';
                 for (let k = 1; k<=3; k++){ //columna
                     if (orden <= cuenta){
                         if (mesBien < 10 && orden <10){
@@ -123,11 +123,11 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                     orden++;
                 }
             } else if (diaSem == 5){
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="4"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="4"></td>';
                 for (let k = 1; k<=2; k++){ //columna
              
                     if (orden <= cuenta){

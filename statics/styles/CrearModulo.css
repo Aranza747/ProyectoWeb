@@ -162,6 +162,16 @@ label{
     border-radius: 10px 10px 10px 10px;
     text-align: center;
 }
+.tarea{
+    margin: 2%;
+    width:40%;   
+    height: 50%;
+    padding: 1rem;
+    background-color: #65cac28e;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
+
 .abajo{
     justify-content: center;
     font-family: "catamaran", 'Lucinda Sans', serif;

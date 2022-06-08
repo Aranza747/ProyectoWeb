@@ -18,4 +18,5 @@ if(!$con){
   
     echo json_encode($resultados, JSON_UNESCAPED_UNICODE);
      
+    
 }
