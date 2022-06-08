@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="../../libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../statics/styles/tarea.css">
     <title>Tarea</title>
 </head>
 <body>
