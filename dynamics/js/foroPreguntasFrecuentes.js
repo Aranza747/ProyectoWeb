@@ -56,7 +56,7 @@ const preguntaFrecuente = document.getElementById("preguntasFrecuentes");
 
 preguntaFrecuente.addEventListener("click", (evento) => {
     const divClickeado = document.getElementById(evento.target.id);
-    if(divClickeado.classList.contains("eliminar")){
+    if(divClickeado.contains.classList("eliminar")){
         let datosForm = new FormData();
         datosForm.append("id", evento.target.id);
         fetch("./borrarPreguntaFrecuente.php",{

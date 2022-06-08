@@ -100,26 +100,76 @@ aside{
 
 /*CALENDARIO
 ------------------------------------------------------------------------------------*/
-table{
-    background-color: #006778;
-    border-color: #ffffff;
-    position: absolute;
+#contenedor{
+    position:  relative;
+    transform: translate(170px, 0);
+    margin: 2%;
+    width:85%;   
+}
+.cuerpo{
     width: 70%;
     height: 70%;
     font-family: 'averia';
     color: #ffffff;
-    border-radius: 20px;
-    margin: 20px;
+    border:#fed049;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: .2cm;
 }
 
 thead{
     text-align: center;
+    justify-items: center;
+}
+.columna{
+    font-family: "jaldi", 'Lucinda Sans', serif;
+    font-size: .7cm;
+    text-align: center;
+    border:#ffffff;
+    border-style: solid;
+    padding: 15px 15px;
+    background: #007580;
+    color: #ffffff;
+}
+.dias{
+    font-family: "jaldi", 'Lucinda Sans', serif;
+    font-size: .7cm;
+    text-align: center;
+    border-right:#ffffff;
+    border-bottom: #ffffff;
+    border-left: #ffffff;
+    
+    border-style: solid;
+    padding: 15px 15px;
+    background: #65CAC1;
+    color: #000000;
+}
+
+/*TITULO
+------------------------------------------------------------------------------------*/
+span{
+    font-size: 1cm;
+    margin: 2%;
+    color: #000000;
+    font-family: "averia", 'Lucinda Sans', serif;
+}
+#titulo{
+    background-color: #fed049;
+}
+.btn{
+    width: 5%;
+    height: 5%;
+    margin-bottom: 1%;
+    background-color: #ffffff;
+    border-color: #007580;
+    color: #007580;
 }
 
 /*BOTONES DE AVANZAR
 ------------------------------------------------------------------------------------*/
-#anterior {
-    position: absolute;
+
+/* #anterior {
+    position: relative;
     margin: 20px;
     top: 6%;
     float: right;
@@ -127,16 +177,16 @@ thead{
 }
 
 #siguiente {
-    position: absolute;
+    position: relative;
     margin: 20px;
     top: 6%;
     float: right;
      left: 77%;
-}
+} */
 
-/*SOLO PARA ADMIN
+/* SOLO PARA ADMIN
 ------------------------------------------------------------------------------------*/
-#editar {
+/* #editar {
     position: relative;
     transform: translate(15%);
     margin: 7%;
@@ -149,11 +199,11 @@ thead{
     border-color: #006778;
     padding: 5px 15px;
     border-radius: 9px;
-}
+} */
 
 /* FORMULARIO DE JAVA
 ------------------------------------------------------------------------------------*/
-#Formulario {
+/* #Formulario {
     position: relative;
     width: 300px;
     height: 600px;
@@ -175,5 +225,5 @@ thead{
     border-color: #ffffff;
     padding: 5px 15px;
     border-radius: 9px;
-}
+} */
 
