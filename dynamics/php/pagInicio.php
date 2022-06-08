@@ -4,6 +4,7 @@
     session_start();
 
     $_SESSION["materia"] = 0;
+    $_SESSION["modulo"] = 0;
 ?>
 
 <!DOCTYPE html>
