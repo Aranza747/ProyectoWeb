@@ -13,27 +13,27 @@ const [diaAct, semAct, mesAct, anoAct] = [date.getDate(), date.getDay(), date.ge
 console.log([mesAct, diaAct, anoAct]);
 
 function mostrarEventos(fecha){
-    // let fecha = buscador.value;
-    //   divResultados.innerHTML = "";
-
+    
+    let nombre = ' ';
       
-        fetch("../php/mostrandoEventos.php?q="+fecha)
+        return fetch("../php/mostrandoEventos.php?q="+fecha)
         .then((response) => {
           return response.json();
         })
         .then((datosJSON) => {
           console.log(datosJSON);
           if(datosJSON.ok == true){
-            var nombre = datosJSON.evento;
+            return nombre = datosJSON.datos.nombre;
+            datosJSON.resolve(nombre);
+            console.log(datosJSON.datos.nombre);
           }else{
-            alert(datosJSON.texto);
+            alert("no salió");
           }
-        // var nombre= calendarioGlobal.nombre;
-        // console.log(nombre);
-            // }
+        }).then((resolve) => {
+            resolve(nombre);
         })
         
-        return nombre;
+        // return nombre;
     
 }
 
@@ -53,13 +53,13 @@ function dibujarCal (diaSem,  diaAct, mesAct){
              
                     if (orden <= cuenta){
                         if (mesBien < 10 && orden <10){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien < 10 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
                         } else if(mesBien > 9 && orden < 10){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien > 9 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
                         } 
                     }  
                     orden++;
@@ -71,13 +71,13 @@ function dibujarCal (diaSem,  diaAct, mesAct){
              
                     if (orden <= cuenta){
                         if (mesBien < 10 && orden <10){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien < 10 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
                         } else if(mesBien > 9 && orden < 10){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien > 9 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
                         } 
                     }  
                     orden++;
@@ -90,13 +90,13 @@ function dibujarCal (diaSem,  diaAct, mesAct){
              
                     if (orden <= cuenta){
                         if (mesBien < 10 && orden <10){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien < 10 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
                         } else if(mesBien > 9 && orden < 10){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien > 9 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
                         } 
                         
                     }  
@@ -110,13 +110,13 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                 for (let k = 1; k<=3; k++){ //columna
                     if (orden <= cuenta){
                         if (mesBien < 10 && orden <10){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien < 10 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
                         } else if(mesBien > 9 && orden < 10){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien > 9 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
                         } 
                         
                     }  
@@ -132,13 +132,13 @@ function dibujarCal (diaSem,  diaAct, mesAct){
              
                     if (orden <= cuenta){
                         if (mesBien < 10 && orden <10){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien < 10 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
                         } else if(mesBien > 9 && orden < 10){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien > 9 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
                         } 
                         
                     }  
@@ -155,13 +155,13 @@ function dibujarCal (diaSem,  diaAct, mesAct){
              
                     if (orden <= cuenta){
                         if (mesBien < 10 && orden <10){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien < 10 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
                         } else if(mesBien > 9 && orden < 10){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
                         } else if(mesBien > 9 && orden > 9){
-                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                            cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
                         } 
                     }  
                     orden++;
@@ -172,13 +172,13 @@ function dibujarCal (diaSem,  diaAct, mesAct){
              
                 if (orden <= cuenta){
                     if (mesBien < 10 && orden <10){
-                        cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
+                        cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-0'+orden)+'</td>';
                     } else if(mesBien < 10 && orden > 9){
-                        cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
+                        cadena +='<td class="columna" id='+anoBien+'-0'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-0'+mesBien+'-'+orden)+'</td>';
                     } else if(mesBien > 9 && orden < 10){
-                        cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
+                        cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-0'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-0'+orden)+'</td>';
                     } else if(mesBien > 9 && orden > 9){
-                        cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //+mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
+                        cadena +='<td class="columna" id='+anoBien+'-'+mesBien+'-'+orden+'>'+orden+'</td>'; //mostrarEventos(anoBien+'-'+mesBien+'-'+orden)+'</td>';
                     } 
                     
                 }  
