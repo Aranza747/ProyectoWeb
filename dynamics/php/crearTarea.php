@@ -4,6 +4,8 @@ session_name("SesionUsuario");
 session_id("123456789");
 session_start();
 
+$mod = $_SESSION["modulo"];
+
 date_default_timezone_set('America/Mexico_City');
 $fechaAct=date('Y-m-d');
 
@@ -46,18 +48,21 @@ if($res==false){
     $sql = "SELECT id_archivoTarea FROM archivoTarea WHERE ruta='$ruta'";
     $res = mysqli_query($con, $sql);
     var_dump($res);
+    echo '</br></br>';
     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC);
     var_dump($datos);
+    echo '</br>';
+
     
     if($res == false){
         echo "no recibí id de archivos";
     } else {
 
         $id_archivoTarea = $datos['id_archivoTarea'];
-        $sql = "INSERT INTO tarea (id_archivoTarea, fecha, hora, descripcion, nombreTarea) VALUES('$id_archivoTarea', '$fecha', '$hora', '$descripcion', '$nombre')";
+        $sql = "INSERT INTO tarea (id_modulo, id_archivoTarea, fecha, hora, descripcion, nombreTarea) VALUES('$mod', '$id_archivoTarea', '$fecha', '$hora', '$descripcion', '$nombre')";
         $res = mysqli_query($con, $sql);
     
-        if($res == NULL){
+        if($res == false){
             echo "no podemos conectar los datos";
         } else {
             header ('Location: ./tarea.php');

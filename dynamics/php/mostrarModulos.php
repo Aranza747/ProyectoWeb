@@ -7,26 +7,18 @@ session_name("SesionUsuario");
 session_id("123456789");
 session_start();
 
+// $_SESSION["modulo"]="0";
+
 $mate = $_SESSION["materia"];
 
 
 
-if(isset($_GET['q'])){
-    $sql = "SELECT id_materia, nombreMateria, descripcion FROM materia WHERE id_materia=$mate ";
 
-    $res = mysqli_query($con, $sql);
-    $row = mysqli_fetch_assoc($res);
-    // $datos = [];
-    $datos = array("id"=>$row['id_materia'], "nombre"=>$row['nombreMateria'], "descripcion"=>$row['descripcion']);
+if(isset($_GET['id'])){
 
-    $respuesta = array("ok"=>true, "datos"=>$datos);
-
-    echo json_encode($respuesta);
-
-} else if(isset($_GET['id'])){
     $_SESSION["modulo"] = $_GET['id'];
 
-    echo json_encode("se pudo");
+    echo json_encode($_SESSION["modulo"]);
 
   } else {         
     $sql ="SELECT id_modulo, nombreMod FROM modulo WHERE id_materia = '$mate'";
