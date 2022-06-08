@@ -61,6 +61,8 @@
         
     </aside>
 
+    <div id="infoTarea"></div>
+
     
 
    

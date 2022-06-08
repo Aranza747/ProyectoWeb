@@ -5,6 +5,9 @@
 
     $_SESSION["materia"] = 0;
     $_SESSION["modulo"] = 0;
+    $_SESSION["tarea"] = 0;
+    $_SESSION["tema"] = 0;
+
 ?>
 
 <!DOCTYPE html>

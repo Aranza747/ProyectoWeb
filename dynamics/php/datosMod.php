@@ -13,11 +13,12 @@ $mate = $_SESSION["materia"];
 $mod = $_SESSION["modulo"];
 
 
+
 $sql ="SELECT nombreMod FROM modulo WHERE id_modulo = '$mod'";
     // $sql = "SELECT id_materia FROM rolHasMateria WHERE id_rol = $usuario;
-    $res = mysqli_query($con, $sql);
-    $resultados = mysqli_fetch_array($res, MYSQLI_ASSOC); 
-
+$res = mysqli_query($con, $sql);
+$resultados = mysqli_fetch_array($res); 
+  
     $nombre = $resultados['nombreMod'];
     
     // $respuesta = array("ok"=>true, "datos"=>$datos);
