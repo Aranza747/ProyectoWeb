@@ -17,7 +17,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../statics/styles/principal.css">
 
-    <title>AulaP6</title>
+    <title>Foro</title>
 </head>
 <body>
     <!--  Navbar -->
@@ -71,17 +71,18 @@
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
             
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro</button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
-            <?php
+            <!-- <button type="button" class="list-group-item btn-opcion" id="foroEstudiantes" onclick="location.href='./vistaForoEstudiantes.php'">Foro Estudiantes</button> -->
+           <?php
                 if($_SESSION["rol"] == "Profesor"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                 } else if ($_SESSION["rol"] == "Administrador"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
                 } else if ($_SESSION["rol"] == "Alumno"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./calificaciones.php\'">Calificaciones</button>'; 
                 } else if ($_SESSION["rol"] == "Moderador"){
 
                 }
@@ -102,6 +103,7 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../jsredireccionar.js"></script>
 </body>
     
 </html>
