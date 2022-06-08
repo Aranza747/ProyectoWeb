@@ -92,16 +92,15 @@
                     <button type="submit" id="enviar">Publicar en el tablón</button>
                 </div>
             </form>
-
         </div>
 
         <div id="contenedorPublicaciones">
-            <div id="publicacionesRecientes">
+            <!-- <div id="publicacionesRecientes">
 
             </div>
             <div id="todasLasPublicaciones">
 
-            </div>
+            </div> -->
         </div>
 
         <div id="publicaciones populares"></div>
