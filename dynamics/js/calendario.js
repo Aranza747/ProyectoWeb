@@ -145,12 +145,12 @@ function dibujarCal (diaSem,  diaAct, mesAct){
                     orden++;
                 }
             } else if (diaSem == 6){
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="0"></td>';
-                cadena +='<td class="columna" id="5"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="0"></td>';
+                cadena +='<td class="columna2" id="5"></td>';
                 for (let k = 1; k<=1; k++){ //columna
              
                     if (orden <= cuenta){
@@ -344,20 +344,22 @@ editar.addEventListener("click", (evento) =>{
 
     tabla.addEventListener("click", (evento) =>{
         formulario.innerHTML = '';
+        formulario.innerHTML += '<div id="contenedorForm">';
         formulario.innerHTML += '<label for="nombre">Nombre del evento</label><br>';
-        formulario.innerHTML += '    <input type="text" id="nombre" name="nombre"><br><br>';
+        formulario.innerHTML += '    <input type="text" id="nombre" name="nombre" class="input"><br><br>';
 
         formulario.innerHTML += '    <label for="descripcion">Descripción del evento</label><br>';
-        formulario.innerHTML += '    <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea><br><br>';
+        formulario.innerHTML += '    <textarea name="descripcion" id="descripcion" cols="30" rows="10" class="area"></textarea><br><br>';
 
         formulario.innerHTML += '    <label for="hora">Hora del evento</label><br>';
-        formulario.innerHTML += '    <input type="time" name="hora" id="hora"><br><br>';
+        formulario.innerHTML += '    <input type="time" name="hora" id="hora" class="input"><br><br>';
             
         formulario.innerHTML += '   <label for="fecha">Fecha del evento</label><br>'
-        formulario.innerHTML += '<input type="date" name="fecha" id="fecha" value="'+evento.target.id+'"> <br><br>';
+        formulario.innerHTML += '<input type="date" name="fecha" id="fecha" class="input" value="'+evento.target.id+'"> <br><br>';
 
         formulario.innerHTML += '    <button type="submit" id="anadir">Añadir evento</button>';
-        
+        formulario.innerHTML += '</div>';
+
         formEvento.style.display = "block";
     });
     

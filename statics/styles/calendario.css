@@ -104,17 +104,21 @@ aside{
     position:  relative;
     transform: translate(170px, 0);
     margin: 2%;
-    width:85%;   
+    width:85%;  
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
 }
 .cuerpo{
-    width: 70%;
-    height: 70%;
+    width: 150%;
+    height: 150%;
     font-family: 'averia';
     color: #ffffff;
     border:#fed049;
     border-style: solid;
     border-radius: 15px;
     border-width: .2cm;
+    flex: 4;
 }
 
 thead{
@@ -161,36 +165,15 @@ span{
     height: 5%;
     margin-bottom: 1%;
     background-color: #ffffff;
-    border-color: #007580;
+    border-style: none;
     color: #007580;
+    font-size: .5cm;
 }
-
-/*BOTONES DE AVANZAR
-------------------------------------------------------------------------------------*/
-
-/* #anterior {
-    position: relative;
-    margin: 20px;
-    top: 6%;
-    float: right;
-    left: 75%;
-}
-
-#siguiente {
-    position: relative;
-    margin: 20px;
-    top: 6%;
-    float: right;
-     left: 77%;
-} */
 
 /* SOLO PARA ADMIN
 ------------------------------------------------------------------------------------*/
-/* #editar {
-    position: relative;
-    transform: translate(15%);
-    margin: 7%;
-    top: 10%;
+#editar {
+    margin-right: 100%;
     float: right;
     background-color: #006778;
     color: #ffffff;
@@ -199,22 +182,46 @@ span{
     border-color: #006778;
     padding: 5px 15px;
     border-radius: 9px;
-} */
+    flex: 1;
+}
 
 /* FORMULARIO DE JAVA
 ------------------------------------------------------------------------------------*/
-/* #Formulario {
-    position: relative;
-    width: 300px;
-    height: 600px;
-    transform: translate(75%);
-    margin: 7%;
+#Formulario {
+    position: absolute;
     top: 10%;
-    float: right;
+    left: 76%;
+    width: auto;
+    height: auto;
     background-color: #006778;
     color: #ffffff;
     font-family: 'catamaran';
     text-align: center;
+    margin-top: 5%;
+    flex: 1;
+}
+
+.input{
+    margin-left:  2%;
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 70%;
+    height: 7%;
+    border-color: #006778;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px 40px;
+}
+.area{
+    margin-left:  2%;
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 70%;
+    height: 30%;
+    border-color: #006778;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px 40px;
 }
 
 #anadir {
@@ -225,5 +232,9 @@ span{
     border-color: #ffffff;
     padding: 5px 15px;
     border-radius: 9px;
-} */
+    margin-bottom: 5%;
+}
 
+#contenedorForm{
+    margin: 5%;
+}
