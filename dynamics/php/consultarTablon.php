@@ -14,7 +14,6 @@ if(!$con){
     {
         if($row["id_archivoTablon"]){
             $idArchivoTablon = ($row["id_archivoTablon"]);
-            echo $idArchivoTablon;
             $sqlFecha = "SELECT fechaCreacion FROM archivoTablon WHERE id_archivoTablon=$idArchivoTablon";
             $resFecha = mysqli_query($con, $sqlFecha);
             $fechaCreacion = mysqli_fetch_array($resFecha, MYSQLI_ASSOC);
@@ -31,7 +30,7 @@ if(!$con){
 
 
 
-        $resultados[] = array("nombre" => $nombre["nombre"], "materia" => $row["materia"], "descripcion" => $row["descripcion"], "fechaCreacion" => $fechaCreacion["fechaCreacion"], "ruta" => $ruta["ruta"], "likes" => $row["likes"]);
+        $resultados[] = array("id_tablon" => $row["id_tablon"], "nombre" => $nombre["nombre"], "materia" => $row["materia"], "descripcion" => $row["descripcion"], "fechaCreacion" => $fechaCreacion["fechaCreacion"], "ruta" => $ruta["ruta"], "likes" => $row["likes"]);
 
     }
   
