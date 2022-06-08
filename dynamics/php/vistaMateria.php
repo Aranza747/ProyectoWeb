@@ -2,6 +2,8 @@
     session_name("SesionUsuario");
     session_id("123456789");
     session_start();
+
+    $_SESSION["modulo"] = 0;
 ?>
 
 <!DOCTYPE html>
@@ -66,10 +68,10 @@
         </div>'
     ?>
 
-    <aside>
+<aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
             <?php
@@ -83,11 +85,26 @@
                 } else if ($_SESSION["rol"] == "Moderador"){
 
                 }
+
+                
             ?>
+
+            
             
         </ul>
     </aside>
 
+
+    <div id="datosMateria">
+
+    </div>
+
+
+
+    <div id="contModulos">
+
+
+    </div>
     
 
     <!-- Modal -->
@@ -197,20 +214,13 @@
                
             </div>';
 
+            
+
         }
 ?>
 
 
-    <div id="datosMateria">
-
-    </div>
-
-
-
-    <div id="contModulos">
-
-
-    </div>
+    
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>

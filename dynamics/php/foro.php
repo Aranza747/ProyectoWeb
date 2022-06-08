@@ -3,7 +3,8 @@
     session_id("123456789");
     session_start();
 
-    
+    $_SESSION["materia"] = 0;
+    $_SESSION["modulo"] = 0;
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../statics/styles/principal.css">
 
-    <title>Foro</title>
+    <title>AulaP6</title>
 </head>
 <body>
     <!--  Navbar -->
@@ -27,6 +28,13 @@
                 <img src="../../statics/img/logoprepa.png" alt="" width="50" height="50">
             </a>
             <!-- Necesario solo cuando no sea la vista principal -->
+            <div class="navbar-nav">
+                <div>
+                    <a class="navbar-brand" href="./pagInicio.php">
+                        <img id="inicio" src="../../statics/img/Logoaula.png" alt="" width="40" height="40">
+                    </a>
+                </div>
+                <div>
             <div class="navbar-nav">
                 <div>
                     <form action='./CerrarSesion.php' method='post' turget='_self'>
@@ -71,18 +79,17 @@
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
             
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro</button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
-            <!-- <button type="button" class="list-group-item btn-opcion" id="foroEstudiantes" onclick="location.href='./vistaForoEstudiantes.php'">Foro Estudiantes</button> -->
-           <?php
+            <?php
                 if($_SESSION["rol"] == "Profesor"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                 } else if ($_SESSION["rol"] == "Administrador"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
                 } else if ($_SESSION["rol"] == "Alumno"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./calificaciones.php\'">Calificaciones</button>'; 
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
                 } else if ($_SESSION["rol"] == "Moderador"){
 
                 }
@@ -95,15 +102,28 @@
             // echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  
         echo '
             <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-primary" type="button" onclick="location.href=\'./formIngresarMateria.php\'">Ingresar a curso nuevo</button>
+                
             </div>';
         }
+
+        echo '<div id="contMaterias">
+            
+        </div>';
+        
+        echo $_SESSION["materia"];
+        
+
     ?>
+
+
+
+
+    
 
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../jsredireccionar.js"></script>
+    <script src="../js/pagInicio.js"></script>
 </body>
     
 </html>

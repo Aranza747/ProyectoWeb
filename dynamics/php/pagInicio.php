@@ -4,6 +4,7 @@
     session_start();
 
     $_SESSION["materia"] = 0;
+    $_SESSION["modulo"] = 0;
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +72,7 @@
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
             
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
             <?php

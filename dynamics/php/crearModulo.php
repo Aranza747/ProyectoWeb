@@ -18,7 +18,7 @@ $res = mysqli_query($con, $sql);
 if($res == true)
 {
     
-    header ('Location: ./modulo.php');
+    header ('Location: ./vistaMateria.php');
 }else
 {
     echo "no se conectó";
