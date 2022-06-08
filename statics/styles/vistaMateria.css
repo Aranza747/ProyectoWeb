@@ -97,8 +97,26 @@ aside{
 }
 /*CONTENEDOR
 ------------------------------------------------------------------------------------*/
-#contenedor{
+.contenedor{
     position: absolute;
-    transform: translate(120px, 0);
+    transform: translate(170px, 0);
     margin: 3%;
+}
+
+#juego{
+    display: flex;
+
+    /* flex-direction: column; */
+}
+.preguntas{
+    flex: 1;
+    margin: 1%;
+}
+.respuestas{
+    flex: 4;
+    margin: 1%;
+}
+#botones{
+    float: right;
+    margin: 1%;
 }
