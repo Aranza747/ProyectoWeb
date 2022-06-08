@@ -1,0 +1,123 @@
+@font-face{ /*froza*/
+    font-family: "froza"; 
+    src: url("../fonts/font1.ttf");
+}
+
+@font-face{
+    font-family: "averia"; /*Averia*/
+    src: url("../fonts/font2.ttf");
+}
+
+@font-face{
+    font-family: "mukta"; /*Mukta*/
+    src: url("../fonts/font3.ttf");
+}
+
+@font-face{
+    font-family: "jaldi"; /*Jaldi*/
+    src: url("../fonts/Jaldi-Bold.ttf");
+}
+
+@font-face{
+    font-family: "catamaran"; /*catamaran*/
+    src: url("../fonts/Catamaran-Regular.ttf");
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+/*NAVBAR
+------------------------------------------------------------------------------------*/
+#nav {
+    background-color: #006778;
+    padding: 9px 10px ;
+}
+
+.btn-opcion {
+    /* top: -20px; */
+    background-color: #006778;
+    color: #ffffff;
+    font-family: 'catamaran';
+    text-align: center;
+    border-color: #ffffff;
+    padding: 15px 10px;
+
+}
+ 
+.navbar-nav{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+table{
+    background-color: #006778;
+    border-color: #ffffff;
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    font-family: 'averia';
+    color: #ffffff;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+thead{
+    text-align: center;
+}
+
+#anterior {
+    position: absolute;
+    /* transform: translate(75%); */
+    margin: 20px;
+    top: 6%;
+    float: right;
+    left: 75%;
+}
+
+#siguiente {
+    position: absolute;
+    /* transform: translate(75%);  */
+    margin: 20px;
+    top: 6%;
+    float: right;
+     left: 77%;
+}
+
+#editar {
+    position: relative;
+    transform: translate(15%);
+    margin: 7%;
+    top: 10%;
+    float: right;
+    background-color: #006778;
+    color: #ffffff;
+    font-family: 'catamaran';
+    text-align: center;
+    border-color: #006778;
+    padding: 5px 15px;
+    border-radius: 9px;
+}
+
+#Formulario {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    transform: translate(75%);
+    margin: 7%;
+    top: 10%;
+    float: right;
+    background-color: #006778;
+    color: #ffffff;
+    font-family: 'catamaran';
+    text-align: center;
+}
+
+#anadir {
+    background-color: #006778;
+    color: #ffffff;
+    font-family: 'catamaran';
+    text-align: center;
+    border-color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 9px;
+}
+

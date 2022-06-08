@@ -95,12 +95,12 @@
         </div>
 
         <div id="contenedorPublicaciones">
-            <!-- <div id="publicacionesRecientes">
+            <div id="publicacionesRecientes">
 
             </div>
             <div id="todasLasPublicaciones">
 
-            </div> -->
+            </div>
         </div>
 
         <div id="publicaciones populares"></div>

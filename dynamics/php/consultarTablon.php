@@ -14,7 +14,7 @@ if(!$con){
     {
         if($row["id_archivoTablon"]){
             $idArchivoTablon = ($row["id_archivoTablon"]);
-            //echo $idArchivoTablon;
+            echo $idArchivoTablon;
             $sqlFecha = "SELECT fechaCreacion FROM archivoTablon WHERE id_archivoTablon=$idArchivoTablon";
             $resFecha = mysqli_query($con, $sqlFecha);
             $fechaCreacion = mysqli_fetch_array($resFecha, MYSQLI_ASSOC);

@@ -69,16 +69,19 @@
     <aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
-            
-            
             <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
+<<<<<<< HEAD
             <button type="button" class="list-group-item btn-opcion" id="tablon" onclick="location.href='./vistaTablon.php'">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
+=======
+            <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
+            <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
+>>>>>>> bfc66cc125e17be7cabee5f2de311381625248bb
             <?php
                 if($_SESSION["rol"] == "Profesor"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                 } else if ($_SESSION["rol"] == "Administrador"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
+                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formCrearMateria.php\'">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
                 } else if ($_SESSION["rol"] == "Alumno"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
@@ -90,17 +93,18 @@
         </ul>
     </aside>
 
-    <div id="contenedor">
-        <!-- Button modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Crear Módulo
-        </button>
-    </div>
+    
 
     <!-- Modal -->
     <?php
         if($_SESSION["rol"] == "Profesor" || $_SESSION["rol"] == "Administrador"){
-            echo '<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            echo '<div id="contenedor">
+                <!-- Button modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Crear Módulo
+                </button>
+            </div>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
