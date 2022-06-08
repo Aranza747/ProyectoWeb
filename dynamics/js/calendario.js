@@ -230,6 +230,8 @@ var dia = [];
 
 if((anoBien == 2024 && mesBien == 2) || (anoBien == 2020 && mesBien == 2)){
     duracion[2] = 29;
+} else {
+    duracion[2] = 28;
 }
 
 // MesAno.innerHTML = mes[mesAct+1]+' '+anoAct;
@@ -253,31 +255,46 @@ for(let i = 1; i < diaAct; i++){
 }
 console.log(mes[mesAct+1]);
 console.log(duracion[mesAct+1]);
-console.log(dia[semAct]);
+var flechas = 0;
+// console.log(dia[semAct]);
 
 anterior.addEventListener("click", () =>{
+    flechas++;
     if((anoBien == 2024 && mesBien == 1) || (anoBien == 2020 && mesBien == 1)){
         duracion[2] = 29;
+    } else {
+        duracion[2] = 28;
     }
     tabla.innerHTML='';
 
-    for(let i = 1; i < duracion[mesBien]; i++){
+    for(let i = 1; i <= duracion[mesBien]; i++){
         if(diaSem == 1)
         {   
             diaSem = 7;
         } else {
             diaSem--;
         }
+        console.log("for"+i);
     }
-    console.log(diaSem);
+    
+    console.log("despues del for:"+diaSem); //junio3 2
 
-    if(diaSem == 1){   
-        diaSem = 7;
+    if(diaSem == 7){   
+        diaSem = 1;
     } else {
-        diaSem--;
+        diaSem++;
     } 
     // diaSem-=1;
-    console.log(diaSem);
+    console.log("despues del if:"+diaSem); // junio 2 1
+
+    // if(flechas > 2)
+    // {
+    //     if(diaSem == 1){   
+    //         diaSem = 7;
+    //     } else {
+    //         diaSem++;
+    //     }  
+    // }
 
     if(mesBien==1){
         mesBien = 12;
@@ -285,52 +302,92 @@ anterior.addEventListener("click", () =>{
     } else {
         mesBien-=1;
     }
-    // console.log("antes");
-    // console.log(mes[mesBien]);
-    // console.log(anoBien);  
+
+    for(let i = 1; i <= duracion[mesBien]; i++){
+        if(diaSem == 1)
+        {   
+            diaSem = 7;
+        } else {
+            diaSem--;
+        }
+        console.log("for"+i);
+    }
+    if(diaSem == 7){   
+        diaSem = 1;
+    } else {
+        diaSem++;
+    } 
+
+    // if(flechas > 2)
+    // {
+    //     if(diaSem == 7){   
+    //         diaSem = 1;
+    //     } else {
+    //         diaSem++;
+    //     }  
+    // }
+    
+     
     
     
     console.log(diaSem);
+    console.log("antes");
+    console.log(mes[mesBien]);
+    console.log(anoBien); 
     dibujarCal(diaSem,  diaAct, mesAct);
     
 });
 
 siguiente.addEventListener("click", (evento) =>{
+    flechas++;
     if((anoBien == 2024 && mesBien == 1) || (anoBien == 2020 && mesBien == 1)){
         duracion[2] = 29;
-        console.log("entras?");
-        console.log(duracion[2]);
-        console.log(anoBien);
-        console.log(mesBien);
-
-
+    } else {
+        duracion[2] = 28;
     }
+
+
     tabla.innerHTML='';
-    for(let i = 1; i < duracion[mesBien]; i++){
+    for(let i = 1; i <= duracion[mesBien]; i++){
         if(diaSem == 7)
         {   
             diaSem = 1;
         } else {
             diaSem++;
         }
+        console.log("for"+i);
     }
-    if(diaSem == 7){   
-        diaSem = 1;
-    } else {
-        diaSem++;
-    }    
+    console.log("despues del for:"+diaSem); //julio 4     3
+    // if(diaSem == 7){   
+    //     diaSem = 1;
+    // } else {
+    //     diaSem++;
+    // }    
+    console.log("despues del if:"+diaSem); //julio 5    4
+
+    if(flechas > 2)
+    {
+        if(diaSem == 7){   
+            diaSem = 1;
+        } else {
+            diaSem--;
+        }  
+    }
 
     if(mesBien==12){
         mesBien = 1;
         anoBien += 1;
     } else {
         mesBien+=1;
+
     }
-    // MesAno.innerHTML = mes[mesBien]+' '+anoAct; //No se imprime bien
-    // console.log("después");
-    // console.log(mes[mesBien]);
-    // console.log(anoBien);
-    // console.log(diaSem);
+    MesAno.innerHTML = mes[mesBien]+' '+anoAct; //No se imprime bien
+    
+    
+    console.log(diaSem);
+    console.log("después");
+    console.log(mes[mesBien]);
+    console.log(anoBien);
     dibujarCal(diaSem,  diaAct, mesAct);
 
 });
@@ -340,30 +397,30 @@ MesAno.innerHTML = mes[mesBien]+' '+anoBien;
 dibujarCal(diaSem,  diaAct);
 
 
-editar.addEventListener("click", (evento) =>{
+// editar.addEventListener("click", (evento) =>{
 
-    tabla.addEventListener("click", (evento) =>{
-        formulario.innerHTML = '';
-        formulario.innerHTML += '<div id="contenedorForm">';
-        formulario.innerHTML += '<label for="nombre">Nombre del evento</label><br>';
-        formulario.innerHTML += '    <input type="text" id="nombre" name="nombre" class="input"><br><br>';
+//     tabla.addEventListener("click", (evento) =>{
+//         formulario.innerHTML = '';
+//         formulario.innerHTML += '<div id="contenedorForm">';
+//         formulario.innerHTML += '<label for="nombre">Nombre del evento</label><br>';
+//         formulario.innerHTML += '    <input type="text" id="nombre" name="nombre" class="input"><br><br>';
 
-        formulario.innerHTML += '    <label for="descripcion">Descripción del evento</label><br>';
-        formulario.innerHTML += '    <textarea name="descripcion" id="descripcion" cols="30" rows="10" class="area"></textarea><br><br>';
+//         formulario.innerHTML += '    <label for="descripcion">Descripción del evento</label><br>';
+//         formulario.innerHTML += '    <textarea name="descripcion" id="descripcion" cols="30" rows="10" class="area"></textarea><br><br>';
 
-        formulario.innerHTML += '    <label for="hora">Hora del evento</label><br>';
-        formulario.innerHTML += '    <input type="time" name="hora" id="hora" class="input"><br><br>';
+//         formulario.innerHTML += '    <label for="hora">Hora del evento</label><br>';
+//         formulario.innerHTML += '    <input type="time" name="hora" id="hora" class="input"><br><br>';
             
-        formulario.innerHTML += '   <label for="fecha">Fecha del evento</label><br>'
-        formulario.innerHTML += '<input type="date" name="fecha" id="fecha" class="input" value="'+evento.target.id+'"> <br><br>';
+//         formulario.innerHTML += '   <label for="fecha">Fecha del evento</label><br>'
+//         formulario.innerHTML += '<input type="date" name="fecha" id="fecha" class="input" value="'+evento.target.id+'"> <br><br>';
 
-        formulario.innerHTML += '    <button type="submit" id="anadir">Añadir evento</button>';
-        formulario.innerHTML += '</div>';
+//         formulario.innerHTML += '    <button type="submit" id="anadir">Añadir evento</button>';
+//         formulario.innerHTML += '</div>';
 
-        formEvento.style.display = "block";
-    });
+//         formEvento.style.display = "block";
+//     });
     
-});
+// });
 
 // anadir.addEventListener("click", (evento)=>{
 //     formEvento.style.display = "none";

@@ -15,7 +15,12 @@
     
       } else {
             $usuario = $_SESSION["id_alumno"];
-            $sql ="SELECT id_materia, foto, nombreMateria FROM materia NATURAL JOIN rolHasMateria WHERE id_rol = '$usuario'";
+            if ($_SESSION["rol"] != "Alumno"){
+                $sql ="SELECT id_materia, foto, nombreMateria FROM materia NATURAL JOIN rolHasMateria WHERE id_rol = '$usuario'";
+            } else if ($_SESSION["rol"] == "Alumno"){
+                $sql ="SELECT id_materia, foto, nombreMateria FROM materia NATURAL JOIN alumnoHasMateria WHERE id_alumno = '$usuario'";
+            }
+            
             // $sql = "SELECT id_materia FROM rolHasMateria WHERE id_rol = $usuario;
             $res = mysqli_query($con, $sql);
             $resultados=[];
