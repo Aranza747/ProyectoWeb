@@ -56,12 +56,18 @@
                         </dd>
                     </dl>
 
-                    <dl><dt class="cabeza">Rol: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["rol"].'
-                    </dd>
+                    <dl><dt class="cabeza">Rol: &nbsp</dt>'.'<dd id="noDeCuentaRFC" class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["rol"].'
+                        </dd>
                     </dl> 
+
+                    <dl><dt class="cabeza">Numero de Cuenta o RFC: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["noDeCuenta"].'
+                        </dd>
+                    </dl>
+
                 </div>
             </div>
         </div>'
+
     ?>
     
 
@@ -119,8 +125,8 @@
             <a href="./vistaForoPreguntasFrec.php" class="stretched-link">Preguntas frecuentes</a>
         </div>
     </div>
-<!-- 
-    <aside id="asideDerecha">
+
+    <!-- <aside id="asideDerecha">
         <ul>
             <button type="button" class="list-group-item" id="preguntasFrecuentes" onclick="location.href='./vistaForoPreguntasFrecuentes.php'">Preguntas Frecuentes</button>
             <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
