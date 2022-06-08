@@ -30,7 +30,7 @@ if(!$con){
 
 
 
-        $resultados[] = array("id_tablon" => $row["id_tablon"], "nombre" => $nombre["nombre"], "materia" => $row["materia"], "descripcion" => $row["descripcion"], "fechaCreacion" => $fechaCreacion["fechaCreacion"], "ruta" => $ruta["ruta"], "likes" => $row["likes"]);
+        $resultados[] = array("id_tablon" => $row["id_tablon"], "nombre" => $nombre["nombre"], "materia" => $row["materia"], "descripcion" => $row["descripcion"], "fechaCreacion" => $fechaCreacion["fechaCreacion"], "ruta" => $ruta["ruta"], "likes" => $row["likes"], "reportes" => $row["reportes"]);
 
     }
   

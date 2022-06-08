@@ -67,7 +67,7 @@ if($res==false){
 }else{
     $datos = mysqli_fetch_array($res, MYSQLI_ASSOC); 
     $idAlumno = $datos['id_alumno'];
-    $sql = "INSERT INTO tablon (id_alumno, id_archivoTablon, materia, descripcion) VALUES('$idAlumno', '$idArchivoTablon', '$materia', '$descripcion')";//checar
+    $sql = "INSERT INTO tablon (id_alumno, id_archivoTablon, materia, descripcion, likes, reportes) VALUES('$idAlumno', '$idArchivoTablon', '$materia', '$descripcion', 0, 0)";//checar
     $res = mysqli_query($con, $sql);
     header('Location: ./vistaTablon.php');
 }
