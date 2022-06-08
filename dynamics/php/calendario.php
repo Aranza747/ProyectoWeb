@@ -146,25 +146,20 @@
 
             </table> 
         </div>
+
+        <div id="boton">
+        <?php
+            if($_SESSION["rol"]=="Administrador"){
+                echo '<button id="editar">Editar</button>';
+            }
+        ?>
+        </div>
     </div>
-
-    <?php
-        if($_SESSION["rol"]=="Administrador"){
-            echo '<button id="editar">Editar</button>';
-        }
-    ?>
-    
-    
-
     <div id="formEvento" style="display: none">     
+            <form action="./agregarEventos.php" id="Formulario" method="post">
+            </form>
+        </div>
 
-
-        <form action="./agregarEventos.php" id="Formulario" method="post">
-
-            
-            
-        </form>
-    </div>
 
     
        

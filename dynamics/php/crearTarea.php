@@ -71,7 +71,7 @@ if($res==false){
         if($res == false){
             echo "no podemos conectar los datos";
         } else {
-            header ('Location: ./tarea.php');
+            header ('Location: ./modulo.php');
         }
     }
 }

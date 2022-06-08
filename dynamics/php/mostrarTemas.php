@@ -18,15 +18,13 @@ if(isset($_GET['id'])){
     echo json_encode($_SESSION["tema"]);
 
   } else {         // hace el boton a la tarea
-    $sql ="SELECT id_tema, nombreTema FROM tarea WHERE id_modulo = '$mod'";
-    // $sql = "SELECT id_materia FROM rolHasMateria WHERE id_rol = $usuario;
+    $sql ="SELECT id_tema, nombreTema FROM tema WHERE id_modulo = '$mod'";
     $res = mysqli_query($con, $sql);
     $resultados=[];
     while($row = mysqli_fetch_assoc($res)){
         $resultados[] = array("id_tema"=>$row['id_tema'], "nombreTema"=>$row['nombreTema']);
     }
     
-    // $respuesta = array("ok"=>true, "datos"=>$datos);
 
     echo json_encode($resultados);
 }
