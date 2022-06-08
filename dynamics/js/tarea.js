@@ -1,16 +1,18 @@
-// const infoTarea = document.getElementById ("infoTarea")
+const infoTarea = document.getElementById ("infoTarea")
 
-// let tarea = "hla";
-// fetch("../php/mostrarTareas.php?id="+tarea)
-//     .then((response) => {
-//         return response.json();
-//     })
-//     .then((datosJSON) => {
-//         if(datosJSON.ok == true){
-//             infoTarea.innerHTML += "<div class='dato'>" + datosJSON.datos.nombreTarea + "</div>";
-//             infoTarea.innerHTML += "<div class='dato'>" + datosJSON.datos.descripcion + "</div>";
-//             infoTarea.innerHTML += "<div class='dato'>Imagen Relacionada: " + datosJSON.datos.ruta + "</div>";
-//             infoTarea.innerHTML += "<div class='dato'>Fecha de entrega: " + datosJSON.datos.fechaEntreg +' a las '+datosJSON.datos.hora+ "</div>";
 
-//         }
-//     })
+fetch("../php/desplegarTarea.php")
+.then((response) => {
+    return response.json();
+})
+.then((datosJSON) => {
+    console.log(datosJSON);
+    if(datosJSON.ok == true){
+        infoTarea.innerHTML += "<div class='nombre'>" + datosJSON.datos.nombreTarea + "</div>";
+        infoTarea.innerHTML += "<div class='descripcion'>" + datosJSON.datos.descripcion + "</div>";
+        infoTarea.innerHTML += "<div class='archivo'>Imagen Relacionada: " + datosJSON.datos.ruta + "</div>";
+        infoTarea.innerHTML += "<div class='subida'>Publicada: " + datosJSON.datos.fecha + "</div>";
+        infoTarea.innerHTML += "<div class='entrega'>Fecha de entrega: " + datosJSON.datos.fechaEntrega +' a las '+datosJSON.datos.hora+ "</div>";
+
+    }
+})

@@ -53,7 +53,7 @@ fetch("../php/mostrarTemas.php")  //despliega tareas
 .then((datosJSON) => {
     console.log(datosJSON);
     for(datos of datosJSON){
-        contTemas.innerHTML += "<button class='temas' id='"+datos.id_temas+"'>"+datos.nombreTema+"</button>";
+        contTemas.innerHTML += "<button class='temas' id='"+datos.id_tema+"'>"+datos.nombreTema+"</button>";
         
     }
 });

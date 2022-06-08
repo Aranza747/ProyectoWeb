@@ -10,13 +10,13 @@ session_start();
 // $_SESSION["modulo"]="0";
 
 $mod = $_SESSION["modulo"];
-$tarea = $_SESSION["tarea"];
+$tema = $_SESSION["tarea"];
 
-$sql ="SELECT *  FROM tarea NATURAL JOIN archivoTarea WHERE id_tarea = '$tarea'";
+$sql ="SELECT *  FROM tema NATURAL JOIN archivoTema WHERE id_tema = '$tema'";
     $res = mysqli_query($con, $sql);
     $row = mysqli_fetch_assoc($res);
       
-    $datos = array("fecha"=>$row['fecha'], "hora"=>$row['hora'], "descripcion"=>$row['descripcion'], "nombreTarea"=>$row['nombreTarea'], "ruta"=>$row['ruta'], "fechaEntrega"=>$row['fechaEntrega']);
+    $datos = array("descripcion"=>$row['descripcion'], "fecha"=>$row['fecha'], "nombreTema"=>$row['nombreTema'], "ruta"=>$row['ruta']);
 
     $respuesta = array("ok"=>true, "datos"=>$datos);
 
