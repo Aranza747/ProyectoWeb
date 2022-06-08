@@ -3,7 +3,7 @@
     session_id("123456789");
     session_start();
 
-    
+    $_SESSION["materia"] = 0;
 ?>
 
 <!DOCTYPE html>
@@ -94,15 +94,30 @@
             // echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  
         echo '
             <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-primary" type="button" onclick="location.href=\'./formIngresarMateria.php\'">Ingresar a curso nuevo</button>
+                
             </div>';
         }
+
+        echo '<div id="contMaterias">
+            
+        </div>';
+        
+        echo $_SESSION["materia"];
+        
+
     ?>
+
+
+
+
+    
 
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../jsredireccionar.js"></script>
+    <script src="../js/pagInicio.js"></script>
 </body>
     
 </html>
+
+
