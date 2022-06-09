@@ -64,7 +64,7 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
     17. Crear una cuenta dando clic en el enlace "cree una" e ingrese su número de cuenta si es alumno o RFC si es profesor.
     18. Inicie sesión con su nueva cuenta.
     19. Únase a un curso o créelo y comience a utilizar las funcionalidades disponibles.
-    20. De haber un problema, por favor contáctese con el equipo a: 
+    20. De haber un problema, por favor contáctese con el equipo a: equipomaralitval@gmail.com
 
 **Créditos**
 
