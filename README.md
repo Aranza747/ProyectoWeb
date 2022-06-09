@@ -69,7 +69,18 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
 **Créditos**
 
 - Castro Valentina
-    * ola
+    * Calendario
+    * Crear Tareas
+    * Ingresar Curso 
+    * Desplegar materias
+    * Desplegar módulos
+    * Desplegar temas
+    * Crear temas 
+    * Crear tareas
+    * Crear módulos
+    * Implementación de sesiones
+    * Realización de wireframes
+    * Creación de base de datos  
 - Pueblita Araceli Michel
     * ola
 - Mariana
