@@ -12,7 +12,7 @@ if(!$con){
     $resultados = [];
     while($row = mysqli_fetch_assoc($res))
     {
-        $resultados[] = array("id_foro" => $row["id_foro"], "comentarioForo" => $row["id_comentarioForo"], "respuesta" => $row["respuesta"]);
+        $resultados[] = array("id_Foro" => $row["id_Foro"], "comentarioForo" => $row["id_comentarioForo"], "respuesta" => $row["respuesta"]);
     }
   
     echo json_encode($resultados, JSON_UNESCAPED_UNICODE);
