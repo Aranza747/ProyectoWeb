@@ -10,8 +10,8 @@ fetch("../php/datosMateria.php")
 .then((datosJSON) => {
     if(datosJSON.ok == true){
         console.log(datosJSON);
-        datosMateria.innerHTML += "<div class='dato'><strong>" + datosJSON.datos.nombre + "</strong></div>";
-        datosMateria.innerHTML += "<div class='dato'>" + datosJSON.datos.descripcion + "</div>";    
+        datosMateria.innerHTML += "<div class='titulo'>" + datosJSON.datos.nombre + "</div>";
+        datosMateria.innerHTML += "<div class='descripcion'>" + datosJSON.datos.descripcion + "</div>";    
     }
 })
 
@@ -31,7 +31,7 @@ fetch("../php/mostrarModulos.php")
 
 contModulos.addEventListener("click", (evento) =>{
     let id = evento.target.id;
-    // console.log(evento.target);
+    console.log(evento.target);
     console.log (evento.target.id);
     fetch("../php/mostrarModulos.php?id="+id)
     .then((response) => {

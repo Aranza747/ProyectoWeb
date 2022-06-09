@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="../../libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../../statics/styles/tarea.css">
     <title>Tarea</title>
 </head>
 <body>
@@ -43,6 +43,7 @@
     <?php    
         echo $_SESSION["modulo"];
         echo $_SESSION["tarea"];
+        echo $_SESSION["tema"];
         echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
@@ -63,7 +64,11 @@
         
     </aside>
 
-    <div id="infoTarea"></div>
+    <div id="infoTarea">
+
+
+    
+    </div>
 
     
 

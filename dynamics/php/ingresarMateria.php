@@ -1,6 +1,10 @@
 <?php
   require "config.php";
 
+    session_name("SesionUsuario");
+    session_id("123456789");
+    session_start();
+
   $con = mysqli_connect($db_host, $db_user, $db_pass, $db_schema);
   
 if(!$con){
@@ -29,6 +33,24 @@ if(!$con){
     $respuesta = array("ok"=>true, "datos"=>$datos);
 
     echo json_encode($respuesta);
+
+  } else if(isset($_GET['idMat'])){
+      $alumno = $_SESSION["id_alumno"];
+      $query = $_GET['idMat'];
+
+      
+      
+      $sql = "INSERT INTO alumnoHasMateria VALUES (null, '$alumno', '$query')";
+      $res = mysqli_query($con, $sql);
+
+      if($res == true){
+        $datos = true;
+      } else {
+        $datos = null;
+      }
+      
+
+    echo json_encode($datos);
   }
 }
 

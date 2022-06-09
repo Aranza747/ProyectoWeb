@@ -53,11 +53,21 @@ window.addEventListener("load", ()=>{
 
       divDatos.addEventListener("click", (evento)=>{
         if(evento.target.id == "btnContrasena"){
-          console.log(divDatos.children[0].value); 
+          let idMat = evento.target.dataset.id; 
+          console.log(evento.target.dataset.id);
+          // console.log(divDatos.children[0].value); 
           if(divDatos.children[0].value == contra){ //compara el valor del input de contraseña (children[0]) con la conraseña que viene de base de datos
-            alert("bien");
+            fetch("../php/ingresarMateria.php?idMat="+idMat)
+            .then((response) => {
+              return response.json();
+            })
+            .then((datosJSON) => {
+              console.log(datosJSON);
+              if(datosJSON == true)
+                window.location.href="./pagInicio.php";
+            })
           } else {
-            alert("mal");
+            alert("Tu contraseña es incorrecta");
           }
         }
       });

@@ -193,3 +193,11 @@ label{
     color: #636864;
     font-size: .5cm;
 }
+
+.temas{
+    float: right;
+}
+
+.tareas{
+    float: right;
+}

@@ -12,6 +12,7 @@
     
     <link rel="stylesheet" href="../../libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../libs/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.css" rel="styleshet">
     <link rel="stylesheet" href="../../statics/styles/tablon.css">
 
     <title>Tablon</title>
@@ -46,16 +47,24 @@
     <?php    
         echo '<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" width="15%" height="15%">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Perfil</h5>
+                <span class="offcanvas-title" id="offcanvasRightLabel">Perfil</span>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <img src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="25%" height="15%">
-                Nombre: '.$_SESSION["nombre"].'
-                <br><br>
-                Correo: '.$_SESSION["correo"].'
-                <br><br>
-                Rol: '.$_SESSION["rol"].'
+            <div class="offcanvas-body" id="padre">
+                    <img  id="hijo" src="../../statics/img/descargasfondoinicio.jpeg" alt="perfil" width="80%" height="25%">
+                <div class="hijo">
+                    <dl><dt class="cabeza">Nombre: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["nombre"].'
+                        </dd>
+                    </dl>
+
+                    <dl><dt class="cabeza">Correo: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["correo"].'
+                        </dd>
+                    </dl>
+
+                    <dl><dt class="cabeza">Rol: &nbsp</dt>'.'<dd class="dato"> &nbsp &nbsp &nbsp &nbsp'.$_SESSION["rol"].'
+                    </dd>
+                    </dl> 
+                </div>
             </div>
         </div>'
     ?>
@@ -81,32 +90,38 @@
     </aside>
     <div class="contenedor">
         <div class="crearPublicacion">
-            <div class="section foto"><img src="../../descargas/img/img_perfilUsuarios/321165848.jpg" width="13%" height="15%" alt="fotodeperfil"></div><!--imagen del usuario de la sesion -->
+            <div class="derecha">
+                <div class="section foto">
+                    <img src="../../descargas/img/img_perfilUsuarios/321165848.jpg"  width="10%" height="10%" alt="fotodeperfil">
+                </div><!--imagen del usuario de la sesion -->
             <form id="formulario" action="./crearNuevoTablon.php" method="post" enctype="multipart/form-data">
                 <div class="section texto">
-                    <textarea name="descripcion" type="text" placeholder="Escribe algo.."></textarea>
-                    <input name="materia" type="text" placeholder="Materia relacionada al archivo..."></input> 
+                    <textarea class="input" name="descripcion" type="text" placeholder="Escribe algo.."></textarea>
+                    <input class="input" name="materia" type="text" placeholder="Materia relacionada al archivo..."></input> 
                 </div> 
-                <div class="section botones">
-                    <input name="archivoTablon" type="file" id="archivoTablon"></input>
-                    <button type="submit" id="enviar">Publicar en el tablón</button>
+            </div>
+            <!-- abajo -->
+                <div class="section botones" id="abajo">
+                    <div>
+                        <input class="form-control form-control-sm" name="archivoTablon" type="file" id="archivoTablon" multiple required>
+                    
+                        <button type="submit" id="enviar">Publicar en el tablón</button>
+                    </div>
                 </div>
             </form>
+
         </div>
 
         <div id="contenedorPublicaciones">
-            <div id="publicacionesRecientes">
-
-            </div>
-            <div id="todasLasPublicaciones">
-
-            </div>
+            <div id="publicacionesRecientes"></div>
+            <div id="todasLasPublicaciones"></div>
         </div>
 
         <!-- <div id="publicaciones populares"></div> -->
 
     </div>
 
+    <button class="fa-solid fa-coffee fa-2xs"></button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/tablon.js"></script>
 </body>

@@ -95,10 +95,8 @@
     </aside>   
     <?php
         if($_SESSION["rol"] == "Alumno"){
-            // echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  
-        echo '
-            <div class="d-grid gap-2 col-6 mx-auto">
-                
+            echo '  <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href=\'./formIngresarMateria.php\'">Ingresar Materia</button>
             </div>';
         }
 
@@ -106,7 +104,7 @@
             
         </div>';
         
-        echo $_SESSION["materia"];
+        // echo $_SESSION["materia"];
         
 
     ?>

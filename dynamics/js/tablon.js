@@ -12,7 +12,8 @@ fetch("./consultarTablon.php")
         contenedorPublicaciones.innerHTML += 
             '<div class="crearPublicacion">'+
                 '<div class="section foto"><img src="../../descargas/img/img_perfilUsuarios/321165848.jpg" width="13%" height="15%" alt="fotodeperfil"></div>'+
-                '<div>Autor: '+dato.nombre+"  Materia: "+dato.materia+'</div>'+
+                '<div>Autor: '+dato.nombre+'</div>'+
+                '<div>Materia: '+dato.materia+'</div>'+
                 '<div>'+dato.descripcion+'</div>'+
                 '<div>'+dato.fechaCreacion+'</div>'+
                 '<button  class="likes" data-id="'+dato.id_tablon+'" data-likes="'+dato.likes+'">❤'+dato.likes+'</button>'+
@@ -23,7 +24,8 @@ fetch("./consultarTablon.php")
             contenedorPublicaciones.innerHTML += 
             '<div class="crearPublicacion">'+
                 '<div class="section foto"><img src="../../descargas/img/img_perfilUsuarios/321165848.jpg" width="13%" height="15%" alt="fotodeperfil"></div>'+
-                '<div>Autor: '+dato.nombre+"  Materia: "+dato.materia+'</div>'+
+                '<div>Autor: '+dato.nombre+'</div>'+
+                '<div>Materia: '+dato.materia+'</div>'+
                 '<div>'+dato.descripcion+'</div>'+
                 '<div>'+dato.fechaCreacion+'</div>'+
                 '<embed src="'+dato.ruta+'" type="application/pdf"" width="300"/>'+
