@@ -68,7 +68,7 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
 
 **Créditos**
 
-- Castro Valentina
+- Castro López Valentina
     * Calendario
     * Crear Tareas
     * Ingresar Curso 
@@ -81,13 +81,28 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
     * Implementación de sesiones
     * Realización de wireframes
     * Creación de base de datos  
-- Pueblita Araceli Michel
-    * ola
-- Mariana
+    
+- Pueblita Zacarias Araceli Michel
+    * Desarrollo de wireframes
+    * Realizacion de base de datos
+    * Maquetados html
+    * Validacion de datos 
+    * Peticiones fetch
+    * implementación de eventos en js
+    * Estilizado en CSS
+    * Registro de estudiantes
+    * Realizacion del foro de preguntas frecuentes
+    * Realizacion del tablon de estudiantes
+    * Creacion de tareas
+    * Descarga de archivos y rutas en base de datos
+    * Conexion base de datos
+    
+- Mariana López Pérez
     * Diseño completo
     * Documentacion de wareflow
     * Normnalizacion
     * Realizacion de base de datos
+    
 - Reyes Romero Gloria Aranza
     * Maquetado HTML
     * Hasheo
@@ -95,7 +110,5 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
     * Foro 
     * Documentación
     * Perfil inicial
-
-// le ponen sus nombres completos pofavo, creo están en orden alfabético pero no me sé todos sus apellidos T0T
 
           
