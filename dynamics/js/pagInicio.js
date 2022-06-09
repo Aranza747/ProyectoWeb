@@ -13,7 +13,7 @@ fetch("../php/mostrarMaterias.php")
         // div.innerHTML += "<div class='materia'>" + datos.nombre+datos.foto + "</div>";
         // div.dataset.id = datos.id_materia;
         // contMaterias.innerHTML += "<button class='materia' id='"+datos.id_materia+"'  onclick='location.href=\"./vistaMateria.php\"'><strong>"+datos.nombreMateria+"</strong>" +datos.foto+ "</button>";
-        contMaterias.innerHTML += "<div><button class='materia' id='"+datos.id_materia+"'><div id='datos'>"+datos.nombreMateria+"</div><div id='imagen'>"+datos.foto+ "</div></button></div>";
+        contMaterias.innerHTML += "<button class='materia' id='"+datos.id_materia+"'><div id='datos'>"+datos.nombreMateria+"</div><div id='imagen'>"+datos.foto+ "</div></button>";
        
     }
 });

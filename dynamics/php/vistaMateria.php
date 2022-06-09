@@ -97,6 +97,10 @@
     </aside>
 
     
+    <div id="datosMateria"></div>
+
+    <div id="contModulos"></div>
+
 
     <!-- Modal -->
     <?php
