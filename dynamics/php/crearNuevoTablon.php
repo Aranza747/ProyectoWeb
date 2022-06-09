@@ -24,7 +24,7 @@ echo $materia."<br>";
 
 $sql = "INSERT INTO archivotablon (fechaCreacion) VALUES('$fecha')";//AÑADIMOS FECHA
 $res = mysqli_query($con, $sql);
-var_dump($res);
+// var_dump($res);
 
 $idArchivoTablon = mysqli_insert_id($con);
 

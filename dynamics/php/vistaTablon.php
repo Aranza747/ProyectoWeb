@@ -80,8 +80,6 @@
                 } else if ($_SESSION["rol"] == "Administrador"){
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
                     echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
-                } else if ($_SESSION["rol"] == "Alumno"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
                 } else if ($_SESSION["rol"] == "Moderador"){
 
                 }
@@ -92,7 +90,7 @@
         <div class="crearPublicacion">
             <div class="derecha">
                 <div class="section foto">
-                    <img src="../../descargas/img/img_perfilUsuarios/321165848.jpg"  width="10%" height="10%" alt="fotodeperfil">
+                    <img src="../../descargas/img/img_perfilUsuarios/user.png"  width="13%" height="15%" alt="fotodeperfil">
                 </div><!--imagen del usuario de la sesion -->
             <form id="formulario" action="./crearNuevoTablon.php" method="post" enctype="multipart/form-data">
                 <div class="section texto">
@@ -103,7 +101,7 @@
             <!-- abajo -->
                 <div class="section botones" id="abajo">
                     <div>
-                        <input class="form-control form-control-sm" name="archivoTablon" type="file" id="archivoTablon" multiple required>
+                        <input class="form-control form-control-sm" name="archivoTablon" type="file" id="archivoTablon" multiple>
                     
                         <button type="submit" id="enviar">Publicar en el tablón</button>
                     </div>

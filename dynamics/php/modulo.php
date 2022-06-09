@@ -69,7 +69,11 @@
     ?>
 
 
-
+    <div class="titulo">    
+        <div id="datosMod">
+            
+        </div>
+    </div>
 
     <!-- crar materia -->
     <?php
@@ -78,11 +82,7 @@
             echo $_SESSION["modulo"];
             echo '<div class="contenedor">
             
-                <div class="titulo">
-                    <div id="datosMod">
-                        
-                    </div>
-                </div>
+                
                 <div class="tabla">
                     <div class="columna">
                         <div class="arriba">Material del trabajo</div>

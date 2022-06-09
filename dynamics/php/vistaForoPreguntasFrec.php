@@ -70,7 +70,7 @@
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
             <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro </button>
-            <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
+            <button type="button" class="list-group-item btn-opcion" id="tablon" onclick="location.href='./vistaTablon.php'">Tablon</button>
             <button type="button" class="list-group-item btn-opcion" id="calendario" onclick="location.href='./calendario.php'">Calendario</button>
             <?php
                 if($_SESSION["rol"] == "Profesor"){
@@ -127,17 +127,16 @@
      <!-- donde se aguarda las preguntas -->
     <div class=contenedor>
         <div id="preguntasFrecuentes">
+
+            <?php
+                if($_SESSION["rol"] == "Administrador" || $_SESSION["rol"] == "Moderador"){
+                    echo 'onclick= eliminar();';
+                }
+            ?>
         </div>
     </div>
 
-    <!-- segundo aside -->
-    <!-- <aside id="asideDerecha">
-        <ul>
-            <button type="button" class="list-group-item" id="foroEstudiante">Foro Estudiantes</button>
-            <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
-            <button type="button" class="list-group-item" id="añadir">Añadir</button>
-        </ul>
-    </aside> -->
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/foroPreguntasFrecuentes.js"></script>
