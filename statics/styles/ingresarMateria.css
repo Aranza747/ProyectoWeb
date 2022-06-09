@@ -109,7 +109,7 @@ aside{
 
 #titulo{
     margin: 3%;
-    padding: 1rem;
+    padding: 1rem 320px;
     background-color: #65cac28e;
     border-radius: 10px 10px 10px 10px;
     width: 85%;
@@ -119,14 +119,58 @@ aside{
     font-size: .7cm;
 }
 
+.coincidencia{
+    background-color: #FFA001;
+    margin: .7% 0 0 5%;
+    width: 81%;
+    border-radius: 10px 10px 10px 10px;
+    font-family: 'jaldi';
+    font-size: .6cm;
+    padding: 2px 40px;
+}
+
 .input{
-    margin-left:  4%;
+    margin-left:  10%;
     color: #000000;
     font-size: .4cm;
     font-family: "catamaran", 'Lucinda Sans', serif;
-    width: 50%;
+    width: 70%;
     height: 7%;
     border-color: #006778;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 20px 20px 20px 20px;
     padding: 7px 40px;
+}
+/*FORMULARIO
+------------------------------------------------------------------------------------*/
+#contenedor-mostrar{
+    background-color: #4eab4f;
+    margin: .7% 0 0 5%;
+    width: 81%;
+    border-radius: 10px 10px 10px 10px;
+    padding: 50px 50px;
+}
+#btnContrasena{
+    width: 5%;
+    border-color: #006778;
+    border-radius: 20px 20px 20px 20px;
+    padding: 2px 2px;
+    float: right;
+}
+.mover{
+    float: left;
+}
+#contrasena{
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 40%;
+    border-color: #006778;
+    border-radius: 20px 20px 20px 20px;
+    padding: 7px 40px;
+    margin: 1%;
+}
+.dato{
+
+    font-family: 'froza';
+    font-size: .4cm;
 }

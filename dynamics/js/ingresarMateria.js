@@ -41,6 +41,7 @@ window.addEventListener("load", ()=>{
                 divDatos.innerHTML += "<div class='dato'>" + datosJSON.datos.descripcion + "</div>";
                 divDatos.innerHTML += "<div class='dato'>Imagen Relacionada: " + datosJSON.datos.foto + "</div>";
                 divDatos.innerHTML += "<button id='btnContrasena' data-id='" + id + "'>►</button>";
+                // divDatos.innerHTML += "<input type='password' id='contrasena' placeholder='Escriba la contraseña aquí' >"
                 // console.log(datosJSON.datos);
                 divDatos.style.display="block";
                 contra = datosJSON.datos.contrasena;
