@@ -96,10 +96,11 @@
         </ul>
     </aside>
 
-    
-    <div id="datosMateria"></div>
+    <div class="contenedor">
+        <div id="datosMateria"></div>
 
-    <div id="contModulos"></div>
+        <div id="contModulos"></div>
+    </div>
 
 
     <!-- Modal -->
