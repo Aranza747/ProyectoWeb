@@ -73,7 +73,10 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
 - Pueblita Araceli Michel
     * ola
 - Mariana
-    * ola
+    * Diseño completo
+    * Documentacion de wareflow
+    * Normnalizacion
+    * Realizacion de base de datos
 - Reyes Romero Gloria Aranza
     * Maquetado HTML
     * Hasheo
