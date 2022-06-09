@@ -38,6 +38,7 @@ aside{
     height: 100%;
     background-color: #006778;
     z-index: 4;
+    display: none;
 }
 .btn-opcion {
     /* top: -20px; */

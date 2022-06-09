@@ -93,10 +93,10 @@
 
     <!-- ingresar nuevo curso -->
     <div id="contenedor">
-        <h1>Ingresar a curso nuevo</h1>
+        <div id="titulo">Ingresar a curso nuevo</div>
         
         <div id="contenedor-buscador">
-            <input id="buscador" placeholder="Busca la clase">
+            <input  class="input" id="buscador" placeholder="Busca la clase">
             <div id="contenedor-resultados"></div>
         </div>
 
