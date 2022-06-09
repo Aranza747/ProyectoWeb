@@ -16,29 +16,29 @@ $materia = (isset($_POST["materia"]) && $_POST["materia"]!= "")?$_POST["materia"
 
 $fecha = date("Y-m-d");
    
-echo $fecha."<br>";
+// echo $fecha."<br>";
 
-echo $descripcion."<br>";
-echo $materia."<br>";
+// echo $descripcion."<br>";
+// echo $materia."<br>";
 
 
-$sql = "INSERT INTO archivotablon (fechaCreacion) VALUES('$fecha')";//AÑADIMOS FECHA
+$sql = "INSERT INTO archivoTablon(fechaCreacion) VALUES('$fecha')";//AÑADIMOS FECHA
 $res = mysqli_query($con, $sql);
-// var_dump($res);
+var_dump($res);
 
 $idArchivoTablon = mysqli_insert_id($con);
 
-echo $idArchivoTablon;
+// echo $idArchivoTablon;
 if(isset($_FILES['archivoTablon'])){
-    echo "si hay archivo";
+    // echo "si hay archivo";
     $name= $_FILES['archivoTablon']['name'];   
     $arch= $_FILES['archivoTablon']['tmp_name'];
     $ext= pathinfo($name, PATHINFO_EXTENSION);
-    echo $ext;
+    // echo $ext;
     if($ext=="pdf" || $ext=="txt" || $ext=="doc" || $ext=="docx" || $ext=="jpg" || $ext=="png" || $ext=="jpge" || $ext=="pptx" || $ext=="pptm" || $ext=="ppt" || $ext=="xlsx" || $ext=="xlsm" || $ext=="xls"){
         $ruta = "../../archivosTablon/$idArchivoTablon.$ext"; //idtablo de la tabla Tablon
         rename($arch, "$ruta");
-        echo $ruta;
+        // echo $ruta;
         $sql = "UPDATE archivoTablon SET ruta='$ruta' WHERE id_archivoTablon='$idArchivoTablon'";
         $res = mysqli_query($con, $sql);
     }
