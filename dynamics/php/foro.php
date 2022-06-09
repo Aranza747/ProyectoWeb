@@ -16,7 +16,7 @@
     
     <link rel="stylesheet" href="../../libs/bootstrap-5.2.0-beta1-dist/css/bootstrap.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../statics/styles/principal.css">
+    <link rel="stylesheet" href="../../statics/styles/foro.css">
 
     <title>AulaP6</title>
 </head>
@@ -73,7 +73,10 @@
         </div>'
     ?>
     <!-- Perfil -->
-    
+
+    <button type="button" class="botones" id="preguntasFrec" onclick="location.href='./vistaForoPreguntasFrec.php'">Preguntas Frecuentes</button>
+    <button type="button" class="botones" id="foroEst" onclick="location.href='./vistaForoEstudiantes.php'">Foro de Estudiantes</button>
+    <button type="button" class="botones" id="dudas" onclick="location.href='./vistaForoPreguntasFrecuentes.php'">Dudas</button>
 
     <aside>
         <!-- columna-->
@@ -97,33 +100,9 @@
             
         </ul>
     </aside>   
-    <?php
-        if($_SESSION["rol"] == "Alumno"){
-            // echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  
-        echo '
-            <div class="d-grid gap-2 col-6 mx-auto">
-                
-            </div>';
-        }
-
-        echo '<div id="contMaterias">
-            
-        </div>';
-        
-        echo $_SESSION["materia"];
-        
-
-    ?>
-
-
-
-
     
-
-    
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/pagInicio.js"></script>
+    
 </body>
     
 </html>

@@ -88,23 +88,17 @@
         </ul>
     </aside>
 
-    <!-- <div id="preguntasFrecuentes">
-        <div class="card border-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body text-primary">
-              <h5 class="card-title">Primary card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
-        </div>
-    </div> -->
-
+    <?php
+        if($_SESSION["rol"] == "Administrador" || $_SESSION["rol"] == "Moderador"){
+            echo '<div class=contenedor>
+                <button type="button" class="añadir" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <img id="MAS" src="../../statics/img/+.png" alt="" width="40" height="50">
+                </button>
+            </div>';
+        }
+    ?>
     <!-- Button modal -->
-    <div class=contenedor>
-        <button type="button" class="añadir" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <img id="MAS" src="../../statics/img/+.png" alt="" width="40" height="50">
-        </button>
-    </div>
+    
 
     <!-- Modal, el recuadro que emerge de hacer click en el boton -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

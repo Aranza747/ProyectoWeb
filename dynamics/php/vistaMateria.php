@@ -70,7 +70,7 @@
         </div>'
     ?>
 
-<aside>
+    <aside>
         <!-- columna-->
         <ul class="list-group list-group-flush"> 
             <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro </button>
