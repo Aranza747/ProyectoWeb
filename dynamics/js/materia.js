@@ -24,7 +24,8 @@ fetch("../php/mostrarModulos.php")
     console.log(datosJSON);
     for(datos of datosJSON){
         
-        contModulos.innerHTML += "<button class='modulo' id='"+datos.id_modulo+"'>"+datos.nombreMod+"</button>";
+        // contModulos.innerHTML += "<button class='modulo' id='"+datos.id_modulo+"'>"+datos.nombreMod+"</button>";
+        contModulos.innerHTML += "<div class='borde'><button class='modulo' id='"+datos.id_modulo+"'><div id='datos'>"+datos.nombreMod+"</div></button></div>";
         
     }
 });
@@ -43,3 +44,5 @@ contModulos.addEventListener("click", (evento) =>{
     })
     
 });
+
+

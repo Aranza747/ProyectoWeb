@@ -100,15 +100,10 @@
 
         <div id="contenedor-mostrar" style="display:none">
             <!-- <div id="sinResult" style="display:none">No se encontraron coincidencias</div> -->
-            <input type="text" id="contrasena" placeholder='Escriba la contraseña aquí' >
+            <div><input type="text" id="contrasena" placeholder='Escriba la contraseña aquí' ></div>
         </div>
     </div>
 
-    <div id="contenedor-mostrar" style="display:none">
-      <!-- <div id="sinResult" style="display:none">No se encontraron coincidencias</div> -->
-      <input type="password" id="contrasena" placeholder='Escriba la contraseña aquí' >
-      
-    </div>
 
 
     <script src="../js/ingresarMateria.js"></script>

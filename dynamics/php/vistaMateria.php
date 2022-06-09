@@ -96,30 +96,27 @@
         </ul>
     </aside>
 
+    <div class="contenedor">
+        <div id="datosMateria"></div>
 
-    <div id="datosMateria">
-
+        <div id="contModulos"></div>
     </div>
 
-
-
-    <div id="contModulos">
-
-
-    </div>
-    
 
     <!-- Modal -->
     <?php
         if($_SESSION["rol"] == "Profesor" || $_SESSION["rol"] == "Administrador"){
             echo '
             <div class="contenedor">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    Crear Módulo
-                </button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
-                    Crear Juego
-                </button>
+            
+                <div id="datosMateria">
+                    <button type="button" class=" input" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Crear Módulo
+                    </button>
+                </div>
+
+                <div id="contModulos"></div>
+        
             </div>
 
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -144,80 +141,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Crear juego -->
-
-
-            <div class="modal-dialog modal-xl modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
-              <div class="modal-dialog">
-                <div class="modal-content">
-        
-                  <!-- titulo -->
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ingresa las preguntas y respuestas del memorama</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-        
-                  <!-- contenido/ preguntas -->
-                <form>
-                    <div  id="juego">
-                        <div class="preguntas">
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="1" placeholder="Escribir pregunta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="2" placeholder="Escribir pregunta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="3" placeholder="Escribir pregunta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="4" placeholder="Escribir pregunta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="5" placeholder="Escribir pregunta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="6" placeholder="Escribir pregunta">
-                            </div>
-                        </div>
-            
-                        <div class="respuestas">
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="R1" placeholder="Escribir respuesta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="R2" placeholder="Escribir respuesta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="R3" placeholder="Escribir respuesta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="R4" placeholder="Escribir respuesta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="R5" placeholder="Escribir respuesta">
-                            </div>
-                            <div class="mb-3">
-                            <input type="text" class="form-control" id="R6" placeholder="Escribir respuesta">
-                        </div>
-                        
-                    </div>
-                </div> 
-                <!-- botones -->
-                <div class="" id="botones">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Enviar</button>
-                </div>
-                </form>
-              </div>
-              
-               
-            </div>';
-
-            
-
+        </div>';
         }
 ?>
 

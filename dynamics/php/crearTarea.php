@@ -6,6 +6,7 @@ session_start();
 
 $mod = $_SESSION["modulo"];
 
+
 date_default_timezone_set('America/Mexico_City');
 $fechaAct=date('Y-m-d');
 
