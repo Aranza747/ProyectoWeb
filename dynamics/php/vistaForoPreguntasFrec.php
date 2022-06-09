@@ -131,9 +131,9 @@
     </div>
 
      <!-- donde se aguarda las preguntas -->
-     <div class=contenedor>
-    <div id="preguntasFrecuentes">
-    </div>
+    <div class=contenedor>
+        <div id="preguntasFrecuentes">
+        </div>
     </div>
 
     <!-- segundo aside -->

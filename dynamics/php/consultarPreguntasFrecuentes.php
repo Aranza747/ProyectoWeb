@@ -9,7 +9,6 @@ if(!$con){
 }else{
     $sql = "SELECT * FROM preguntasFrecuentes";
     $res = mysqli_query($con, $sql);
-    var_dump ($res);
     $resultados = [];
     while($row = mysqli_fetch_assoc($res))
     {

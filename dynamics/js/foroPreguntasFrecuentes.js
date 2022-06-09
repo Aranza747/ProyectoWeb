@@ -26,11 +26,11 @@ fetch("./consultarPreguntasFrecuentes.php")
   return response.json();
 })
 .then((datosJSON)=>{
-  console.log(datosJSON);
+
   let preguntaFrecuente = document.getElementById("preguntasFrecuentes");
   for(dato of datosJSON){
     preguntaFrecuente.innerHTML += 
-      '<div class="accordion" id="accordionPanelsStayOpenExample">'+
+      '<div class="accordion">'+
         '<div class="accordion-item">'+
           '<h2 class="accordion-header" id="headingOne">'+
             '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">'
@@ -55,10 +55,13 @@ fetch("./consultarPreguntasFrecuentes.php")
 const preguntaFrecuente = document.getElementById("preguntasFrecuentes");
 
 preguntaFrecuente.addEventListener("click", (evento) => {
-    const divClickeado = document.getElementById(evento.target.id);
-    if(divClickeado.contains.classList("eliminar")){
+    const divClickeado = evento.target;
+
+
+    if(divClickeado.classList.contains("eliminar")){
         let datosForm = new FormData();
         datosForm.append("id", evento.target.id);
+
         fetch("./borrarPreguntaFrecuente.php",{
           method:"POST",
           body: datosForm,

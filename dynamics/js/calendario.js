@@ -30,7 +30,7 @@ function mostrarEventos(fecha){
             alert("no salió");
           }
         }).then((resolve) => {
-            resolve(nombre);
+            return nombre;
         })
         
         // return nombre;
