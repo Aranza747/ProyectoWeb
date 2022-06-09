@@ -76,7 +76,7 @@
 
     <button type="button" class="botones" id="preguntasFrec" onclick="location.href='./vistaForoPreguntasFrec.php'">Preguntas Frecuentes</button>
     <button type="button" class="botones" id="foroEst" onclick="location.href='./vistaForoEstudiantes.php'">Foro de Estudiantes</button>
-    <button type="button" class="botones" id="dudas" onclick="location.href='./vistaForoPreguntasFrec.php'">Dudas</button>
+    <!-- <button type="button" class="botones" id="dudas" onclick="location.href='./vistaForoPreguntasFrec.php'">Dudas</button> -->
 
     <aside>
         <!-- columna-->

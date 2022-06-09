@@ -148,6 +148,8 @@ aside{
     width: 81%;
     border-radius: 10px 10px 10px 10px;
     padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
 }
 #btnContrasena{
     width: 5%;
@@ -155,9 +157,6 @@ aside{
     border-radius: 20px 20px 20px 20px;
     padding: 2px 2px;
     float: right;
-}
-.mover{
-    float: left;
 }
 #contrasena{
     color: #000000;

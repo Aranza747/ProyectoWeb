@@ -90,7 +90,7 @@
         <div class="crearPublicacion">
             <div class="derecha">
                 <div class="section foto">
-                    <img src="../../descargas/img/img_perfilUsuarios/user.png"  width="13%" height="15%" alt="fotodeperfil">
+                    👤
                 </div><!--imagen del usuario de la sesion -->
             <form id="formulario" action="./crearNuevoTablon.php" method="post" enctype="multipart/form-data">
                 <div class="section texto">

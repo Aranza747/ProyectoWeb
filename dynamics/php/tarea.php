@@ -65,10 +65,24 @@
     </aside>
 
     <div id="infoTarea">
-
-
     
     </div>
+
+    <?php
+        if($_SESSION["rol"] == "Alumno"){
+            echo '<div id="entregar">
+                <form action="./enviar.php" method="post" enctype="multipart/form-data">
+                    <label for="formFileSm" class="file" class="form-label">Adjunta tu tarea</label>
+                    <input class="form-control form-control-sm" id="formFileSm" name="archivo" type="file" multiple required>
+                    <button type="submit" id="entregar">Enviar tarea</button>
+                </form>
+            </div>';
+        }
+    ?>
+
+    
+
+    
 
     
 

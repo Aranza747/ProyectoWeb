@@ -100,7 +100,7 @@
 
         <div id="contenedor-mostrar" style="display:none">
             <!-- <div id="sinResult" style="display:none">No se encontraron coincidencias</div> -->
-            <div class="mover"><input type="text" id="contrasena" placeholder='Escriba la contraseña aquí' ></div>
+            <div><input type="text" id="contrasena" placeholder='Escriba la contraseña aquí' ></div>
         </div>
     </div>
 
