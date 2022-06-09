@@ -11,7 +11,7 @@ fetch("./consultarTablon.php")
         if(dato.ruta == null)
         contenedorPublicaciones.innerHTML += 
             '<div class="crearPublicacion">'+
-                '<div class="section foto"><img src="../../descargas/img/img_perfilUsuarios/user.png" width="13%" height="15%" alt="fotodeperfil"></div>'+
+                '👤'+
                 '<div>Autor: '+dato.nombre+'</div>'+
                 '<div>Materia: '+dato.materia+'</div>'+
                 '<div>'+dato.descripcion+'</div>'+
@@ -23,7 +23,7 @@ fetch("./consultarTablon.php")
         if(dato.ruta != null)
             contenedorPublicaciones.innerHTML += 
             '<div class="crearPublicacion">'+
-                '<div class="section foto"><img src="../../descargas/img/img_perfilUsuarios/user.png" width="13%" height="15%" alt="fotodeperfil"></div>'+
+                '👤'+
                 '<div>Autor: '+dato.nombre+'</div>'+
                 '<div>Materia: '+dato.materia+'</div>'+
                 '<div>'+dato.descripcion+'</div>'+

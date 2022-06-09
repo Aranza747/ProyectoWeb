@@ -11,7 +11,7 @@ fetch("../php/datosMateria.php")
     if(datosJSON.ok == true){
         console.log(datosJSON);
         datosMateria.innerHTML += "<div class='titulo'>" + datosJSON.datos.nombre + "</div>";
-        datosMateria.innerHTML += "<div class='descripcion'>" + datosJSON.datos.descripcion + "</div>";    
+        datosMateria.innerHTML += "<div class='descripcion'>" + datosJSON.datos.descripcion + "</div>"; 
     }
 })
 

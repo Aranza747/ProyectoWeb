@@ -182,3 +182,48 @@ aside{
     margin: 3%;
 }
 
+.input{
+    float: right;
+    margin-right: 8%;
+    margin-top: 8%;
+    border-style: none;
+    background-color: #65cac28e;;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px 40px;
+
+    font-size: .8cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    color: #497BA9;
+    width: 28%;
+}
+
+/*MODULOS
+------------------------------------------------------------------------------------*/
+#contModulos{
+    
+    margin: 1% 0 1% 2%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 92%;
+}
+.borde{
+    margin: 1% 1% 0 0;
+
+}
+/* boton */
+.modulo{
+    border-style: none;
+    background-color: #FFA001;
+    border-radius: 10px 10px 10px 10px;
+    width: 20.7rem;
+}
+#datos{
+
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    height: 90%;
+    font-size: .7cm;
+    font-family: 'catamaran';
+    margin: 3%;
+}

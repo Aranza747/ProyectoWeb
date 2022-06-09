@@ -45,15 +45,26 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
           2. Buscar "windows terminal" e instalarla.
 
 **Ejecución**
-1. Crear una carpeta en esta ruta: C:/xampp/htdocs con el nombre de preferencia.
-2. Abrir la terminal y arrastrar la carpeta a la terminal para tomar la ruta.
-3. Escribir "git init" para inicializar la carpeta.
-4. Escribir "git clone https://github.com/Aranza747/ProyectoWeb.git
-5. Una vez clonada la carpeta en el repositorio, abrir el archivo iniciarSesion.html
-6. Abrir XAMPP y verificar que los rubros antes mencionados estén activados.
-7. Crear una cuenta dando clic en el enlace "cree una" e ingrese su número de cuenta si es alumno o RFC si es profesor.
-8. Inicie sesión con su nueva cuenta.
-9. Únase a un curso o créelo y comienxe a utiizar las funcionalidades disponibles.
+*Para ejecutar un comando se escribe la línea y se presiona la tecla Enter.
+
+    1. Crear una carpeta en esta ruta: C:/xampp/htdocs con el nombre de preferencia.
+    2. Abrir la terminal y arrastrar la carpeta a la terminal para tomar la ruta.
+    3. Escribir "git init" para inicializar la carpeta.
+    4. Escribir "git clone https://github.com/Aranza747/ProyectoWeb.git
+    5. Copiar el archivo de la base de datos llamado "aula2.sql" ubicada en la carpeta docs en la siguiente ruta: C:/xampp/mysql/bin
+    6. Abrir una nueva pestaña de la terminal y escribir la siguiente línea: C:\xampp\mysql\bin en windows y a /opt/lampp/bin en linux.
+    7. Ejecutar el comando ./mysql -u root;
+    8. Ejecutar el comando CREATE DATABASE aula2;
+    11. Luego mysql -u root --default-character-set=utf8;
+    12. SET names 'utf8';
+    13. USE aula2;
+    14. SOURCE aula2.sql;
+    15. Una vez clonada la carpeta en el repositorio con la base de datos importada, abrir el archivo iniciarSesion.html
+    16. Abrir XAMPP y verificar que los rubros antes mencionados estén activados.
+    17. Crear una cuenta dando clic en el enlace "cree una" e ingrese su número de cuenta si es alumno o RFC si es profesor.
+    18. Inicie sesión con su nueva cuenta.
+    19. Únase a un curso o créelo y comience a utilizar las funcionalidades disponibles.
+    20. De haber un problema, por favor contáctese con el equipo a: 
 
 **Créditos**
 

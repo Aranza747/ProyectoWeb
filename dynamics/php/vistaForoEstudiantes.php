@@ -71,9 +71,9 @@
     ?>
     
 
-    <aside>
+    <!-- <aside> -->
         <!-- columna-->
-        <ul class="list-group list-group-flush"> 
+        <!-- <ul class="list-group list-group-flush"> 
             
             <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./foro.php'">Foro </button>
             <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
@@ -92,47 +92,36 @@
             ?>
             
         </ul>
-    </aside>
+    </aside>    -->
 
-    <aside>
-        <!-- columna-->
-        <ul class="list-group list-group-flush"> 
-            <button type="button" class="list-group-item btn-opcion" id="foro" onclick="location.href='./vistaForoPreguntasFrec.php'">Foro </button>
-            <button type="button" class="list-group-item btn-opcion" id="tablon">Tablon</button>
-            <button type="button" class="list-group-item btn-opcion" id="calendario">Calendario</button>
-            <?php
-                if($_SESSION["rol"] == "Profesor"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
-                } else if ($_SESSION["rol"] == "Administrador"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear" onclick="location.href="./formCrearMateria.php"">Crear Materia</button>'  ;
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Participantes</button>'; 
-                } else if ($_SESSION["rol"] == "Alumno"){
-                    echo '<button type="button" class="list-group-item btn-opcion" id="crear">Calificaciones</button>'; 
-                } else if ($_SESSION["rol"] == "Moderador"){
-
-                }
-            ?>
-            
-        </ul>
-    </aside>   
-  
-
-    <div class="d-flex position-relative pregunta">
-        <img src="..." id="imagenAlum" class="flex-shrink-0 me-3" alt="...">
-        <div id="contenido">
-            <h5 class="mt-0">Nombre del alumno:</h5>
-            <p>Comentario:</p>
-            <a href="./vistaForoPreguntasFrec.php" class="stretched-link">Preguntas frecuentes</a>
-        </div>
+    <div id="nuevo">
+        <button id="crearComentario">Agregar Comentario/Pregunta</button>
     </div>
 
-    <!-- <aside id="asideDerecha">
-        <ul>
-            <button type="button" class="list-group-item" id="preguntasFrecuentes" onclick="location.href='./vistaForoPreguntasFrecuentes.php'">Preguntas Frecuentes</button>
-            <button type="button" class="list-group-item" id="guardarCambios">Guardar Cambios</button>
-            <button type="button" class="list-group-item btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="añadir">Añadir</button>
-        </ul>
-    </aside> -->
+    <div id="nuevoComentario" style="display:none">
+        
+        <!-- <p>Nombre del alumno:</p> -->
+        <h5 class="mt-0">Comentario:</h5>
+        <br>
+        <div id="info"><label></label> <input type="text" name="info-comentario" ></div><br>
+        <button id="btn-guardar-comentario">Guardar</button>
+
+    </div>
+  
+
+    <!-- <img src="..." id="imagenAlum" class="flex-shrink-0 me-3" alt="..."> -->
+    <div class="d-flex position-relative pregunta" id="contenido" style="display:none">
+        <h5 class="mt-0">Comentario:</h5>
+        <p>Nombre del alumno:</p>
+        <button id="responder">Responder</button>
+        <div id="contenedor-agregar" style="display:none">
+            <form id="form-nuevo">
+                <br>
+                <div class="info"><label></label> <input type="text" name="info-respuesta" ></div><br>
+                <button id="btn-enviar">Enviar</button>
+            </form>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/foroEstudiantes.js"></script>
