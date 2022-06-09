@@ -38,7 +38,6 @@ aside{
     height: 100%;
     background-color: #006778;
     z-index: 4;
-    display: none;
 }
 .btn-opcion {
     /* top: -20px; */
@@ -102,11 +101,15 @@ aside{
     position: absolute;
     transform: translate(170px, 0);
     margin: 3%;
+    margin-left: 8%;
+    width: 80%;
 }
 
+
+/*JUEGO
+------------------------------------------------------------------------------------*/
 #juego{
     display: flex;
-
     /* flex-direction: column; */
 }
 .preguntas{
@@ -117,35 +120,77 @@ aside{
     flex: 4;
     margin: 1%;
 }
-
-
-/* #contModulos{
-    position: absolute;
-    transform: translate(170px, 0);
-    margin: 3%;
-    display: flex;
-    flex-direction: column;
-} */
-
+/*DATOS
+------------------------------------------------------------------------------------*/
 .titulo{
-    margin: 4% 1% 0 14%;
+    margin: 1% 0 1% 2%;
     padding: 1rem;
     background-color: #65cac28e;
     border-radius: 10px 10px 10px 10px;
-    width: 80%;
+    width: 90%;
+
+    font-family: "averia", 'Lucinda Sans', serif;
+    font-size: 1cm;
+    font-weight:400;
+    color: #497BA9;
 }
 
 .descripcion{
-    margin: 5px 1% 0 14%;
+    margin: 1% 0 1% 2%;
     padding: 1rem;
     background-color: #65cac28e;
     border-radius: 10px 10px 10px 10px;
     width: 60%;
+    height: max-content;
+
+    font-family: "averia", 'Lucinda Sans', serif;
+    font-size: .5cm;
+    font-weight:400;
+    color: #497BA9;
 }
 
-/* .btn-primary{
-    float: right;
-    transform: translate(62%, 0);
-    margin: 1%;
-} */
 
+.input{
+    float: right;
+    margin-right: 8%;
+    margin-top: 6.8%;
+    border-style: none;
+    background-color: #65cac28e;;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px 40px;
+
+    font-size: .8cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    color: #497BA9;
+    width: 28%;
+}
+
+/*MODULOS
+------------------------------------------------------------------------------------*/
+#contModulos{
+    margin: 1% 0 1% 2%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 92%;
+}
+.borde{
+    margin: 1% 1% 0 0;
+
+}
+/* boton */
+.modulo{
+    border-style: none;
+    background-color: #FFA001;
+    border-radius: 10px 10px 10px 10px;
+    width: 20.7rem;
+}
+#datos{
+
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 10px 10px 10px 10px;
+    height: 90%;
+    font-size: .7cm;
+    font-family: 'catamaran';
+    margin: 3%;
+}

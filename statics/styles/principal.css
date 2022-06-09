@@ -102,14 +102,30 @@ aside{
 
 /*MATERIAS
 ------------------------------------------------------------------------------------*/
-#contMaterias{
-    
-        position: absolute;
-        transform: translate(170px, 0);
-        margin: 3%;
-        display: flex;
-        flex-direction: column;
+.materia{
+    position: absolute;
+    transform: translate(170px, 0);
+    margin: 3%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: #EB5353;
+    border-radius: 10px 10px 10px 10px;
+    height: 20%;
+    align-items: center;
 }
+#datos{
+    color: #ffffff;
+    background-color: #F9D923;
+    width: 90%;
+    border-radius: 10px 10px 10px 10px;
+    height: 20%;
+    font-size: .5cm;
+    font-family: 'catamaran';
+    margin: 3%;
+}
+
+
 .form{
     background-color: #FFA001;
     font-size: .7cm;

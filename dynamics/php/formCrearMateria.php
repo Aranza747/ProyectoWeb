@@ -112,7 +112,7 @@
                 <div id="derecha">
                     <!-- Aqui vamos a poner el cuadrito donde se muestre la imagen -->
                     <div >
-                        <img id="imagenRelacionada"></img>
+                        <img id="imagenRelacionada" width: 30% height: 20%></img>
                     </div>
                     <!--  -->
                     <!-- Este es el boton de files -->
