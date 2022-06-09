@@ -96,7 +96,12 @@
         </ul>
     </aside>
 
-    
+    <div class="contenedor">
+        <div id="datosMateria"></div>
+
+        <div id="contModulos"></div>
+    </div>
+
 
     <!-- Modal -->
     <?php

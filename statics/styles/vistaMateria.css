@@ -106,20 +106,6 @@ aside{
 }
 
 
-/*JUEGO
-------------------------------------------------------------------------------------*/
-#juego{
-    display: flex;
-    /* flex-direction: column; */
-}
-.preguntas{
-    flex: 1;
-    margin: 1%;
-}
-.respuestas{
-    flex: 4;
-    margin: 1%;
-}
 /*DATOS
 ------------------------------------------------------------------------------------*/
 .titulo{
@@ -153,7 +139,7 @@ aside{
 .input{
     float: right;
     margin-right: 8%;
-    margin-top: 6.8%;
+    margin-top: 8%;
     border-style: none;
     background-color: #65cac28e;;
     border-radius: 10px 10px 10px 10px;
@@ -168,6 +154,7 @@ aside{
 /*MODULOS
 ------------------------------------------------------------------------------------*/
 #contModulos{
+    
     margin: 1% 0 1% 2%;
     display: flex;
     flex-wrap: wrap;
