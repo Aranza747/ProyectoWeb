@@ -84,24 +84,24 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
     
 - Pueblita Zacarias Araceli Michel
     * Desarrollo de wireframes
-    * Realizacion de base de datos
+    * Realización de base de datos
     * Maquetados html
-    * Validacion de datos 
+    * Validación de datos 
     * Peticiones fetch
     * implementación de eventos en js
     * Estilizado en CSS
     * Registro de estudiantes
-    * Realizacion del foro de preguntas frecuentes
-    * Realizacion del tablon de estudiantes
+    * Realización del foro de preguntas frecuentes
+    * Realización del tablón de estudiantes
     * Creacion de tareas
     * Descarga de archivos y rutas en base de datos
-    * Conexion base de datos
+    * Conexión base de datos
     
 - Mariana López Pérez
     * Diseño completo
-    * Documentacion de wareflow
-    * Normnalizacion
-    * Realizacion de base de datos
+    * Documentación de wareflow
+    * Normnalización
+    * Realización de base de datos
     
 - Reyes Romero Gloria Aranza
     * Maquetado HTML
@@ -110,5 +110,6 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
     * Foro 
     * Documentación
     * Perfil inicial
+    * Realización de wireframes
 
           
