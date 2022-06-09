@@ -100,7 +100,7 @@ Aula virtual para la Escuela Nacional Preparatoria No. 6 "Antonio Caso".
 - Mariana López Pérez
     * Diseño completo
     * Documentación de wareflow
-    * Normnalización
+    * Normalización
     * Realización de base de datos
     
 - Reyes Romero Gloria Aranza
