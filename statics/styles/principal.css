@@ -110,3 +110,9 @@ aside{
         display: flex;
         flex-direction: column;
 }
+.form{
+    background-color: #FFA001;
+    font-size: .7cm;
+    border-radius: 10px 10px 10px 10px;
+    font-family: 'catamaran';
+}

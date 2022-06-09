@@ -106,3 +106,27 @@ aside{
     margin: 2%;
     width:85%;
 }
+
+#titulo{
+    margin: 3%;
+    padding: 1rem;
+    background-color: #65cac28e;
+    border-radius: 10px 10px 10px 10px;
+    width: 85%;
+    border-color: #65cac28e;
+    color: rgb(0, 0, 0);
+    font-family: 'catamaran';
+    font-size: .7cm;
+}
+
+.input{
+    margin-left:  4%;
+    color: #000000;
+    font-size: .4cm;
+    font-family: "catamaran", 'Lucinda Sans', serif;
+    width: 50%;
+    height: 7%;
+    border-color: #006778;
+    border-radius: 10px 10px 10px 10px;
+    padding: 7px 40px;
+}
